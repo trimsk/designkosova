@@ -1,0 +1,4 @@
+git clone designkosova.bundle designkosova
+cd designkosova
+git remote set-url origin https://github.com/trimsk/designkosova.git
+git push -u origin main
