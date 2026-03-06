@@ -6,9 +6,9 @@
 <title>Design Kosova Foundation</title>
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ════════════════════════════════════════
+/* ââââââââââââââââââââââââââââââââââââââââ
    SHARED DESIGN SYSTEM
-════════════════════════════════════════ */
+ââââââââââââââââââââââââââââââââââââââââ */
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;background:#EDEEE6}
@@ -24,7 +24,7 @@ body{
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 
-/* ══ NAV ══ */
+/* ââ NAV ââ */
 .nav{
   width:100%;height:60px;
   display:flex;align-items:center;justify-content:space-between;
@@ -70,7 +70,7 @@ a{text-decoration:none;color:inherit}
 }
 .nav-cta:hover{background:#002fb5}
 
-/* ══ HERO ══ */
+/* ââ HERO ââ */
 .hero{display:grid;grid-template-columns:3fr 1fr;height:calc(100vh - 60px);min-height:560px;border-bottom:1px solid #101A30}
 .hero-img{position:relative;overflow:hidden;border-right:1px solid #101A30}
 .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .9s}
@@ -108,14 +108,14 @@ a{text-decoration:none;color:inherit}
 }
 .hero-btn:hover{background:#002fb5}
 
-/* ══ STATS ══ */
+/* ââ STATS ââ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #101A30}
 .stat{padding:22px clamp(24px,4vw,48px);border-right:1px solid #101A30;display:flex;align-items:baseline;gap:16px}
 .stat:last-child{border-right:none}
 .stat-n{font-size:26px;letter-spacing:-.04em;line-height:1;color:#003DD6}
 .stat-l{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#101A30}
 
-/* ══ TICKER ══ */
+/* ââ TICKER ââ */
 .ticker{overflow:hidden;padding:13px 0;border-bottom:1px solid #101A30;background:#EDEEE6}
 .ticker-track{display:inline-flex;animation:tick 36s linear infinite;white-space:nowrap}
 .ticker-track:hover{animation-play-state:paused}
@@ -123,7 +123,7 @@ a{text-decoration:none;color:inherit}
 .ticker-dot{font-size:14px;color:#003DD6;padding-left:48px}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ══ SECTION HEADER ══ */
+/* ââ SECTION HEADER ââ */
 .s-head{display:flex;justify-content:space-between;align-items:flex-end;padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px);border-bottom:1px solid #101A30}
 .s-label{display:none}
 .s-title{font-size:clamp(48px,5.4vw,78px);line-height:1;letter-spacing:-.022em;color:#101A30;font-weight:300}
@@ -133,7 +133,7 @@ a{text-decoration:none;color:inherit}
 .s-link.white{color:#fff;border-bottom-color:#fff}
 .s-link:hover{opacity:.7}
 
-/* ══ ABOUT ══ */
+/* ââ ABOUT ââ */
 .about-spread{height:580px;position:relative;overflow:hidden;border-bottom:1px solid #101A30}
 .about-bg{position:absolute;inset:0}
 .about-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
@@ -146,7 +146,7 @@ a{text-decoration:none;color:inherit}
 .about-body p{font-size:13px;line-height:1.9;color:#101A30}
 .about-body p+p{margin-top:13px}
 
-/* ══ PILLARS ══ */
+/* ââ PILLARS ââ */
 .pillars{display:grid;grid-template-columns:repeat(4,1fr)}
 .pillar{padding:clamp(32px,4vw,56px) clamp(24px,3.5vw,48px);border-right:1px solid #101A30;display:flex;flex-direction:column;gap:17px}
 .pillar:last-child{border-right:none}
@@ -155,8 +155,8 @@ a{text-decoration:none;color:inherit}
 .pillar-title{font-size:16px;line-height:1.2;letter-spacing:-.01em;color:#101A30}
 .pillar-desc{font-size:13px;line-height:1.82;color:#101A30}
 
-/* ══ PROJECTS ══ */
-.proj-head{display:flex;justify-content:space-between;align-items:flex-end;padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px);border-bottom:1px solid #101A30;border-top:1px solid #101A30}
+/* ââ PROJECTS ââ */
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;padding:clamp(32px,4vw,52px) clamp(28px,5vw,56px);border-bottom:1px solid #101A30;border-top:1px solid #101A30}
 .proj-cards{display:grid;grid-template-columns:repeat(6,1fr);background:#101A30;gap:1px;border-bottom:1px solid #101A30}
 .pcard{
   min-height:460px;padding:32px 26px 29px;
@@ -178,14 +178,14 @@ a{text-decoration:none;color:inherit}
 .pcard-foot{border-top:1px solid #101A30;padding-top:17px;display:flex;justify-content:space-between;align-items:flex-end}
 .pcard-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase}
 
-/* ══ MOSAIC ══ */
+/* ââ MOSAIC ââ */
 .mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:300px 262px;background:#101A30;gap:1px;border-bottom:1px solid #101A30}
 .mc{overflow:hidden;position:relative;background:#b0b1aa}
 .mc img{width:100%;height:100%;object-fit:cover}
 .mc:nth-child(1){grid-row:1/3}
 .mc-cap{position:absolute;bottom:22px;left:26px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
 
-/* ══ IMPACT ══ */
+/* ââ IMPACT ââ */
 .impact-sec{border-bottom:1px solid #101A30}
 .impact-s-head{
   display:flex;justify-content:space-between;align-items:flex-end;
@@ -207,7 +207,7 @@ a{text-decoration:none;color:inherit}
 .collab-name{font-size:14px;color:#EDEEE6}
 .collab-loc{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,238,230,.6)}
 
-/* ══ EVENTS ══ */
+/* ââ EVENTS ââ */
 .events-sec{border-bottom:1px solid #101A30}
 .events-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#101A30;gap:1px}
 .ev{min-height:320px;padding:clamp(28px,3.5vw,48px);background:#EDEEE6;display:flex;flex-direction:column;justify-content:space-between}
@@ -217,7 +217,7 @@ a{text-decoration:none;color:inherit}
 .ev-desc{font-size:13px;line-height:1.75;color:#101A30;margin-bottom:16px}
 .ev-arr{font-size:16px;color:#101A30}
 
-/* ══ CTA ══ */
+/* ââ CTA ââ */
 .cta-layout{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #101A30}
 .cta-left{border-right:1px solid #101A30;padding:96px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:560px}
 .cta-title{font-size:clamp(52px,5.4vw,78px);line-height:1;letter-spacing:-.023em;color:#003DD6;font-weight:300}
@@ -237,7 +237,7 @@ a{text-decoration:none;color:inherit}
 .soc{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30;border-bottom:1px solid #101A30;padding-bottom:3px}
 .soc:hover{opacity:.6}
 
-/* ══ FOOTER ══ */
+/* ââ FOOTER ââ */
 footer{background:#101A30;color:#EDEEE6}
 .ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid rgba(237,238,230,.12)}
 .ft-col{padding:56px 40px;border-right:1px solid rgba(237,238,230,.12)}
@@ -254,9 +254,9 @@ footer{background:#101A30;color:#EDEEE6}
 .ft-bottom{display:flex;justify-content:space-between;align-items:center;padding:16px clamp(24px,4vw,40px);font-size:9px;letter-spacing:.06em;color:rgba(237,238,230,.45)}
 
 
-/* ════════════════════════════════════════
+/* ââââââââââââââââââââââââââââââââââââââââ
    SPA + EXTRA
-════════════════════════════════════════ */
+ââââââââââââââââââââââââââââââââââââââââ */
 
 /* SPA routing */
 .page-section { display:none; }
@@ -297,7 +297,7 @@ footer{background:#101A30;color:#EDEEE6}
 .sh-filter-bar { position:sticky; top:60px; }
 
 
-/* ════ LOADER ════ */
+/* ââââ LOADER ââââ */
 body.ldr-lock { overflow: hidden; }
 #LD {
   position: fixed; inset: 0; z-index: 9999;
@@ -396,14 +396,14 @@ body.ldr-lock { overflow: hidden; }
 
 
 
-/* ════ B&W + ARTISTIC BLUE TEXTURE HOVER ════ */
+/* ââââ B&W + ARTISTIC BLUE TEXTURE HOVER ââââ */
 
 /* All content images: greyscale at rest */
 img {
   filter: grayscale(100%) contrast(1.06) brightness(0.97);
   transition: filter .55s cubic-bezier(.4,0,.2,1);
 }
-/* Protect nav, logos, icons — no grayscale */
+/* Protect nav, logos, icons â no grayscale */
 nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !important; }
 
 /* HOVER: darken image so texture layers are visible */
@@ -446,7 +446,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   isolation: isolate;
 }
 
-/* Layer A — halftone dots — opacity 0 at rest */
+/* Layer A â halftone dots â opacity 0 at rest */
 .hero-img::before,
 .about-bg::before,
 .mc::before,
@@ -472,7 +472,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   transition: opacity .5s cubic-bezier(.4,0,.2,1);
 }
 
-/* Layer B — lines + grain — opacity 0 at rest */
+/* Layer B â lines + grain â opacity 0 at rest */
 .hero-img::after,
 .about-bg::after,
 .mc::after,
@@ -498,7 +498,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   transition: opacity .5s cubic-bezier(.4,0,.2,1) .03s;
 }
 
-/* HOVER ONLY — reveal texture */
+/* HOVER ONLY â reveal texture */
 .hero-img:hover::before,
 .about-bg:hover::before,
 .mc:hover::before,
@@ -531,7 +531,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .sh-card:hover .sh-prod-img::after { opacity: 0.72; }
 
 
-/* ── Homepage collaborators strip ── */
+/* ââ Homepage collaborators strip ââ */
 .hc-section { border-bottom: 1px solid #101A30; }
 .hc-head {
   display: flex; justify-content: space-between; align-items: flex-end;
@@ -574,7 +574,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 @media(max-width:1024px) { .hc-grid { grid-template-columns: repeat(3,1fr); } }
 @media(max-width:640px)  { .hc-grid { grid-template-columns: repeat(2,1fr); } }
 
-/* ════ FOUNDERS ════ */
+/* ââââ FOUNDERS ââââ */
 .a-founders { border-bottom: 1px solid #101A30; }
 .a-founders-head {
   padding: clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px);
@@ -621,7 +621,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   .founder-photo { aspect-ratio: 4/5; min-height: unset; border-right: none; border-bottom: 1px solid #101A30; }
 }
 
-/* ════ COLLABORATORS PAGE ════ */
+/* ââââ COLLABORATORS PAGE ââââ */
 .col-hero { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #101A30; min-height: calc(100vh - 60px); }
 .col-hero-l { background: #101A30; padding: clamp(44px,6vw,72px) clamp(28px,4vw,56px); display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(237,238,230,.12); }
 .col-hero-r { padding: clamp(44px,6vw,72px) clamp(28px,4vw,56px); display: flex; flex-direction: column; justify-content: space-between; background: #EDEEE6; }
@@ -655,7 +655,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 @media(max-width:640px){ .col-grid { grid-template-columns: repeat(2,1fr); } }
 
 
-/* ── Cream hero accent rule ── */
+/* ââ Cream hero accent rule ââ */
 .hero-rule{
   display:block; width:32px; height:2px;
   background:#003DD6; margin-bottom:32px;
@@ -762,7 +762,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </div>
   <div class="hero-text">
     <div class="hero-top">
-      <div class="hero-eyebrow">Pristina · Kosovo</div>
+      <div class="hero-eyebrow">Pristina Â· Kosovo</div>
       <div class="side-dots" id="sDots">
         <div class="side-dot on" style="width:94px" data-i="0"></div>
         <div class="side-dot" style="width:60px" data-i="1"></div>
@@ -776,12 +776,12 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
     <div class="h-panel" id="hp1">
       <div class="hero-title">Festival<br>of Design</div>
-      <div><p class="hero-desc">Kosovo's largest design festival — exhibitions, workshops, and panels for emerging talent.</p>
+      <div><p class="hero-desc">Kosovo's largest design festival â exhibitions, workshops, and panels for emerging talent.</p>
       <button class="hero-btn" onclick="nav('festival')"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></button></div>
     </div>
     <div class="h-panel" id="hp2">
       <div class="hero-title">Academy<br>of Design</div>
-      <div><p class="hero-desc">Mentorship, courses, and training in design — building Kosovo's next generation of creatives.</p>
+      <div><p class="hero-desc">Mentorship, courses, and training in design â building Kosovo's next generation of creatives.</p>
       <button class="hero-btn" onclick="nav('academy')"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></button></div>
     </div>
   </div>
@@ -793,24 +793,24 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="stat"><span class="stat-n">WDO</span><span class="stat-l">World Design Org.</span></div>
 </div>
 <div class="ticker"><div class="ticker-track">
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">Â·</span>
 </div></div>
 <section>
   <div class="s-head"><h2 class="s-title blue">A Creative Ecosystem</h2><a href="#" onclick="nav('about');return false;" class="s-link">Read More &#8594;</a></div>
@@ -826,9 +826,9 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </div>
   <div class="pillars">
     <div class="pillar"><div class="pillar-n"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/></svg></div><div class="pillar-title">Support Designers</div><p class="pillar-desc">Developing innovative projects and providing platforms for emerging talent locally and internationally.</p></div>
-    <div class="pillar"><div class="pillar-n"><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/></svg></div><div class="pillar-title">Educational Platform</div><p class="pillar-desc">Knowledge exchange and mentorship — specialised training that builds practical, future-ready skills.</p></div>
+    <div class="pillar"><div class="pillar-n"><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/></svg></div><div class="pillar-title">Educational Platform</div><p class="pillar-desc">Knowledge exchange and mentorship â specialised training that builds practical, future-ready skills.</p></div>
     <div class="pillar"><div class="pillar-n"><svg width="60" height="20" viewBox="0 0 60 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/></svg></div><div class="pillar-title">International Exposure</div><p class="pillar-desc">Partnering with DAE Eindhoven, Porto Design Factory, iF Design Foundation, and the World Design Organization.</p></div>
-    <div class="pillar"><div class="pillar-n"><svg width="80" height="20" viewBox="0 0 80 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/><polygon points="70,0 80,10 70,20 60,10" fill="#003DD6"/></svg></div><div class="pillar-title">Urban Transformation</div><p class="pillar-desc">Sustainable and inclusive urban solutions — redesigning public spaces across Kosovo.</p></div>
+    <div class="pillar"><div class="pillar-n"><svg width="80" height="20" viewBox="0 0 80 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/><polygon points="70,0 80,10 70,20 60,10" fill="#003DD6"/></svg></div><div class="pillar-title">Urban Transformation</div><p class="pillar-desc">Sustainable and inclusive urban solutions â redesigning public spaces across Kosovo.</p></div>
   </div>
 </section>
 <section>
@@ -900,7 +900,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       </div>
       <div class="imp-row">
         <div class="imp-n"><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/><polygon points="30,0 40,10 30,20 20,10" fill="#F8C65A"/></svg></div>
-        <div><div class="imp-row-title">Global Design Weeks</div><p>Participating in Milan, Dutch and Dubai Design Week — representing Kosovo on the world stage.</p></div>
+        <div><div class="imp-row-title">Global Design Weeks</div><p>Participating in Milan, Dutch and Dubai Design Week â representing Kosovo on the world stage.</p></div>
       </div>
       <div class="imp-row">
         <div class="imp-n"><svg width="40" height="40" viewBox="0 0 40 40"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/><polygon points="30,0 40,10 30,20 20,10" fill="#F8C65A"/><polygon points="20,20 30,30 20,40 10,30" fill="#F8C65A"/></svg></div>
@@ -932,15 +932,15 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="s-head"><h2 class="s-title blue">Where We Show Up</h2></div>
   <div class="events-grid">
     <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Milan, Italy</div><div class="ev-name">Milan Design Week</div></div><div><p class="ev-desc">Fuorisalone exhibitions showcasing Kosovo's emerging design talent alongside global practitioners.</p><div class="ev-arr">&#8594;</div></div></div>
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Eindhoven, Netherlands</div><div class="ev-name">Dutch Design Week</div></div><div><p class="ev-desc">The world's largest design event — where DKF connects with the international design community.</p><div class="ev-arr">&#8594;</div></div></div>
+    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Eindhoven, Netherlands</div><div class="ev-name">Dutch Design Week</div></div><div><p class="ev-desc">The world's largest design event â where DKF connects with the international design community.</p><div class="ev-arr">&#8594;</div></div></div>
     <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Dubai, UAE</div><div class="ev-name">Dubai Design Week</div></div><div><p class="ev-desc">Cross-cultural design dialogue, representing Kosovo in the MENA design scene.</p><div class="ev-arr">&#8594;</div></div></div>
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Pristina, Kosovo</div><div class="ev-name">Festival of Design</div></div><div><p class="ev-desc">Kosovo's flagship design festival — DKF's homeground where it all begins every year.</p><div class="ev-arr">&#8594;</div></div></div>
+    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Pristina, Kosovo</div><div class="ev-name">Festival of Design</div></div><div><p class="ev-desc">Kosovo's flagship design festival â DKF's homeground where it all begins every year.</p><div class="ev-arr">&#8594;</div></div></div>
   </div>
 </section>
 <section><div class="cta-layout">
     <div class="cta-left">
       <h2 class="cta-title">Shape the<br>Future<br>of Design</h2>
-      <p class="cta-desc">Design Kosova is more than a festival — it is a creative ecosystem that leverages design to generate meaningful change.</p>
+      <p class="cta-desc">Design Kosova is more than a festival â it is a creative ecosystem that leverages design to generate meaningful change.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Get In Touch</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a>
     </div>
     <div class="cta-right">
@@ -968,7 +968,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1002,7 +1002,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1115,10 +1115,10 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="manifesto-left">
     <div class="manifesto-deco">DKF</div>
     <span class="hero-rule"></span>
-    <div class="manifesto-eyebrow">Pristina · Kosovo · Est. 2016</div>
+    <div class="manifesto-eyebrow">Pristina Â· Kosovo Â· Est. 2016</div>
     <div>
       <div class="manifesto-quote">Design is not<br>decoration.<br>It is a <em>catalyst</em><br>for progress.</div>
-      <p class="manifesto-sub">Design Kosova Foundation was built on the belief that design shapes identity, economy, and culture — and Kosovo is ready to lead.</p>
+      <p class="manifesto-sub">Design Kosova Foundation was built on the belief that design shapes identity, economy, and culture â and Kosovo is ready to lead.</p>
     </div>
     <a href="#" onclick="nav('projects');return false;" class="s-link" style="align-self:flex-start">See Our Work &#8594;</a>
   </div>
@@ -1137,7 +1137,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <div class="a-collage">
   <div class="ac-cell tall"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=88&fit=crop" alt=""><div class="ac-label">Our City</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=88&fit=crop" alt=""><div class="ac-label">Factory of Design</div></div>
-  <div class="ac-accent"><div class="ac-accent-n">KOS</div><div class="ac-accent-l">Kosovo · Global</div></div>
+  <div class="ac-accent"><div class="ac-accent-n">KOS</div><div class="ac-accent-l">Kosovo Â· Global</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=88&fit=crop" alt=""><div class="ac-label">Academy</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=88&fit=crop" alt=""><div class="ac-label">Festival</div></div>
 </div>
@@ -1145,26 +1145,26 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="a-story-l">
     <div class="a-tagline">A platform built to connect Kosovo's creative potential to the world.</div>
     <div class="a-body">
-      <p>Design Kosova (DKF) operates as an umbrella platform for six core initiatives. Each activates a different layer of Kosovo's creative ecosystem — from annual festivals to educational programmes, marketplaces, and urban interventions.</p>
+      <p>Design Kosova (DKF) operates as an umbrella platform for six core initiatives. Each activates a different layer of Kosovo's creative ecosystem â from annual festivals to educational programmes, marketplaces, and urban interventions.</p>
       <p>We believe design is a public resource. Not reserved for institutions or corporations, but a tool that belongs to communities, cities, and individuals. Our work puts design at the service of Kosovo's cultural transformation.</p>
-      <p>Rooted in Pristina but globally connected — DKF has built formal partnerships with Design Academy Eindhoven, Porto Design Factory, the World Design Organization, and iF Design Foundation.</p>
+      <p>Rooted in Pristina but globally connected â DKF has built formal partnerships with Design Academy Eindhoven, Porto Design Factory, the World Design Organization, and iF Design Foundation.</p>
     </div>
   </div>
   <div class="a-story-r">
     <div class="a-pillar"><div><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/></svg></div><div><div class="ap-title">Support Designers</div><div class="ap-desc">Creating platforms, markets, and networks that give Kosovo's designers real economic and professional pathways.</div></div></div>
     <div class="a-pillar"><div><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/></svg></div><div><div class="ap-title">Educational Platform</div><div class="ap-desc">Mentorship, workshops, and professional courses for students and early-career designers.</div></div></div>
-    <div class="a-pillar"><div><svg width="60" height="20" viewBox="0 0 60 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/></svg></div><div><div class="ap-title">International Exposure</div><div class="ap-desc">Representing Kosovo at Milan, Dutch, and Dubai Design Weeks — and through formal global partnerships.</div></div></div>
+    <div class="a-pillar"><div><svg width="60" height="20" viewBox="0 0 60 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/></svg></div><div><div class="ap-title">International Exposure</div><div class="ap-desc">Representing Kosovo at Milan, Dutch, and Dubai Design Weeks â and through formal global partnerships.</div></div></div>
     <div class="a-pillar"><div><svg width="80" height="20" viewBox="0 0 80 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/><polygon points="70,0 80,10 70,20 60,10" fill="#003DD6"/></svg></div><div><div class="ap-title">Urban Transformation</div><div class="ap-desc">Applying design to Pristina's public spaces, policy, and civic infrastructure.</div></div></div>
   </div>
 </div>
 <section class="a-tl">
   <div class="a-tl-head"><h2 class="s-title yellow">Our Journey</h2></div>
-  <div class="a-tl-item"><div class="a-tl-yr">2016</div><div class="a-tl-content"><div class="a-tl-name">Design Kosova Founded</div><span class="a-tl-tag">Origin</span><p class="a-tl-desc">Established in Pristina to build Kosovo's first structured design platform — connecting local talent to global networks.</p></div></div>
-  <div class="a-tl-item"><div class="a-tl-yr">2018</div><div class="a-tl-content"><div class="a-tl-name">Festival of Design — First Edition</div><span class="a-tl-tag">Annual Event</span><p class="a-tl-desc">Kosovo's inaugural design festival brought together over 200 designers, architects, and creative practitioners for a week of exhibitions and talks.</p></div></div>
-  <div class="a-tl-item"><div class="a-tl-yr">2019</div><div class="a-tl-content"><div class="a-tl-name">DAE Eindhoven Partnership</div><span class="a-tl-tag">Partnership</span><p class="a-tl-desc">Formal collaboration with Design Academy Eindhoven — opening exchange programmes and co-educational initiatives.</p></div></div>
+  <div class="a-tl-item"><div class="a-tl-yr">2016</div><div class="a-tl-content"><div class="a-tl-name">Design Kosova Founded</div><span class="a-tl-tag">Origin</span><p class="a-tl-desc">Established in Pristina to build Kosovo's first structured design platform â connecting local talent to global networks.</p></div></div>
+  <div class="a-tl-item"><div class="a-tl-yr">2018</div><div class="a-tl-content"><div class="a-tl-name">Festival of Design â First Edition</div><span class="a-tl-tag">Annual Event</span><p class="a-tl-desc">Kosovo's inaugural design festival brought together over 200 designers, architects, and creative practitioners for a week of exhibitions and talks.</p></div></div>
+  <div class="a-tl-item"><div class="a-tl-yr">2019</div><div class="a-tl-content"><div class="a-tl-name">DAE Eindhoven Partnership</div><span class="a-tl-tag">Partnership</span><p class="a-tl-desc">Formal collaboration with Design Academy Eindhoven â opening exchange programmes and co-educational initiatives.</p></div></div>
   <div class="a-tl-item"><div class="a-tl-yr">2021</div><div class="a-tl-content"><div class="a-tl-name">Milan &amp; Dutch Design Weeks</div><span class="a-tl-tag">Global Presence</span><p class="a-tl-desc">First official Kosovo presence at Milan Design Week and Dutch Design Week.</p></div></div>
-  <div class="a-tl-item"><div class="a-tl-yr">2022</div><div class="a-tl-content"><div class="a-tl-name">WDO Membership</div><span class="a-tl-tag">Recognition</span><p class="a-tl-desc">World Design Organization membership — officially placing Kosovo on the global design map with access to WDO's 40+ country network.</p></div></div>
-  <div class="a-tl-item"><div class="a-tl-yr">2024</div><div class="a-tl-content"><div class="a-tl-name">Academy of Design Launch</div><span class="a-tl-tag">Education</span><p class="a-tl-desc">Launch of Kosovo's first structured design education programme — mentorship, workshops, and professional development.</p></div></div>
+  <div class="a-tl-item"><div class="a-tl-yr">2022</div><div class="a-tl-content"><div class="a-tl-name">WDO Membership</div><span class="a-tl-tag">Recognition</span><p class="a-tl-desc">World Design Organization membership â officially placing Kosovo on the global design map with access to WDO's 40+ country network.</p></div></div>
+  <div class="a-tl-item"><div class="a-tl-yr">2024</div><div class="a-tl-content"><div class="a-tl-name">Academy of Design Launch</div><span class="a-tl-tag">Education</span><p class="a-tl-desc">Launch of Kosovo's first structured design education programme â mentorship, workshops, and professional development.</p></div></div>
 </section>
 <section class="a-founders">
   <div class="a-founders-head">
@@ -1204,7 +1204,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <div class="founder-num">03 / Founder</div>
         <div class="founder-name">Enes<br>Ramaxhiku</div>
         <div class="founder-role">Animator</div>
-        <p class="founder-bio">Motion and animation director at DKF. Enes leads the moving-image identity of the foundation — from festival openers to campaign films and interactive visual experiences.</p>
+        <p class="founder-bio">Motion and animation director at DKF. Enes leads the moving-image identity of the foundation â from festival openers to campaign films and interactive visual experiences.</p>
         <div class="founder-links">
           <a href="#" class="founder-link">Portfolio &#8599;</a>
           <a href="#" class="founder-link">Instagram &#8599;</a>
@@ -1216,16 +1216,16 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <section class="a-partners">
   <div class="a-ph"><h2 class="s-title blue">Partners</h2><a href="#" onclick="nav('contact');return false;" class="s-link">Become a Partner &#8594;</a></div>
   <div class="a-pgrid">
-    <div class="a-pcard"><div class="a-pflag"></div><div><div class="a-pname">Design Academy Eindhoven</div><div class="a-pcountry">Netherlands</div></div><div class="a-ptype">Academic Partner · Exchange programmes, joint education, student placements</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#F8C65A"></div><div><div class="a-pname">Porto Design Factory</div><div class="a-pcountry">Portugal</div></div><div class="a-ptype">Innovation Partner · Design research and methodology exchange</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#101A30"></div><div><div class="a-pname">World Design Organization</div><div class="a-pcountry">International</div></div><div class="a-ptype">Global Body · WDO member — access to 40+ countries and global design policy</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#FF8FA3"></div><div><div class="a-pname">iF Design Foundation</div><div class="a-pcountry">Germany</div></div><div class="a-ptype">Awards &amp; Recognition · iF Design Foundation partnership and visibility</div></div>
+    <div class="a-pcard"><div class="a-pflag"></div><div><div class="a-pname">Design Academy Eindhoven</div><div class="a-pcountry">Netherlands</div></div><div class="a-ptype">Academic Partner Â· Exchange programmes, joint education, student placements</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#F8C65A"></div><div><div class="a-pname">Porto Design Factory</div><div class="a-pcountry">Portugal</div></div><div class="a-ptype">Innovation Partner Â· Design research and methodology exchange</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#101A30"></div><div><div class="a-pname">World Design Organization</div><div class="a-pcountry">International</div></div><div class="a-ptype">Global Body Â· WDO member â access to 40+ countries and global design policy</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#FF8FA3"></div><div><div class="a-pname">iF Design Foundation</div><div class="a-pcountry">Germany</div></div><div class="a-ptype">Awards &amp; Recognition Â· iF Design Foundation partnership and visibility</div></div>
   </div>
 </section>
 <section><div class="cta-layout">
     <div class="cta-left">
       <h2 class="cta-title">Join the<br>Movement</h2>
-      <p class="cta-desc">Whether you're a designer, institution, or business — there's a place for you in Kosovo's creative ecosystem.</p>
+      <p class="cta-desc">Whether you're a designer, institution, or business â there's a place for you in Kosovo's creative ecosystem.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Get In Touch</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a>
     </div>
     <div class="cta-right">
@@ -1253,7 +1253,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1287,7 +1287,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1353,14 +1353,14 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pih-img"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=90&fit=crop" alt=""></div>
   <div class="pih-text">
     <div><div class="pih-eyebrow">What We Do</div><h1 class="pih-title"><span>Core</span><br>Projects</h1></div>
-    <p class="pih-desc">Six initiatives, one vision — activating Kosovo's design culture.</p>
+    <p class="pih-desc">Six initiatives, one vision â activating Kosovo's design culture.</p>
   </div>
 </div>
 <div class="cs"><div class="cs1"></div><div class="cs2"></div><div class="cs3"></div><div class="cs4"></div><div class="cs5"></div><div class="cs6"></div></div>
 <div class="pi-cards">
   <a class="pi-card" href="#" onclick="nav('festival');return false;" style="border-right:none">
     <div class="pi-card-num">01</div>
-    <div><span class="pi-card-tag">Annual Event</span><div class="pi-card-name">Festival of Design</div><p class="pi-card-desc">Kosovo's flagship design event — a week of exhibitions, talks and workshops in Pristina.</p></div>
+    <div><span class="pi-card-tag">Annual Event</span><div class="pi-card-name">Festival of Design</div><p class="pi-card-desc">Kosovo's flagship design event â a week of exhibitions, talks and workshops in Pristina.</p></div>
     <div class="pi-card-foot"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30">Explore</span><span class="pi-card-arr">&#8594;</span></div>
   </a>
   <a class="pi-card" href="#" onclick="nav('talk');return false;" style="border-left:1px solid #101A30;border-right:none">
@@ -1370,7 +1370,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </a>
   <a class="pi-card" href="#" onclick="nav('shop');return false;" style="border-left:1px solid #101A30">
     <div class="pi-card-num">03</div>
-    <div><span class="pi-card-tag" style="border-color:#F8C65A;color:#F8C65A">Marketplace</span><div class="pi-card-name">Shop Design</div><p class="pi-card-desc">Objects, prints, textiles and ceramics — all made by Kosovo's creative community.</p></div>
+    <div><span class="pi-card-tag" style="border-color:#F8C65A;color:#F8C65A">Marketplace</span><div class="pi-card-name">Shop Design</div><p class="pi-card-desc">Objects, prints, textiles and ceramics â all made by Kosovo's creative community.</p></div>
     <div class="pi-card-foot"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30">Shop Now</span><span class="pi-card-arr">&#8594;</span></div>
   </a>
   <a class="pi-card" href="#" onclick="nav('factory');return false;" style="border-top:1px solid #101A30;border-right:none">
@@ -1380,7 +1380,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </a>
   <a class="pi-card" href="#" onclick="nav('academy');return false;" style="border-top:1px solid #101A30;border-left:1px solid #101A30;border-right:none">
     <div class="pi-card-num">05</div>
-    <div><span class="pi-card-tag" style="border-color:#A3C4F3;color:#003DD6">Education</span><div class="pi-card-name">Academy of Design</div><p class="pi-card-desc">Kosovo's first structured design education programme — mentorship and intensive workshops.</p></div>
+    <div><span class="pi-card-tag" style="border-color:#A3C4F3;color:#003DD6">Education</span><div class="pi-card-name">Academy of Design</div><p class="pi-card-desc">Kosovo's first structured design education programme â mentorship and intensive workshops.</p></div>
     <div class="pi-card-foot"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30">Apply</span><span class="pi-card-arr">&#8594;</span></div>
   </a>
   <a class="pi-card" href="#" onclick="nav('urban');return false;" style="border-top:1px solid #101A30;border-left:1px solid #101A30">
@@ -1390,7 +1390,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </a>
 </div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Each initiative welcomes collaborators — designers, educators, institutions, or sponsors.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Each initiative welcomes collaborators â designers, educators, institutions, or sponsors.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner with one of our initiatives.</div>
       <a href="/cdn-cgi/l/email-protection#7b131e1717143b1f1e08121c15101408140d1a5514091c" class="cta-email"><span class="__cf_email__" data-cfemail="a7cfc2cbcbc8e7c3c2d4cec0c9ccc8d4c8d1c689c8d5c0">[email&#160;protected]</span></a></div>
@@ -1415,7 +1415,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1449,7 +1449,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1516,7 +1516,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .imp-n-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#101A30}
 .imp-n-sub{font-size:12px;line-height:1.6;color:rgba(16,26,48,.5);margin-top:4px}
 .imp-collab{border-bottom:1px solid #101A30;background:#101A30}
-.imp-collab-head{padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px);border-bottom:1px solid rgba(237,238,230,.12);display:flex;justify-content:space-between;align-items:flex-end}
+.imp-collab-head{padding:clamp(32px,4vw,52px) clamp(28px,5vw,56px);border-bottom:1px solid rgba(237,238,230,.12);display:flex;justify-content:space-between;align-items:flex-end}
 .imp-collab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(237,238,230,.08)}
 .ic-card{background:#101A30;padding:48px 40px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;transition:background .25s}
 .ic-card:hover{background:#0d1628}
@@ -1549,7 +1549,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <div class="imp-hero-eyebrow">Our Reach</div>
     <div>
       <h1 class="imp-hero-title">Global<br>Network,<br><span>Local Impact.</span></h1>
-      <p class="imp-hero-desc" style="margin-top:32px">From Pristina to Milan, Eindhoven, and Dubai — Design Kosova is building Kosovo's presence on the global design stage, one collaboration at a time.</p>
+      <p class="imp-hero-desc" style="margin-top:32px">From Pristina to Milan, Eindhoven, and Dubai â Design Kosova is building Kosovo's presence on the global design stage, one collaboration at a time.</p>
     </div>
     <div class="imp-hero-stats">
       <div class="imp-hs"><div class="imp-hs-n yellow">4+</div><div class="imp-hs-l">Global Partners</div></div>
@@ -1561,7 +1561,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="imp-hero-r">
     <div class="imp-photo">
       <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1200&q=88&fit=crop" alt="">
-      <div class="imp-photo-cap">Festival of Design · Pristina</div>
+      <div class="imp-photo-cap">Festival of Design Â· Pristina</div>
     </div>
     <div class="imp-map-panel">
       <div class="imp-map-grid"></div>
@@ -1576,27 +1576,27 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <div class="imp-numbers">
   <div class="imp-n-item"><div class="imp-n-big">500+</div><div class="imp-n-label">Designers Supported</div><p class="imp-n-sub">Local designers given platforms, mentorship, and economic pathways through DKF programmes.</p></div>
   <div class="imp-n-item"><div class="imp-n-big">7</div><div class="imp-n-label">Festival Editions</div><p class="imp-n-sub">Annual flagship event drawing thousands of visitors and practitioners to Pristina each year.</p></div>
-  <div class="imp-n-item"><div class="imp-n-big">40+</div><div class="imp-n-label">Talk for Design Sessions</div><p class="imp-n-sub">Curated lectures with local and international practitioners — all recorded and freely available.</p></div>
+  <div class="imp-n-item"><div class="imp-n-big">40+</div><div class="imp-n-label">Talk for Design Sessions</div><p class="imp-n-sub">Curated lectures with local and international practitioners â all recorded and freely available.</p></div>
   <div class="imp-n-item"><div class="imp-n-big">120+</div><div class="imp-n-label">Academy Students</div><p class="imp-n-sub">Emerging designers trained through Kosovo's first structured design education programme.</p></div>
 </div>
 <section class="imp-collab">
   <div class="imp-collab-head"><h2 class="s-title yellow">Collaborators</h2><a href="#" onclick="nav('contact');return false;" class="s-link white">Partner With Us &#8594;</a></div>
   <div class="imp-collab-grid">
-    <div class="ic-card"><div class="ic-flag"></div><div><div class="ic-name">Design Academy Eindhoven</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Academic partnership · Exchange programmes and joint education</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#003DD6"></div><div><div class="ic-name">Porto Design Factory</div><div class="ic-country">Portugal</div></div><div class="ic-type">Innovation partnership · Research collaboration and methodology</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#EDEEE6"></div><div><div class="ic-name">World Design Organization</div><div class="ic-country">International</div></div><div class="ic-type">Global body · WDO member with access to 40+ country network</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#FF8FA3"></div><div><div class="ic-name">iF Design Foundation</div><div class="ic-country">Germany</div></div><div class="ic-type">Awards &amp; recognition · iF Design Foundation partnership</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#A8DAFF"></div><div><div class="ic-name">Milan Design Week</div><div class="ic-country">Italy</div></div><div class="ic-type">Annual participation · Fuorisalone exhibitions since 2021</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#C5F135"></div><div><div class="ic-name">Dutch Design Week</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Annual participation · World's largest design event</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#FFD166"></div><div><div class="ic-name">Dubai Design Week</div><div class="ic-country">UAE</div></div><div class="ic-type">MENA presence · Cross-cultural design dialogue</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#A8E6CE"></div><div><div class="ic-name">Kosovo Government</div><div class="ic-country">Kosovo</div></div><div class="ic-type">Civic partner · Urban planning and design policy integration</div></div>
+    <div class="ic-card"><div class="ic-flag"></div><div><div class="ic-name">Design Academy Eindhoven</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Academic partnership Â· Exchange programmes and joint education</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#003DD6"></div><div><div class="ic-name">Porto Design Factory</div><div class="ic-country">Portugal</div></div><div class="ic-type">Innovation partnership Â· Research collaboration and methodology</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#EDEEE6"></div><div><div class="ic-name">World Design Organization</div><div class="ic-country">International</div></div><div class="ic-type">Global body Â· WDO member with access to 40+ country network</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#FF8FA3"></div><div><div class="ic-name">iF Design Foundation</div><div class="ic-country">Germany</div></div><div class="ic-type">Awards &amp; recognition Â· iF Design Foundation partnership</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#A8DAFF"></div><div><div class="ic-name">Milan Design Week</div><div class="ic-country">Italy</div></div><div class="ic-type">Annual participation Â· Fuorisalone exhibitions since 2021</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#C5F135"></div><div><div class="ic-name">Dutch Design Week</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Annual participation Â· World's largest design event</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#FFD166"></div><div><div class="ic-name">Dubai Design Week</div><div class="ic-country">UAE</div></div><div class="ic-type">MENA presence Â· Cross-cultural design dialogue</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#A8E6CE"></div><div><div class="ic-name">Kosovo Government</div><div class="ic-country">Kosovo</div></div><div class="ic-type">Civic partner Â· Urban planning and design policy integration</div></div>
   </div>
 </section>
 <section class="imp-presence">
   <div class="ip-head"><h2 class="s-title blue">Global Presence</h2></div>
   <div class="ip-grid">
     <div class="ip-card"><div><div class="ip-card-city">Milan, Italy</div><div class="ip-card-name">Milan Design Week</div><p class="ip-card-desc">Fuorisalone exhibitions showcasing Kosovo's emerging design talent alongside global practitioners in the world's design capital.</p></div><div class="ip-card-yr">2021</div></div>
-    <div class="ip-card"><div><div class="ip-card-city">Eindhoven, Netherlands</div><div class="ip-card-name">Dutch Design Week</div><p class="ip-card-desc">The world's largest design event — DKF's gateway to the European design community and DAE Eindhoven partnership hub.</p></div><div class="ip-card-yr">2021</div></div>
+    <div class="ip-card"><div><div class="ip-card-city">Eindhoven, Netherlands</div><div class="ip-card-name">Dutch Design Week</div><p class="ip-card-desc">The world's largest design event â DKF's gateway to the European design community and DAE Eindhoven partnership hub.</p></div><div class="ip-card-yr">2021</div></div>
     <div class="ip-card"><div><div class="ip-card-city">Dubai, UAE</div><div class="ip-card-name">Dubai Design Week</div><p class="ip-card-desc">Cross-cultural design dialogue, representing Kosovo in the fastest-growing design scene in the MENA region.</p></div><div class="ip-card-yr">2022</div></div>
   </div>
 </section>
@@ -1626,7 +1626,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1660,7 +1660,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1781,8 +1781,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <div class="ct-location">
       <div class="ct-loc-grid"></div>
       <div class="ct-pin"></div>
-      <div><div class="ct-city">Pristina</div><div class="ct-city-sub">Kosovo · Central Europe</div></div>
-      <div class="ct-address">Rruga Fehmi Agani, Nr. 12<br>10000 Pristina, Kosovo<br>Mon–Fri · 09:00–18:00</div>
+      <div><div class="ct-city">Pristina</div><div class="ct-city-sub">Kosovo Â· Central Europe</div></div>
+      <div class="ct-address">Rruga Fehmi Agani, Nr. 12<br>10000 Pristina, Kosovo<br>MonâFri Â· 09:00â18:00</div>
     </div>
   </div>
 </div>
@@ -1847,7 +1847,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1881,7 +1881,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1927,7 +1927,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,238,230,.38);margin-bottom:20px">Community</div>
       <h1 style="font-size:clamp(44px,5.5vw,88px);line-height:.92;letter-spacing:-.04em;font-weight:300;color:#EDEEE6">Kosovo's<br>Creative<br><span style="color:#F8C65A">Community.</span></h1>
     </div>
-    <p style="font-size:14px;line-height:1.88;color:rgba(237,238,230,.52);max-width:38ch">Designers, architects, animators and makers who have participated in DKF events — Kosovo's creative ecosystem in one place.</p>
+    <p style="font-size:14px;line-height:1.88;color:rgba(237,238,230,.52);max-width:38ch">Designers, architects, animators and makers who have participated in DKF events â Kosovo's creative ecosystem in one place.</p>
   </div>
   <div class="col-hero-r">
     <div>
@@ -2068,7 +2068,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,238,230,.38);margin-bottom:18px">Join the roster</div>
       <h2 style="font-size:clamp(30px,3.5vw,56px);line-height:1;letter-spacing:-.03em;font-weight:300;color:#EDEEE6">Are you a Kosovo<br>creative?</h2>
     </div>
-    <p style="font-size:13px;line-height:1.88;color:rgba(237,238,230,.48);max-width:36ch">Participate in one of our events and get listed — connecting your work to Kosovo's growing international design network.</p>
+    <p style="font-size:13px;line-height:1.88;color:rgba(237,238,230,.48);max-width:36ch">Participate in one of our events and get listed â connecting your work to Kosovo's growing international design network.</p>
   </div>
   <div class="col-join-r">
     <div><a onclick="go('festival')" style="cursor:pointer;display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(237,238,230,.1);font-size:13px;color:rgba(237,238,230,.6);text-decoration:none">Festival of Design <span style="color:#F8C65A">&#8594;</span></a><a onclick="go('academy')" style="cursor:pointer;display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(237,238,230,.1);font-size:13px;color:rgba(237,238,230,.6);text-decoration:none">Academy of Design <span style="color:#F8C65A">&#8594;</span></a><a onclick="go('factory')" style="cursor:pointer;display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(237,238,230,.1);font-size:13px;color:rgba(237,238,230,.6);text-decoration:none">Factory of Design <span style="color:#F8C65A">&#8594;</span></a></div>
@@ -2094,7 +2094,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2128,7 +2128,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2239,7 +2239,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <a href="#" onclick="nav('projects');return false;" class="sh-back">&#8592; All Projects</a>
       <div class="sh-num">03 / 06</div>
       <h1 class="sh-title">Shop<br><span>Design</span></h1>
-      <p class="sh-desc">Objects, prints, textiles and ceramics — all made by Kosovo's creative community.</p>
+      <p class="sh-desc">Objects, prints, textiles and ceramics â all made by Kosovo's creative community.</p>
     </div>
   </div>
 </div>
@@ -2257,153 +2257,153 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <div class="sh-prod-grid" id="shopProdGrid">
 <div class="sh-prod-card" data-cat="mugs">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1566319?w=600&q=80&fit=crop" alt="Terracotta Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Terracotta Mug" data-price="18€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Terracotta Mug" data-price="18â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Terracotta Mug</div><div class="sh-prod-price">18€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Terracotta Mug</div><div class="sh-prod-price">18â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="mugs">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1493355?w=600&q=80&fit=crop" alt="Blue Glaze Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Glaze Mug" data-price="22€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Glaze Mug" data-price="22â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Blue Glaze Mug</div><div class="sh-prod-price">22€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Blue Glaze Mug</div><div class="sh-prod-price">22â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="mugs">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1793958?w=600&q=80&fit=crop" alt="Market Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Market Mug" data-price="16€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Market Mug" data-price="16â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Market Mug</div><div class="sh-prod-price">16€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Market Mug</div><div class="sh-prod-price">16â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="mugs">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1533873?w=600&q=80&fit=crop" alt="Studio Mug Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Studio Mug Set" data-price="45€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Studio Mug Set" data-price="45â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Studio Mug Set</div><div class="sh-prod-price">45€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Studio Mug Set</div><div class="sh-prod-price">45â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="tshirts">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1536619?w=600&q=80&fit=crop" alt="Kosovo Grid Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Grid Tee" data-price="28€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Grid Tee" data-price="28â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Luan Galica</div><div class="sh-prod-name">Kosovo Grid Tee</div><div class="sh-prod-price">28€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Luan Galica</div><div class="sh-prod-name">Kosovo Grid Tee</div><div class="sh-prod-price">28â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="tshirts">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1483538?w=600&q=80&fit=crop" alt="Festival Tee 2023" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Tee 2023" data-price="32€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Tee 2023" data-price="32â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Tee 2023</div><div class="sh-prod-price">32€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Tee 2023</div><div class="sh-prod-price">32â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="tshirts">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1536620?w=600&q=80&fit=crop" alt="Minimal Type Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Minimal Type Tee" data-price="28€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Minimal Type Tee" data-price="28â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arjeta Morina</div><div class="sh-prod-name">Minimal Type Tee</div><div class="sh-prod-price">28€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Arjeta Morina</div><div class="sh-prod-name">Minimal Type Tee</div><div class="sh-prod-price">28â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="tshirts">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1581092921461?w=600&q=80&fit=crop" alt="Pristina Map Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Map Tee" data-price="35€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Map Tee" data-price="35â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Urban Lab</div><div class="sh-prod-name">Pristina Map Tee</div><div class="sh-prod-price">35€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Urban Lab</div><div class="sh-prod-name">Pristina Map Tee</div><div class="sh-prod-price">35â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="prints">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1212764?w=600&q=80&fit=crop" alt="Diamond Grid Print" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Diamond Grid Print" data-price="48€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Diamond Grid Print" data-price="48â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Diamond Grid Print</div><div class="sh-prod-price">48€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Diamond Grid Print</div><div class="sh-prod-price">48â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="prints">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1423807?w=600&q=80&fit=crop" alt="Kosovo Topography" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Topography" data-price="55€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Topography" data-price="55â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Kosovo Topography</div><div class="sh-prod-price">55€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Kosovo Topography</div><div class="sh-prod-price">55â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="prints">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1366396?w=600&q=80&fit=crop" alt="Festival Poster 2023" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Poster 2023" data-price="38€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Poster 2023" data-price="38â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Poster 2023</div><div class="sh-prod-price">38€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Poster 2023</div><div class="sh-prod-price">38â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="prints">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1545004?w=600&q=80&fit=crop" alt="Architecture Study" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Architecture Study" data-price="65€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Architecture Study" data-price="65â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Kushtrim Lita</div><div class="sh-prod-name">Architecture Study</div><div class="sh-prod-price">65€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Kushtrim Lita</div><div class="sh-prod-name">Architecture Study</div><div class="sh-prod-price">65â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="carpets">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1549778?w=600&q=80&fit=crop" alt="Geometric Kilim" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Geometric Kilim" data-price="220€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Geometric Kilim" data-price="220â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Drita Veseli</div><div class="sh-prod-name">Geometric Kilim</div><div class="sh-prod-price">220€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Drita Veseli</div><div class="sh-prod-name">Geometric Kilim</div><div class="sh-prod-price">220â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="carpets">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1200980?w=600&q=80&fit=crop" alt="Pristina Pattern Rug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Pattern Rug" data-price="340€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Pattern Rug" data-price="340â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Pristina Pattern Rug</div><div class="sh-prod-price">340€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Pristina Pattern Rug</div><div class="sh-prod-price">340â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="carpets">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1577893?w=600&q=80&fit=crop" alt="Blue Diamond Rug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Diamond Rug" data-price="280€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Diamond Rug" data-price="280â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Nora Bajrami</div><div class="sh-prod-name">Blue Diamond Rug</div><div class="sh-prod-price">280€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Nora Bajrami</div><div class="sh-prod-name">Blue Diamond Rug</div><div class="sh-prod-price">280â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="carpets">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1444032?w=600&q=80&fit=crop" alt="Natural Wool Runner" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Natural Wool Runner" data-price="195€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Natural Wool Runner" data-price="195â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Natural Wool Runner</div><div class="sh-prod-price">195€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Natural Wool Runner</div><div class="sh-prod-price">195â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="ceramics">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1493356?w=600&q=80&fit=crop" alt="Vase No. 3" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Vase No. 3" data-price="65€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Vase No. 3" data-price="65â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Vase No. 3</div><div class="sh-prod-price">65€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Vase No. 3</div><div class="sh-prod-price">65â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="ceramics">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1566320?w=600&q=80&fit=crop" alt="Bowl Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Bowl Set" data-price="88€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Bowl Set" data-price="88â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Bowl Set</div><div class="sh-prod-price">88€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Bowl Set</div><div class="sh-prod-price">88â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="ceramics">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1212765?w=600&q=80&fit=crop" alt="Tall Vessel" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Tall Vessel" data-price="110€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Tall Vessel" data-price="110â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Tok</div><div class="sh-prod-name">Tall Vessel</div><div class="sh-prod-price">110€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Tok</div><div class="sh-prod-name">Tall Vessel</div><div class="sh-prod-price">110â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="ceramics">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1533874?w=600&q=80&fit=crop" alt="Speckled Plate" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Speckled Plate" data-price="42€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Speckled Plate" data-price="42â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Speckled Plate</div><div class="sh-prod-price">42€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Speckled Plate</div><div class="sh-prod-price">42â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="frames">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1544034?w=600&q=80&fit=crop" alt="Oak Frame A3" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Oak Frame A3" data-price="55€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Oak Frame A3" data-price="55â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Oak Frame A3</div><div class="sh-prod-price">55€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Oak Frame A3</div><div class="sh-prod-price">55â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="frames">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1545005?w=600&q=80&fit=crop" alt="Walnut Frame A2" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Walnut Frame A2" data-price="85€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Walnut Frame A2" data-price="85â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Walnut Frame A2</div><div class="sh-prod-price">85€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Walnut Frame A2</div><div class="sh-prod-price">85â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="frames">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1546020?w=600&q=80&fit=crop" alt="Thin Black Frame" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Thin Black Frame" data-price="40€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Thin Black Frame" data-price="40â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Ton</div><div class="sh-prod-name">Thin Black Frame</div><div class="sh-prod-price">40€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Ton</div><div class="sh-prod-name">Thin Black Frame</div><div class="sh-prod-price">40â¬</div></div>
 </div>
 <div class="sh-prod-card" data-cat="frames">
   <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1547001?w=600&q=80&fit=crop" alt="Arch Frame Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Arch Frame Set" data-price="72€">Add to Cart</button></div>
+    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Arch Frame Set" data-price="72â¬">Add to Cart</button></div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Arch Frame Set</div><div class="sh-prod-price">72€</div></div>
+  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Arch Frame Set</div><div class="sh-prod-price">72â¬</div></div>
 </div>
 </div>
 <div class="sh-about-strip">
   <div class="sh-about-l"><h2 class="s-title yellow">Made in Kosovo,<br>Designed to Last.</h2></div>
   <div class="sh-about-r">
-    <div class="sh-about-body"><p>Shop Design is our curated marketplace for Kosovo-designed objects — a direct economic channel connecting the country's most talented makers with local and international audiences.</p><p>Every product is independently made, ethically produced, and carries the context of Kosovo's creative culture.</p></div>
+    <div class="sh-about-body"><p>Shop Design is our curated marketplace for Kosovo-designed objects â a direct economic channel connecting the country's most talented makers with local and international audiences.</p><p>Every product is independently made, ethically produced, and carries the context of Kosovo's creative culture.</p></div>
     <a href="#" onclick="nav('contact');return false;" class="s-link white" style="align-self:flex-start">Apply as a Maker &#8594;</a>
   </div>
 </div>
@@ -2413,7 +2413,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="sh-cart-items" id="shopCartItems">
     <div class="sh-cart-empty" id="shopCartEmpty"><div class="sh-cart-empty-icon">&#9671;</div><div class="sh-cart-empty-txt">Your cart is empty</div></div>
   </div>
-  <div class="sh-cart-foot"><div class="sh-cart-total"><span class="sh-ct-label">Total</span><span class="sh-ct-val" id="shopCartTotal">€0</span></div>
+  <div class="sh-cart-foot"><div class="sh-cart-total"><span class="sh-ct-label">Total</span><span class="sh-ct-val" id="shopCartTotal">â¬0</span></div>
   <button class="sh-checkout"><span>Checkout</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></button></div>
 </div>
 <!-- FOOTER -->
@@ -2436,7 +2436,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2470,7 +2470,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2560,21 +2560,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div class="pp-num">01 / 06</div>
       <span class="pp-tag">Annual Event</span>
       <h1 class="pp-title">Festival<br><span>of Design</span></h1>
-      <p class="pp-desc">Kosovo's flagship design event — a week of exhibitions, talks and workshops transforming Pristina into a global design stage.</p>
+      <p class="pp-desc">Kosovo's flagship design event â a week of exhibitions, talks and workshops transforming Pristina into a global design stage.</p>
     </div>
     <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none;max-width:100%"><span>Get Involved</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
 </div>
 <div class="pp-stats"><div class="pp-stat"><div class="pp-stat-n">7th</div><div class="pp-stat-l">Edition in 2024</div></div><div class="pp-stat"><div class="pp-stat-n">200+</div><div class="pp-stat-l">Participants</div></div><div class="pp-stat"><div class="pp-stat-n">12</div><div class="pp-stat-l">Partner Venues</div></div><div class="pp-stat"><div class="pp-stat-n">3K+</div><div class="pp-stat-l">Visitors</div></div></div>
 <div class="pp-content">
-  <div class="pp-content-l"><div class="pp-content-title">One Week That Changes Everything</div><div class="pp-body"><p>The Festival of Design is Kosovo's most significant cultural design event. Each year it transforms Pristina into a stage for design thinking, making, and dialogue — drawing practitioners from across the region and world.</p><p>The festival operates across multiple venues, from galleries and public squares to industrial spaces. Every edition is built around a central theme that responds to Kosovo's evolving cultural moment.</p></div></div>
+  <div class="pp-content-l"><div class="pp-content-title">One Week That Changes Everything</div><div class="pp-body"><p>The Festival of Design is Kosovo's most significant cultural design event. Each year it transforms Pristina into a stage for design thinking, making, and dialogue â drawing practitioners from across the region and world.</p><p>The festival operates across multiple venues, from galleries and public squares to industrial spaces. Every edition is built around a central theme that responds to Kosovo's evolving cultural moment.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Public exhibitions across Pristina's cultural venues</li><li>International speaker programme and keynote talks</li><li>Open workshops for students and emerging practitioners</li><li>Collaborative installations with international partners</li><li>Shop Design market pop-up during festival week</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1504384308090?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Annual Event · Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1504384308090?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Annual Event Â· Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1540575467063?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1531058020387?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution — we'd love to hear from you.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution â we'd love to hear from you.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner.</div>
       <a href="/cdn-cgi/l/email-protection#ff979a939390bf9b9a8c96989194908c90899ed1908d98" class="cta-email"><span class="__cf_email__" data-cfemail="97fff2fbfbf8d7f3f2e4fef0f9fcf8e4f8e1f6b9f8e5f0">[email&#160;protected]</span></a></div>
@@ -2599,7 +2599,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2633,7 +2633,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2723,21 +2723,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div class="pp-num">02 / 06</div>
       <span class="pp-tag">Lectures</span>
       <h1 class="pp-title">Talk<br><span>for Design</span></h1>
-      <p class="pp-desc">A curated lecture series opening Kosovo's creative community to the world's sharpest design minds — monthly talks, archived and free.</p>
+      <p class="pp-desc">A curated lecture series opening Kosovo's creative community to the world's sharpest design minds â monthly talks, archived and free.</p>
     </div>
     <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none;max-width:100%"><span>Get Involved</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
 </div>
 <div class="pp-stats"><div class="pp-stat"><div class="pp-stat-n">40+</div><div class="pp-stat-l">Talks to Date</div></div><div class="pp-stat"><div class="pp-stat-n">80%</div><div class="pp-stat-l">Sold Out Rate</div></div><div class="pp-stat"><div class="pp-stat-n">12</div><div class="pp-stat-l">Countries Represented</div></div><div class="pp-stat"><div class="pp-stat-n">Free</div><div class="pp-stat-l">For Students</div></div></div>
 <div class="pp-content">
-  <div class="pp-content-l"><div class="pp-content-title">Ideas Worth Sharing</div><div class="pp-body"><p>Talk for Design is our ongoing lecture programme. Monthly sessions invite Kosovo-based and international practitioners to share work, process, and provocation — creating a continuous pulse of design knowledge in Pristina.</p><p>All talks are recorded and made freely available. We believe knowledge is a public resource — and that Kosovo's designers deserve access to the same conversations happening in London, Milan, or Amsterdam.</p></div></div>
+  <div class="pp-content-l"><div class="pp-content-title">Ideas Worth Sharing</div><div class="pp-body"><p>Talk for Design is our ongoing lecture programme. Monthly sessions invite Kosovo-based and international practitioners to share work, process, and provocation â creating a continuous pulse of design knowledge in Pristina.</p><p>All talks are recorded and made freely available. We believe knowledge is a public resource â and that Kosovo's designers deserve access to the same conversations happening in London, Milan, or Amsterdam.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Monthly lectures with local and international guests</li><li>Recorded archive accessible to all</li><li>Post-lecture community discussions and networking</li><li>Student Q&A sessions with speakers</li><li>Partner collaborations with design schools</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1475721027785?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Lectures · Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1475721027785?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Lectures Â· Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1531058020387?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1504384308090?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution — we'd love to hear from you.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution â we'd love to hear from you.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner.</div>
       <a href="/cdn-cgi/l/email-protection#ff979a939390bf9b9a8c96989194908c90899ed1908d98" class="cta-email"><span class="__cf_email__" data-cfemail="4f272a2323200f2b2a3c26282124203c20392e61203d28">[email&#160;protected]</span></a></div>
@@ -2762,7 +2762,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2796,7 +2796,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2886,7 +2886,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div class="pp-num">04 / 06</div>
       <span class="pp-tag">Design Lab</span>
       <h1 class="pp-title">Factory<br><span>of Design</span></h1>
-      <p class="pp-desc">A research and prototyping lab commissioning experimental design projects — bridging ideas and making, culture and industry.</p>
+      <p class="pp-desc">A research and prototyping lab commissioning experimental design projects â bridging ideas and making, culture and industry.</p>
     </div>
     <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none;max-width:100%"><span>Get Involved</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
@@ -2896,11 +2896,11 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">Where Ideas Become Objects</div><div class="pp-body"><p>The Factory of Design is DKF's research and making arm. It commissions applied design projects that respond to Kosovo's most pressing cultural, social, and urban challenges.</p><p>The Factory brings together designers, architects, engineers, and cultural thinkers in cross-disciplinary teams. Projects range from product prototypes and spatial interventions to design-led policy proposals.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Commissioned design research projects</li><li>Collaborative studio residencies</li><li>Prototyping support and fabrication access</li><li>Cross-disciplinary teams and methodology</li><li>Exhibition of outcomes at Festival of Design</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1581092921461?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Design Lab · Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1581092921461?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Design Lab Â· Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution — we'd love to hear from you.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution â we'd love to hear from you.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner.</div>
       <a href="/cdn-cgi/l/email-protection#1a727f7676755a7e7f69737d74717569756c7b3475687d" class="cta-email"><span class="__cf_email__" data-cfemail="a9c1ccc5c5c6e9cdccdac0cec7c2c6dac6dfc887c6dbce">[email&#160;protected]</span></a></div>
@@ -2925,7 +2925,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2959,7 +2959,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3049,21 +3049,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div class="pp-num">05 / 06</div>
       <span class="pp-tag">Education</span>
       <h1 class="pp-title">Academy<br><span>of Design</span></h1>
-      <p class="pp-desc">Kosovo's first structured design education programme — mentorship, intensive workshops, and professional development for emerging practitioners.</p>
+      <p class="pp-desc">Kosovo's first structured design education programme â mentorship, intensive workshops, and professional development for emerging practitioners.</p>
     </div>
     <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none;max-width:100%"><span>Get Involved</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
 </div>
 <div class="pp-stats"><div class="pp-stat"><div class="pp-stat-n">120</div><div class="pp-stat-l">Students to Date</div></div><div class="pp-stat"><div class="pp-stat-n">18</div><div class="pp-stat-l">Mentors</div></div><div class="pp-stat"><div class="pp-stat-n">4</div><div class="pp-stat-l">Course Tracks</div></div><div class="pp-stat"><div class="pp-stat-n">80%</div><div class="pp-stat-l">Employment Rate</div></div></div>
 <div class="pp-content">
-  <div class="pp-content-l"><div class="pp-content-title">Building Kosovo's Next Generation</div><div class="pp-body"><p>The Academy of Design is our most ambitious long-term investment — a structured education programme designed specifically for Kosovo's emerging designers. Part mentorship, part intensive training, part professional network.</p><p>The Academy runs in two tracks: a mentorship programme pairing students with established practitioners, and intensive short courses covering graphic design, product design, spatial design, and design research.</p></div></div>
+  <div class="pp-content-l"><div class="pp-content-title">Building Kosovo's Next Generation</div><div class="pp-body"><p>The Academy of Design is our most ambitious long-term investment â a structured education programme designed specifically for Kosovo's emerging designers. Part mentorship, part intensive training, part professional network.</p><p>The Academy runs in two tracks: a mentorship programme pairing students with established practitioners, and intensive short courses covering graphic design, product design, spatial design, and design research.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Mentorship pairings with established practitioners</li><li>Short courses in graphic, product, and spatial design</li><li>Exchange programme with DAE Eindhoven</li><li>Graduate showcase and portfolio development</li><li>Career placement support and studio connections</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1524758631624?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Education · Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1524758631624?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Education Â· Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1540575467063?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1504384308090?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution — we'd love to hear from you.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution â we'd love to hear from you.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner.</div>
       <a href="/cdn-cgi/l/email-protection#aec6cbc2c2c1eecacbddc7c9c0c5c1ddc1d8cf80c1dcc9" class="cta-email"><span class="__cf_email__" data-cfemail="335b565f5f5c735756405a545d585c405c45521d5c4154">[email&#160;protected]</span></a></div>
@@ -3088,7 +3088,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -3122,7 +3122,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3212,21 +3212,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <div class="pp-num">06 / 06</div>
       <span class="pp-tag">Urban</span>
       <h1 class="pp-title">Urban<br><span>Design Lab</span></h1>
-      <p class="pp-desc">A civic design initiative reimagining Pristina's public spaces — making design a tool for inclusive, community-driven urban development.</p>
+      <p class="pp-desc">A civic design initiative reimagining Pristina's public spaces â making design a tool for inclusive, community-driven urban development.</p>
     </div>
     <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none;max-width:100%"><span>Get Involved</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
 </div>
 <div class="pp-stats"><div class="pp-stat"><div class="pp-stat-n">8</div><div class="pp-stat-l">Completed Projects</div></div><div class="pp-stat"><div class="pp-stat-n">5</div><div class="pp-stat-l">Municipalities</div></div><div class="pp-stat"><div class="pp-stat-n">2K+</div><div class="pp-stat-l">Community Participants</div></div><div class="pp-stat"><div class="pp-stat-n">3</div><div class="pp-stat-l">Awards Won</div></div></div>
 <div class="pp-content">
-  <div class="pp-content-l"><div class="pp-content-title">Design for the City</div><div class="pp-body"><p>The Urban Design Lab applies design thinking to Pristina's most visible challenge: its public realm. Working with municipalities, communities, and urban planners, we co-design public spaces that reflect and serve Kosovo's people.</p><p>Our approach is participatory — we believe the people who use a space should have a voice in how it's designed. Every project begins with community consultation and ends with public accountability.</p></div></div>
+  <div class="pp-content-l"><div class="pp-content-title">Design for the City</div><div class="pp-body"><p>The Urban Design Lab applies design thinking to Pristina's most visible challenge: its public realm. Working with municipalities, communities, and urban planners, we co-design public spaces that reflect and serve Kosovo's people.</p><p>Our approach is participatory â we believe the people who use a space should have a voice in how it's designed. Every project begins with community consultation and ends with public accountability.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Public space redesign with city and community partners</li><li>Community co-design workshops and consultation</li><li>Research into Kosovo's built environment and heritage</li><li>Collaboration with Ministry of Urban Planning</li><li>Exhibition of proposals at Festival of Design</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Urban · Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Urban Â· Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1524758631624?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
-    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution — we'd love to hear from you.</p>
+    <div class="cta-left"><h2 class="cta-title">Get<br>Involved</h2><p class="cta-desc">Whether you're a designer, educator, sponsor, or institution â we'd love to hear from you.</p>
       <a href="#" onclick="nav('contact');return false;" class="cta-btn" style="text-decoration:none"><span>Contact Us</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10H18M10 2L18 10L10 18" stroke="currentColor" stroke-width="1.4"/></svg></a></div>
     <div class="cta-right"><div><div class="cta-sub">Contact</div><div class="cta-rtitle">Apply to exhibit, speak, or partner.</div>
       <a href="/cdn-cgi/l/email-protection#9bf3fef7f7f4dbfffee8f2fcf5f0f4e8f4edfab5f4e9fc" class="cta-email"><span class="__cf_email__" data-cfemail="a2cac7cececde2c6c7d1cbc5ccc9cdd1cdd4c38ccdd0c5">[email&#160;protected]</span></a></div>
@@ -3251,7 +3251,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -3285,7 +3285,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3294,7 +3294,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 
-/* ════ LOADER ════ */
+/* ââââ LOADER ââââ */
 (function(){
   var num     = document.getElementById('LD-num');
   var bar     = document.getElementById('LD-bar');
@@ -3377,7 +3377,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 
   requestAnimationFrame(frame);
 })();
-/* ════ END LOADER ════ */
+/* ââââ END LOADER ââââ */
 
 
 function collabFilter(btn){
@@ -3393,7 +3393,7 @@ function collabFilter(btn){
   if (el) el.textContent = v + ' Creatives';
 }
 
-/* ══ SPA ROUTER ══ */
+/* ââ SPA ROUTER ââ */
 const PAGE_TITLES = {"home": "Design Kosova Foundation", "about": "About \u2014 Design Kosova", "projects": "Projects \u2014 Design Kosova", "impact": "Impact \u2014 Design Kosova", "contact": "Contact \u2014 Design Kosova", "shop": "Shop Design \u2014 Design Kosova", "festival": "Festival of Design \u2014 DKF", "talk": "Talk for Design \u2014 DKF", "factory": "Factory of Design \u2014 DKF", "academy": "Academy of Design \u2014 DKF", "urban": "Urban Design Lab \u2014 DKF", "collaborators": "Collaborators \u2014 DKF"};
 let currentPage = 'home';
 let _heroTimer = null;
@@ -3425,7 +3425,7 @@ window.addEventListener('popstate', e => {
   nav(p);
 });
 
-/* ══ HOME CAROUSEL ══ */
+/* ââ HOME CAROUSEL ââ */
 function _initHome() {
   clearInterval(_heroTimer);
   let ci = 0;
@@ -3444,7 +3444,7 @@ function _initHome() {
   resetTimer();
 }
 
-/* ══ SHOP FILTERS ══ */
+/* ââ SHOP FILTERS ââ */
 function shopFilter(btn) {
   document.querySelectorAll('.sh-filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
@@ -3464,7 +3464,7 @@ function _initShop() {
   _updateShopCart();
 }
 
-/* ══ SHOP CART ══ */
+/* ââ SHOP CART ââ */
 function shopAddToCart(btn) {
   _shopCart.push({name:btn.dataset.name, price:btn.dataset.price});
   _updateShopCart();
@@ -3481,9 +3481,9 @@ function _updateShopCart() {
   const totalEl = document.getElementById('shopCartTotal');
   if(!countEl) return;
   countEl.textContent = _shopCart.length;
-  const total = _shopCart.reduce((s,it)=>s+parseFloat(it.price.replace('€','')),0);
+  const total = _shopCart.reduce((s,it)=>s+parseFloat(it.price.replace('â¬','')),0);
 
-  if(totalEl) totalEl.textContent = '€'+total.toFixed(0);
+  if(totalEl) totalEl.textContent = 'â¬'+total.toFixed(0);
   if(!itemsEl) return;
   Array.from(itemsEl.querySelectorAll('.sh-cart-item')).forEach(el=>el.remove());
   if(_shopCart.length===0){
@@ -3511,7 +3511,7 @@ function shopToggleCart(){
   if(o)o.classList.toggle('open');
 }
 
-/* ══ BOOT ══ */
+/* ââ BOOT ââ */
 (function(){
   const hash = location.hash.replace('#','');
   if(hash && document.getElementById('page-'+hash) && hash!=='home'){
