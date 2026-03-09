@@ -661,6 +661,169 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   background:#003DD6; margin-bottom:32px;
   flex-shrink:0;
 }
+
+
+/* =====================================================
+   MOBILE RESPONSIVE — comprehensive fix
+   ===================================================== */
+
+/* === NAV BURGER === */
+.nav-burger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;
+}
+.nav-burger span{
+  display:block;width:22px;height:2px;background:#101A30;
+  transition:transform .3s,opacity .3s;transform-origin:center;
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* === MOBILE MENU OVERLAY === */
+.mob-menu{
+  position:fixed;inset:60px 0 0 0;z-index:99;
+  background:#EDEEE6;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;overflow-y:auto;
+}
+.mob-menu.open{transform:translateX(0)}
+.mob-menu-inner{display:flex;flex-direction:column;justify-content:space-between;min-height:100%;padding:40px 28px 40px;}
+.mob-nav-links{display:flex;flex-direction:column;}
+.mob-nl{
+  display:block;padding:20px 0;
+  font-size:clamp(28px,8vw,42px);letter-spacing:-.02em;font-weight:300;color:#101A30;
+  text-decoration:none;border-bottom:1px solid rgba(16,26,48,.1);
+  cursor:pointer;
+}
+.mob-nl:last-child{border-bottom:none}
+.mob-menu-foot{display:flex;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid rgba(16,26,48,.1);}
+.mob-lang{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#101A30;text-decoration:none;}
+.mob-cta{padding:14px 24px;background:#003DD6;color:#fff;border:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:inherit;}
+
+/* ===================================================
+   BREAKPOINT: max-width 768px (phones + small tablets)
+   =================================================== */
+@media(max-width:768px){
+
+  /* NAV */
+  .nav{padding:0 20px;}
+  .nav-links,.nav-right{display:none!important;}
+  .nav-burger{display:flex;}
+
+  /* HOME HERO: unstack from 3fr 1fr to full column */
+  .hero{grid-template-columns:1fr;height:auto;min-height:unset;}
+  .hero-img{height:55vw;min-height:220px;border-right:none;border-bottom:1px solid #101A30;}
+  .hero-ctrl{padding:32px 20px 40px;min-height:unset;}
+  .hero-text{justify-content:flex-start;gap:20px;}
+  .hero-title{font-size:clamp(30px,8vw,46px);}
+  .wm-text{display:none;}
+
+  /* STATS: 4col → 2col */
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stat-item{border-bottom:1px solid #101A30;}
+
+  /* PILLARS: 4col → 2col */
+  .pillars{grid-template-columns:repeat(2,1fr);}
+
+  /* PROJ CARDS: 6col → 2col */
+  .proj-cards{grid-template-columns:repeat(2,1fr);}
+  .proj-card-head{padding:20px 16px 16px;}
+
+  /* MOSAIC: 2fr 1fr → stacked */
+  .mosaic{grid-template-columns:1fr;grid-template-rows:auto auto auto;}
+  .mc{min-height:220px;}
+
+  /* IMPACT BODY: 2col → 1col */
+  .impact-body{grid-template-columns:1fr;}
+  .imp-photo{height:260px;border-right:none;border-bottom:1px solid rgba(237,238,230,.2);}
+
+  /* EVENTS GRID: 4col → 2col */
+  .events-grid{grid-template-columns:repeat(2,1fr);}
+  .ev-card{min-height:160px;}
+
+  /* CTA LAYOUT: 2col → 1col */
+  .cta-layout{grid-template-columns:1fr;}
+  .cta-l{border-right:none;border-bottom:1px solid #101A30;padding:40px 20px;}
+  .cta-r{padding:40px 20px;}
+
+  /* FOOTER */
+  .ft-top{grid-template-columns:1fr;padding:40px 20px 28px;}
+  .ft-col{border-right:none!important;border-bottom:1px solid rgba(237,238,230,.12);padding:24px 0;}
+  .ft-col:last-child{border-bottom:none;}
+  .ft-bottom{padding:20px;}
+  .ft-bottom-inner{flex-direction:column;gap:12px;text-align:center;}
+
+  /* ABOUT — SK HERO */
+  .sk-hero{grid-template-columns:1fr;height:auto;}
+  .sk-img{height:55vw;min-height:200px;border-right:none;border-bottom:1px solid rgba(16,26,48,.1);}
+  .sk-ctrl{padding:32px 20px 40px;}
+  .sk-title{font-size:clamp(28px,8vw,42px);}
+
+  /* ABOUT — TIMELINE */
+  .a-tl-item{grid-template-columns:80px 1fr;}
+  .a-tl-yr{padding:20px 16px;font-size:12px;}
+  .a-tl-content{padding:20px 16px;}
+
+  /* ABOUT — FOUNDERS GRID */
+  .a-founders-grid{grid-template-columns:1fr!important;}
+  .founder-card{display:flex;flex-direction:column;}
+  .founder-photo{aspect-ratio:4/3;min-height:unset;border-right:none;border-bottom:1px solid #101A30;}
+
+  /* ABOUT — PARTNERS */
+  .hc-grid{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* COLLABORATORS */
+  .col-hero{grid-template-columns:1fr;}
+  .col-hero-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
+  .col-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .col-join{grid-template-columns:1fr;}
+  .col-join-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
+  .col-filter{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .col-fbtn{white-space:nowrap;font-size:9px;padding:0 14px;}
+
+  /* CONTACT */
+  .ct-hero{grid-template-columns:1fr;}
+  .ct-hero-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
+  .ct-form-layout{grid-template-columns:1fr;min-height:unset;}
+  .ct-form-sidebar{padding:32px 20px;border-right:none;border-bottom:1px solid #101A30;}
+  .ct-form-main{padding:32px 20px;}
+
+  /* PROJECTS / MANIFESTO */
+  .manifesto-body{grid-template-columns:1fr;}
+  .manifesto-photo{height:260px;border-right:none;border-bottom:1px solid #101A30;}
+
+  /* IMPACT SECTION */
+  .imp-hero{grid-template-columns:1fr;}
+  .imp-hero-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
+
+  /* General padding fixes */
+  .section-head,.s-head{padding:32px 20px!important;}
+  .a-founders-head,.a-ph,.a-tl-head{padding:32px 20px!important;}
+  .proj-head{padding:32px 20px!important;}
+
+  /* Watermarks — hide on mobile */
+  .wm,.wm-text{display:none!important;}
+
+  /* Blue rule consistent spacing */
+  .hero-rule{margin-bottom:20px;}
+}
+
+/* ===================================================
+   BREAKPOINT: max-width 480px (small phones)
+   =================================================== */
+@media(max-width:480px){
+  .pillars{grid-template-columns:1fr;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .events-grid{grid-template-columns:1fr;}
+  .proj-cards{grid-template-columns:1fr;}
+  .col-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .hc-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .hero-title{font-size:clamp(28px,9vw,40px);}
+  .imp-counter{font-size:clamp(36px,12vw,56px);}
+  .nav-cta{padding:8px 14px;font-size:9px;}
+}
 </style>
 </head>
 <body>
@@ -749,11 +912,26 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
-  <div class="nav-right">
+  <button class="nav-burger" id="nav-burger" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button><div class="nav-right">
     <a href="#" class="nav-lang">SQ / EN</a>
     <button class="nav-cta" onclick="nav('contact')">Get Involved</button>
   </div>
 </nav>
+<div class="mob-menu" id="mob-menu">
+  <div class="mob-menu-inner">
+    <nav class="mob-nav-links">
+      <a class="mob-nl" onclick="nav('about');toggleMobileMenu()">About</a>
+      <a class="mob-nl" onclick="nav('projects');toggleMobileMenu()">Projects</a>
+      <a class="mob-nl" onclick="nav('collaborators');toggleMobileMenu()">Collaborators</a>
+      <a class="mob-nl" onclick="nav('impact');toggleMobileMenu()">Impact</a>
+      <a class="mob-nl" onclick="nav('contact');toggleMobileMenu()">Contact</a>
+    </nav>
+    <div class="mob-menu-foot">
+      <a href="#" class="mob-lang">SQ / EN</a>
+      <button class="mob-cta" onclick="nav('contact');toggleMobileMenu()">Get Involved →</button>
+    </div>
+  </div>
+</div>
 <div class="hero">
   <div class="hero-img" id="heroImg">
     <img id="hImg0" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=90&fit=crop&crop=center" style="opacity:1">
@@ -762,7 +940,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </div>
   <div class="hero-text">
     <div class="hero-top">
-      <div class="hero-eyebrow">Pristina Â· Kosovo</div>
+      <div class="hero-eyebrow">Pristina · Kosovo</div>
       <div class="side-dots" id="sDots">
         <div class="side-dot on" style="width:94px" data-i="0"></div>
         <div class="side-dot" style="width:60px" data-i="1"></div>
@@ -793,24 +971,24 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="stat"><span class="stat-n">WDO</span><span class="stat-l">World Design Org.</span></div>
 </div>
 <div class="ticker"><div class="ticker-track">
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">Â·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">Â·</span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
 </div></div>
 <section>
   <div class="s-head"><h2 class="s-title blue">A Creative Ecosystem</h2><a href="#" onclick="nav('about');return false;" class="s-link">Read More &#8594;</a></div>
@@ -968,7 +1146,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1002,7 +1180,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1115,7 +1293,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="manifesto-left">
     <div class="manifesto-deco">DKF</div>
     <span class="hero-rule"></span>
-    <div class="manifesto-eyebrow">Pristina Â· Kosovo Â· Est. 2016</div>
+    <div class="manifesto-eyebrow">Pristina · Kosovo · Est. 2016</div>
     <div>
       <div class="manifesto-quote">Design is not<br>decoration.<br>It is a <em>catalyst</em><br>for progress.</div>
       <p class="manifesto-sub">Design Kosova Foundation was built on the belief that design shapes identity, economy, and culture â and Kosovo is ready to lead.</p>
@@ -1137,7 +1315,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <div class="a-collage">
   <div class="ac-cell tall"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=88&fit=crop" alt=""><div class="ac-label">Our City</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=88&fit=crop" alt=""><div class="ac-label">Factory of Design</div></div>
-  <div class="ac-accent"><div class="ac-accent-n">KOS</div><div class="ac-accent-l">Kosovo Â· Global</div></div>
+  <div class="ac-accent"><div class="ac-accent-n">KOS</div><div class="ac-accent-l">Kosovo · Global</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=88&fit=crop" alt=""><div class="ac-label">Academy</div></div>
   <div class="ac-cell"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=88&fit=crop" alt=""><div class="ac-label">Festival</div></div>
 </div>
@@ -1216,10 +1394,10 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <section class="a-partners">
   <div class="a-ph"><h2 class="s-title blue">Partners</h2><a href="#" onclick="nav('contact');return false;" class="s-link">Become a Partner &#8594;</a></div>
   <div class="a-pgrid">
-    <div class="a-pcard"><div class="a-pflag"></div><div><div class="a-pname">Design Academy Eindhoven</div><div class="a-pcountry">Netherlands</div></div><div class="a-ptype">Academic Partner Â· Exchange programmes, joint education, student placements</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#F8C65A"></div><div><div class="a-pname">Porto Design Factory</div><div class="a-pcountry">Portugal</div></div><div class="a-ptype">Innovation Partner Â· Design research and methodology exchange</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#101A30"></div><div><div class="a-pname">World Design Organization</div><div class="a-pcountry">International</div></div><div class="a-ptype">Global Body Â· WDO member â access to 40+ countries and global design policy</div></div>
-    <div class="a-pcard"><div class="a-pflag" style="background:#FF8FA3"></div><div><div class="a-pname">iF Design Foundation</div><div class="a-pcountry">Germany</div></div><div class="a-ptype">Awards &amp; Recognition Â· iF Design Foundation partnership and visibility</div></div>
+    <div class="a-pcard"><div class="a-pflag"></div><div><div class="a-pname">Design Academy Eindhoven</div><div class="a-pcountry">Netherlands</div></div><div class="a-ptype">Academic Partner · Exchange programmes, joint education, student placements</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#F8C65A"></div><div><div class="a-pname">Porto Design Factory</div><div class="a-pcountry">Portugal</div></div><div class="a-ptype">Innovation Partner · Design research and methodology exchange</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#101A30"></div><div><div class="a-pname">World Design Organization</div><div class="a-pcountry">International</div></div><div class="a-ptype">Global Body · WDO member â access to 40+ countries and global design policy</div></div>
+    <div class="a-pcard"><div class="a-pflag" style="background:#FF8FA3"></div><div><div class="a-pname">iF Design Foundation</div><div class="a-pcountry">Germany</div></div><div class="a-ptype">Awards &amp; Recognition · iF Design Foundation partnership and visibility</div></div>
   </div>
 </section>
 <section><div class="cta-layout">
@@ -1253,7 +1431,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1287,7 +1465,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1415,7 +1593,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1449,7 +1627,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1561,7 +1739,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="imp-hero-r">
     <div class="imp-photo">
       <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1200&q=88&fit=crop" alt="">
-      <div class="imp-photo-cap">Festival of Design Â· Pristina</div>
+      <div class="imp-photo-cap">Festival of Design · Pristina</div>
     </div>
     <div class="imp-map-panel">
       <div class="imp-map-grid"></div>
@@ -1582,14 +1760,14 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 <section class="imp-collab">
   <div class="imp-collab-head"><h2 class="s-title yellow">Collaborators</h2><a href="#" onclick="nav('contact');return false;" class="s-link white">Partner With Us &#8594;</a></div>
   <div class="imp-collab-grid">
-    <div class="ic-card"><div class="ic-flag"></div><div><div class="ic-name">Design Academy Eindhoven</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Academic partnership Â· Exchange programmes and joint education</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#003DD6"></div><div><div class="ic-name">Porto Design Factory</div><div class="ic-country">Portugal</div></div><div class="ic-type">Innovation partnership Â· Research collaboration and methodology</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#EDEEE6"></div><div><div class="ic-name">World Design Organization</div><div class="ic-country">International</div></div><div class="ic-type">Global body Â· WDO member with access to 40+ country network</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#FF8FA3"></div><div><div class="ic-name">iF Design Foundation</div><div class="ic-country">Germany</div></div><div class="ic-type">Awards &amp; recognition Â· iF Design Foundation partnership</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#A8DAFF"></div><div><div class="ic-name">Milan Design Week</div><div class="ic-country">Italy</div></div><div class="ic-type">Annual participation Â· Fuorisalone exhibitions since 2021</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#C5F135"></div><div><div class="ic-name">Dutch Design Week</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Annual participation Â· World's largest design event</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#FFD166"></div><div><div class="ic-name">Dubai Design Week</div><div class="ic-country">UAE</div></div><div class="ic-type">MENA presence Â· Cross-cultural design dialogue</div></div>
-    <div class="ic-card"><div class="ic-flag" style="background:#A8E6CE"></div><div><div class="ic-name">Kosovo Government</div><div class="ic-country">Kosovo</div></div><div class="ic-type">Civic partner Â· Urban planning and design policy integration</div></div>
+    <div class="ic-card"><div class="ic-flag"></div><div><div class="ic-name">Design Academy Eindhoven</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Academic partnership · Exchange programmes and joint education</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#003DD6"></div><div><div class="ic-name">Porto Design Factory</div><div class="ic-country">Portugal</div></div><div class="ic-type">Innovation partnership · Research collaboration and methodology</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#EDEEE6"></div><div><div class="ic-name">World Design Organization</div><div class="ic-country">International</div></div><div class="ic-type">Global body · WDO member with access to 40+ country network</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#FF8FA3"></div><div><div class="ic-name">iF Design Foundation</div><div class="ic-country">Germany</div></div><div class="ic-type">Awards &amp; recognition · iF Design Foundation partnership</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#A8DAFF"></div><div><div class="ic-name">Milan Design Week</div><div class="ic-country">Italy</div></div><div class="ic-type">Annual participation · Fuorisalone exhibitions since 2021</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#C5F135"></div><div><div class="ic-name">Dutch Design Week</div><div class="ic-country">Netherlands</div></div><div class="ic-type">Annual participation · World's largest design event</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#FFD166"></div><div><div class="ic-name">Dubai Design Week</div><div class="ic-country">UAE</div></div><div class="ic-type">MENA presence · Cross-cultural design dialogue</div></div>
+    <div class="ic-card"><div class="ic-flag" style="background:#A8E6CE"></div><div><div class="ic-name">Kosovo Government</div><div class="ic-country">Kosovo</div></div><div class="ic-type">Civic partner · Urban planning and design policy integration</div></div>
   </div>
 </section>
 <section class="imp-presence">
@@ -1626,7 +1804,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1660,7 +1838,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1781,8 +1959,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <div class="ct-location">
       <div class="ct-loc-grid"></div>
       <div class="ct-pin"></div>
-      <div><div class="ct-city">Pristina</div><div class="ct-city-sub">Kosovo Â· Central Europe</div></div>
-      <div class="ct-address">Rruga Fehmi Agani, Nr. 12<br>10000 Pristina, Kosovo<br>MonâFri Â· 09:00â18:00</div>
+      <div><div class="ct-city">Pristina</div><div class="ct-city-sub">Kosovo · Central Europe</div></div>
+      <div class="ct-address">Rruga Fehmi Agani, Nr. 12<br>10000 Pristina, Kosovo<br>MonâFri · 09:00â18:00</div>
     </div>
   </div>
 </div>
@@ -1847,7 +2025,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -1881,7 +2059,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2094,7 +2272,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2128,7 +2306,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2436,7 +2614,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2470,7 +2648,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2570,7 +2748,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">One Week That Changes Everything</div><div class="pp-body"><p>The Festival of Design is Kosovo's most significant cultural design event. Each year it transforms Pristina into a stage for design thinking, making, and dialogue â drawing practitioners from across the region and world.</p><p>The festival operates across multiple venues, from galleries and public squares to industrial spaces. Every edition is built around a central theme that responds to Kosovo's evolving cultural moment.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Public exhibitions across Pristina's cultural venues</li><li>International speaker programme and keynote talks</li><li>Open workshops for students and emerging practitioners</li><li>Collaborative installations with international partners</li><li>Shop Design market pop-up during festival week</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1504384308090?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Annual Event Â· Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1504384308090?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Annual Event · Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1540575467063?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1531058020387?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
@@ -2599,7 +2777,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2633,7 +2811,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2733,7 +2911,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">Ideas Worth Sharing</div><div class="pp-body"><p>Talk for Design is our ongoing lecture programme. Monthly sessions invite Kosovo-based and international practitioners to share work, process, and provocation â creating a continuous pulse of design knowledge in Pristina.</p><p>All talks are recorded and made freely available. We believe knowledge is a public resource â and that Kosovo's designers deserve access to the same conversations happening in London, Milan, or Amsterdam.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Monthly lectures with local and international guests</li><li>Recorded archive accessible to all</li><li>Post-lecture community discussions and networking</li><li>Student Q&A sessions with speakers</li><li>Partner collaborations with design schools</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1475721027785?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Lectures Â· Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1475721027785?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Lectures · Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1531058020387?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1504384308090?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
@@ -2762,7 +2940,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2796,7 +2974,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2896,7 +3074,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">Where Ideas Become Objects</div><div class="pp-body"><p>The Factory of Design is DKF's research and making arm. It commissions applied design projects that respond to Kosovo's most pressing cultural, social, and urban challenges.</p><p>The Factory brings together designers, architects, engineers, and cultural thinkers in cross-disciplinary teams. Projects range from product prototypes and spatial interventions to design-led policy proposals.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Commissioned design research projects</li><li>Collaborative studio residencies</li><li>Prototyping support and fabrication access</li><li>Cross-disciplinary teams and methodology</li><li>Exhibition of outcomes at Festival of Design</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1581092921461?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Design Lab Â· Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1581092921461?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Design Lab · Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1497366216548?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
@@ -2925,7 +3103,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -2959,7 +3137,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3059,7 +3237,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">Building Kosovo's Next Generation</div><div class="pp-body"><p>The Academy of Design is our most ambitious long-term investment â a structured education programme designed specifically for Kosovo's emerging designers. Part mentorship, part intensive training, part professional network.</p><p>The Academy runs in two tracks: a mentorship programme pairing students with established practitioners, and intensive short courses covering graphic design, product design, spatial design, and design research.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Mentorship pairings with established practitioners</li><li>Short courses in graphic, product, and spatial design</li><li>Exchange programme with DAE Eindhoven</li><li>Graduate showcase and portfolio development</li><li>Career placement support and studio connections</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1524758631624?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Education Â· Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1524758631624?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Education · Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1540575467063?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1504384308090?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('urban');return false;"><div class="pp-other-num">06</div><div><div class="pp-other-name">Urban Design Lab</div><div class="pp-other-tag">Urban</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
@@ -3088,7 +3266,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -3122,7 +3300,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3222,7 +3400,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="pp-content-l"><div class="pp-content-title">Design for the City</div><div class="pp-body"><p>The Urban Design Lab applies design thinking to Pristina's most visible challenge: its public realm. Working with municipalities, communities, and urban planners, we co-design public spaces that reflect and serve Kosovo's people.</p><p>Our approach is participatory â we believe the people who use a space should have a voice in how it's designed. Every project begins with community consultation and ends with public accountability.</p></div></div>
   <div class="pp-content-r"><div class="pp-content-title">What It Includes</div><ul class="pp-features"><li>Public space redesign with city and community partners</li><li>Community co-design workshops and consultation</li><li>Research into Kosovo's built environment and heritage</li><li>Collaboration with Ministry of Urban Planning</li><li>Exhibition of proposals at Festival of Design</li></ul></div>
 </div>
-<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Urban Â· Design Kosova</div></div>
+<div class="pp-fullbleed"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=2000&q=88&fit=crop" alt=""><div class="pp-fullbleed-cap">Urban · Design Kosova</div></div>
 <div class="pp-gallery"><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1524758631624?w=800&q=85&fit=crop" loading="lazy"></div><div class="pp-gal-cell"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=85&fit=crop" loading="lazy"></div></div>
 <div class="pp-other"><div class="pp-other-head"><h2 class="s-title blue" style="font-size:clamp(26px,2.6vw,38px)">Other Initiatives</h2></div><div class="pp-other-grid"><a class="pp-other-card" href="#" onclick="nav('festival');return false;"><div class="pp-other-num">01</div><div><div class="pp-other-name">Festival of Design</div><div class="pp-other-tag">Annual Event</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('talk');return false;"><div class="pp-other-num">02</div><div><div class="pp-other-name">Talk for Design</div><div class="pp-other-tag">Lectures</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('shop');return false;"><div class="pp-other-num">03</div><div><div class="pp-other-name">Shop Design</div><div class="pp-other-tag">Marketplace</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('factory');return false;"><div class="pp-other-num">04</div><div><div class="pp-other-name">Factory of Design</div><div class="pp-other-tag">Lab</div></div><span class="pp-other-arr">&#8594;</span></a><a class="pp-other-card" href="#" onclick="nav('academy');return false;"><div class="pp-other-num">05</div><div><div class="pp-other-name">Academy of Design</div><div class="pp-other-tag">Education</div></div><span class="pp-other-arr">&#8594;</span></a></div></div>
 <section><div class="cta-layout">
@@ -3251,7 +3429,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <span class="ft-brand">Design Kosova</span>
       </div>
       <p class="ft-desc">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
-      <span class="ft-sub">DSN KSV Â· Pristina, Kosovo</span>
+      <span class="ft-sub">DSN KSV · Pristina, Kosovo</span>
     </div>
     <div class="ft-col">
       <div class="ft-h">Foundation</div>
@@ -3285,13 +3463,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova Â· All Rights Reserved</span>
+    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+function toggleMobileMenu(){
+  const m=document.getElementById('mob-menu');
+  const b=document.getElementById('nav-burger');
+  const open=m.classList.toggle('open');
+  b.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+</script><script>
 
 
 /* ââââ LOADER ââââ */
