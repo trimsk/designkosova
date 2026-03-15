@@ -138,7 +138,7 @@ a{text-decoration:none;color:inherit}
 .about-bg{position:absolute;inset:0}
 .about-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
 .about-panel{
-  position:absolute;inset:0 70% 0 0;background:#EDEEE6;
+  position:absolute;inset:0 66.66% 0 0;background:#EDEEE6;
   border-right:1px solid #101A30;
   padding:64px 48px;display:flex;flex-direction:column;justify-content:space-between;z-index:2;
 }
@@ -147,7 +147,7 @@ a{text-decoration:none;color:inherit}
 .about-body p+p{margin-top:13px}
 
 /* ââ PILLARS ââ */
-.pillars{display:grid;grid-template-columns:repeat(4,1fr)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr)}
 .pillar{padding:clamp(32px,4vw,56px) clamp(24px,3.5vw,48px);border-right:1px solid #101A30;display:flex;flex-direction:column;gap:17px}
 .pillar:last-child{border-right:none}
 .pillar-n{margin-bottom:4px;line-height:0}
@@ -156,7 +156,7 @@ a{text-decoration:none;color:inherit}
 .pillar-desc{font-size:13px;line-height:1.82;color:#101A30}
 
 /* ââ PROJECTS ââ */
-.proj-head{display:flex;justify-content:space-between;align-items:flex-end;padding:clamp(32px,4vw,52px) clamp(28px,5vw,56px);border-bottom:1px solid #101A30;border-top:1px solid #101A30}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px);border-bottom:1px solid #101A30;border-top:1px solid #101A30}
 .proj-cards{display:grid;grid-template-columns:repeat(6,1fr);background:#101A30;gap:1px;border-bottom:1px solid #101A30}
 .pcard{
   min-height:460px;padding:32px 26px 29px;
@@ -209,16 +209,17 @@ a{text-decoration:none;color:inherit}
 
 /* ââ EVENTS ââ */
 .events-sec{border-bottom:1px solid #101A30}
-.events-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#101A30;gap:1px}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#101A30;gap:1px}
 .ev{min-height:320px;padding:clamp(28px,3.5vw,48px);background:#EDEEE6;display:flex;flex-direction:column;justify-content:space-between}
-.ev-dot{width:7px;height:7px;border-radius:50%;background:#003DD6;margin-bottom:24px}
+.ev-dot{width:14px;height:14px;margin-bottom:24px}
+.ev-dot svg{width:100%;height:100%}
 .ev-city{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#101A30;margin-bottom:8px}
 .ev-name{font-size:17px;line-height:1.1;letter-spacing:-.02em;color:#101A30}
 .ev-desc{font-size:13px;line-height:1.75;color:#101A30;margin-bottom:16px}
 .ev-arr{font-size:16px;color:#101A30}
 
 /* ââ CTA ââ */
-.cta-layout{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #101A30}
+.cta-layout{display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid #101A30}
 .cta-left{border-right:1px solid #101A30;padding:96px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:560px}
 .cta-title{font-size:clamp(52px,5.4vw,78px);line-height:1;letter-spacing:-.023em;color:#003DD6;font-weight:300}
 .cta-desc{font-size:15px;line-height:1.88;color:#101A30;max-width:44ch}
@@ -267,7 +268,7 @@ footer{background:#101A30;color:#EDEEE6}
 .nav-cta { cursor:pointer; }
 
 /* Project index cards */
-.proj-head { display:flex; justify-content:space-between; align-items:center; padding:40px 40px 0; }
+.proj-head { display:flex; justify-content:space-between; align-items:flex-end; padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px) clamp(32px,4vw,52px); }
 .proj-cards {
   display:grid; grid-template-columns:repeat(6,1fr);
   background:#101A30; gap:1px; border-bottom:1px solid #101A30;
@@ -703,6 +704,21 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .mob-cta{padding:14px 24px;background:#003DD6;color:#fff;border:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:inherit;}
 
 /* ===================================================
+   BREAKPOINT: max-width 1024px (tablets)
+   =================================================== */
+@media(max-width:1024px){
+  .proj-index-hero{grid-template-columns:1fr 1fr!important;height:auto!important;min-height:unset!important;}
+  .ct-hero{min-height:unset!important;}
+  .pp-hero{min-height:unset!important;}
+  .sh-hero{min-height:unset!important;}
+  .pp-stats{grid-template-columns:repeat(2,1fr)!important;}
+  .pp-content{grid-template-columns:1fr!important;}
+  .pp-content-l{border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .ip-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .manifesto{grid-template-columns:1fr!important;height:auto!important;}
+}
+
+/* ===================================================
    BREAKPOINT: max-width 768px (phones + small tablets)
    =================================================== */
 @media(max-width:768px){
@@ -784,24 +800,62 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   .col-fbtn{white-space:nowrap;font-size:9px;padding:0 14px;}
 
   /* CONTACT */
-  .ct-hero{grid-template-columns:1fr;}
-  .ct-hero-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
-  .ct-form-layout{grid-template-columns:1fr;min-height:unset;}
-  .ct-form-sidebar{padding:32px 20px;border-right:none;border-bottom:1px solid #101A30;}
-  .ct-form-main{padding:32px 20px;}
+  .ct-hero{grid-template-columns:1fr!important;min-height:unset!important;}
+  .ct-hero-l{border-right:none!important;border-bottom:1px solid rgba(237,238,230,.12)!important;padding:40px 20px!important;}
+  .ct-hero-r{border-right:none!important;}
+  .ct-form-layout{grid-template-columns:1fr!important;min-height:unset!important;}
+  .ct-form-sidebar{padding:32px 20px!important;border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .ct-form-main{padding:32px 20px!important;}
+  .ct-social-strip{grid-template-columns:1fr!important;}
+  .ct-soc{border-right:none!important;border-bottom:1px solid #101A30!important;min-height:unset!important;padding:28px 20px!important;flex-direction:row!important;align-items:center!important;gap:16px!important;}
+  .ct-soc:last-child{border-bottom:none!important;}
+  .ct-soc-icon{width:18px!important;height:18px!important;}
+  .ct-soc-arr{margin-left:auto!important;}
+  .ct-location{min-height:200px!important;}
+  .ct-ch{padding:16px 20px!important;}
+
+  /* PROJECTS INDEX HERO */
+  .proj-index-hero{grid-template-columns:1fr!important;height:auto!important;min-height:unset!important;}
+  .pih-img{height:50vw!important;min-height:200px!important;border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .pih-text{padding:32px 20px 40px!important;}
 
   /* PROJECTS / MANIFESTO */
-  .manifesto-body{grid-template-columns:1fr;}
-  .manifesto-photo{height:260px;border-right:none;border-bottom:1px solid #101A30;}
+  .manifesto{grid-template-columns:1fr!important;height:auto!important;}
+  .manifesto-body{grid-template-columns:1fr!important;}
+  .manifesto-photo{height:260px!important;border-right:none!important;border-bottom:1px solid #101A30!important;}
 
   /* IMPACT SECTION */
-  .imp-hero{grid-template-columns:1fr;}
-  .imp-hero-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12);}
+  .imp-hero{grid-template-columns:1fr!important;}
+  .imp-hero-l{border-right:none!important;border-bottom:1px solid rgba(237,238,230,.12)!important;}
+  .ip-grid{grid-template-columns:1fr!important;}
+  .ip-card{min-height:unset!important;padding:32px 20px!important;}
+  .ip-head{padding:32px 20px!important;}
+
+  /* SPA SUB-PAGE HEROES (pp-hero, sh-hero) */
+  .pp-hero{grid-template-columns:1fr!important;min-height:unset!important;}
+  .pp-img{height:50vw!important;min-height:200px!important;border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .pp-text{padding:32px 20px 40px!important;}
+  .pp-stats{grid-template-columns:repeat(2,1fr)!important;}
+  .pp-stat{padding:24px 20px!important;}
+  .pp-content{grid-template-columns:1fr!important;}
+  .pp-content-l{border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .pp-gallery{grid-template-columns:repeat(2,1fr)!important;}
+  .pp-fullbleed{height:280px!important;}
+  .pp-fullbleed-cap{left:20px!important;bottom:16px!important;}
+  .sh-hero{grid-template-columns:1fr!important;min-height:unset!important;}
+  .sh-hero-img{height:50vw!important;min-height:200px!important;border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .sh-hero-text{padding:32px 20px 40px!important;}
+
+  /* ABOUT SPREAD (panel+image) */
+  .about-spread{position:relative;min-height:unset;display:flex;flex-direction:column;}
+  .about-panel{position:relative!important;inset:unset!important;width:100%!important;padding:32px 20px!important;}
+  .about-bg{height:55vw;min-height:200px;}
 
   /* General padding fixes */
   .section-head,.s-head{padding:32px 20px!important;}
   .a-founders-head,.a-ph,.a-tl-head{padding:32px 20px!important;}
   .proj-head{padding:32px 20px!important;}
+  .impact-s-head{padding:32px 20px!important;}
 
   /* Watermarks — hide on mobile */
   .wm,.wm-text{display:none!important;}
@@ -823,6 +877,10 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   .hero-title{font-size:clamp(28px,9vw,40px);}
   .imp-counter{font-size:clamp(36px,12vw,56px);}
   .nav-cta{padding:8px 14px;font-size:9px;}
+  .pp-stats{grid-template-columns:1fr!important;}
+  .pp-gallery{grid-template-columns:1fr!important;}
+  .ip-grid{grid-template-columns:1fr!important;}
+  .ct-hero-title{font-size:clamp(32px,10vw,52px)!important;}
 }
 </style>
 </head>
@@ -908,8 +966,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <button class="nav-burger" id="nav-burger" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button><div class="nav-right">
@@ -922,9 +978,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <nav class="mob-nav-links">
       <a class="mob-nl" onclick="nav('about');toggleMobileMenu()">About</a>
       <a class="mob-nl" onclick="nav('projects');toggleMobileMenu()">Projects</a>
-      <a class="mob-nl" onclick="nav('collaborators');toggleMobileMenu()">Collaborators</a>
-      <a class="mob-nl" onclick="nav('impact');toggleMobileMenu()">Impact</a>
-      <a class="mob-nl" onclick="nav('contact');toggleMobileMenu()">Contact</a>
+            <a class="mob-nl" onclick="nav('contact');toggleMobileMenu()">Contact</a>
     </nav>
     <div class="mob-menu-foot">
       <a href="#" class="mob-lang">SQ / EN</a>
@@ -964,31 +1018,25 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
 </div>
-<div class="stats">
-  <div class="stat"><span class="stat-n">6</span><span class="stat-l">Core Initiatives</span></div>
-  <div class="stat"><span class="stat-n">3</span><span class="stat-l">Global Design Weeks</span></div>
-  <div class="stat"><span class="stat-n">DAE</span><span class="stat-l">Eindhoven Partner</span></div>
-  <div class="stat"><span class="stat-n">WDO</span><span class="stat-l">World Design Org.</span></div>
-</div>
 <div class="ticker"><div class="ticker-track">
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Festival of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Talk for Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Shop Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Factory of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Academy of Design</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot">·</span>
-  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot">·</span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Festival of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Talk for Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Shop Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Factory of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Academy of Design</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Urban Design Lab</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Milan Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Dutch Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></span>
+  <span class="ticker-item">Dubai Design Week</span><span class="ticker-dot"><svg width="10" height="10" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></span>
 </div></div>
 <section>
   <div class="s-head"><h2 class="s-title blue">A Creative Ecosystem</h2><a href="#" onclick="nav('about');return false;" class="s-link">Read More &#8594;</a></div>
@@ -1003,10 +1051,9 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="pillars">
-    <div class="pillar"><div class="pillar-n"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/></svg></div><div class="pillar-title">Support Designers</div><p class="pillar-desc">Developing innovative projects and providing platforms for emerging talent locally and internationally.</p></div>
-    <div class="pillar"><div class="pillar-n"><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/></svg></div><div class="pillar-title">Educational Platform</div><p class="pillar-desc">Knowledge exchange and mentorship â specialised training that builds practical, future-ready skills.</p></div>
-    <div class="pillar"><div class="pillar-n"><svg width="60" height="20" viewBox="0 0 60 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/></svg></div><div class="pillar-title">International Exposure</div><p class="pillar-desc">Partnering with DAE Eindhoven, Porto Design Factory, iF Design Foundation, and the World Design Organization.</p></div>
-    <div class="pillar"><div class="pillar-n"><svg width="80" height="20" viewBox="0 0 80 20"><polygon points="10,0 20,10 10,20 0,10" fill="#003DD6"/><polygon points="30,0 40,10 30,20 20,10" fill="#003DD6"/><polygon points="50,0 60,10 50,20 40,10" fill="#003DD6"/><polygon points="70,0 80,10 70,20 60,10" fill="#003DD6"/></svg></div><div class="pillar-title">Urban Transformation</div><p class="pillar-desc">Sustainable and inclusive urban solutions â redesigning public spaces across Kosovo.</p></div>
+    <div class="pillar"><div class="pillar-n"><svg width="24" height="24" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></div><div class="pillar-title">Support Designers</div><p class="pillar-desc">Developing innovative projects and providing platforms for emerging talent locally and internationally.</p></div>
+    <div class="pillar"><div class="pillar-n"><svg width="24" height="24" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></div><div class="pillar-title">Educational Platform</div><p class="pillar-desc">Knowledge exchange and mentorship â specialised training that builds practical, future-ready skills.</p></div>
+    <div class="pillar"><div class="pillar-n"><svg width="24" height="24" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></div><div class="pillar-title">International Exposure</div><p class="pillar-desc">Partnering with DAE Eindhoven, Porto Design Factory, iF Design Foundation, and the World Design Organization.</p></div>
   </div>
 </section>
 <section>
@@ -1025,68 +1072,25 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <div class="mc"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=85&fit=crop"><div class="mc-cap">Talk for Design</div></div>
   <div class="mc"><img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&q=85&fit=crop"><div class="mc-cap">Urban Design Lab</div></div>
 </div>
-<section class="hc-section">
-  <div class="hc-head">
-    <h2 class="s-title blue">Kosovo Creatives</h2>
-    <a href="#" onclick="nav('collaborators');return false;" class="s-link">Full Directory &#8594;</a>
-  </div>
-  <div class="hc-grid"><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=400&q=80&fit=crop&crop=faces" alt="Blerta Hoxha" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Graphic Design</div>
-    <div class="hc-name">Blerta Hoxha</div>
-  </div>
-</a><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&fit=crop&crop=faces" alt="Trim Sokoli" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Brand Design</div>
-    <div class="hc-name">Trim Sokoli</div>
-  </div>
-</a><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop&crop=faces" alt="Arjeta Berisha" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Architecture</div>
-    <div class="hc-name">Arjeta Berisha</div>
-  </div>
-</a><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1463453051546-1b207aa64cca?w=400&q=80&fit=crop&crop=faces" alt="Fisnik Krasniqi" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Photography</div>
-    <div class="hc-name">Fisnik Krasniqi</div>
-  </div>
-</a><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&fit=crop&crop=faces" alt="Elona Kuqi" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Brand Design</div>
-    <div class="hc-name">Elona Kuqi</div>
-  </div>
-</a><a class="hc-card" href="#" onclick="nav('collaborators');return false;">
-  <div class="hc-img"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80&fit=crop&crop=faces" alt="Granit Hyseni" loading="lazy"></div>
-  <div class="hc-info">
-    <div class="hc-disc">Product Design</div>
-    <div class="hc-name">Granit Hyseni</div>
-  </div>
-</a></div>
-</section>
 <section class="impact-sec">
   <div class="impact-s-head"><h2 class="s-title yellow">Impact &amp; Collaborations</h2><a href="#" onclick="nav('impact');return false;" class="s-link white">Full Story &#8594;</a></div>
   <div class="impact-body">
     <div class="impact-left">
       <div class="imp-row">
-        <div class="imp-n"><svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/></svg></div>
+        <div class="imp-n"><svg width="24" height="24" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#F8C65A"/></svg></div>
         <div><div class="imp-row-title">International Partners</div><p>Collaborations with DAE Eindhoven, Porto Design Factory, World Design Organization, iF Design Foundation, and more.</p></div>
       </div>
       <div class="imp-row">
-        <div class="imp-n"><svg width="40" height="20" viewBox="0 0 40 20"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/><polygon points="30,0 40,10 30,20 20,10" fill="#F8C65A"/></svg></div>
-        <div><div class="imp-row-title">Global Design Weeks</div><p>Participating in Milan, Dutch and Dubai Design Week â representing Kosovo on the world stage.</p></div>
+        <div class="imp-n"><svg width="24" height="24" viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#F8C65A"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#F8C65A"/></svg></div>
+        <div><div class="imp-row-title">Global Design Weeks</div><p>Participating in Milan, Dutch and Dubai Design Week — representing Kosovo on the world stage.</p></div>
       </div>
       <div class="imp-row">
-        <div class="imp-n"><svg width="40" height="40" viewBox="0 0 40 40"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/><polygon points="30,0 40,10 30,20 20,10" fill="#F8C65A"/><polygon points="20,20 30,30 20,40 10,30" fill="#F8C65A"/></svg></div>
-        <div><div class="imp-row-title">Education & Mentorship</div><p>Programs empowering emerging designers and architects across Kosovo with skills and global networks.</p></div>
+        <div class="imp-n"><svg width="24" height="24" viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#F8C65A"/></svg></div>
+        <div><div class="imp-row-title">Education &amp; Mentorship</div><p>Programs empowering emerging designers and architects across Kosovo with skills and global networks.</p></div>
       </div>
       <div class="imp-row">
-        <div class="imp-n"><svg width="40" height="40" viewBox="0 0 40 40"><polygon points="10,0 20,10 10,20 0,10" fill="#F8C65A"/><polygon points="30,0 40,10 30,20 20,10" fill="#F8C65A"/><polygon points="10,20 20,30 10,40 0,30" fill="#F8C65A"/><polygon points="30,20 40,30 30,40 20,30" fill="#F8C65A"/></svg></div>
-        <div><div class="imp-row-title">Policy & Urban Development</div><p>Working with government and private sector to integrate design into policymaking and urban strategy.</p></div>
+        <div class="imp-n"><svg width="24" height="24" viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#F8C65A"/></svg></div>
+        <div><div class="imp-row-title">Policy &amp; Urban Development</div><p>Working with government and private sector to integrate design into policymaking and urban strategy.</p></div>
       </div>
     </div>
     <div class="impact-right">
@@ -1102,17 +1106,15 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <div class="collab-row"><span class="collab-name">Dubai Design Week</span><span class="collab-loc">UAE</span></div>
         <div class="collab-row"><span class="collab-name">Kosovo Government</span><span class="collab-loc">Kosovo</span></div>
       </div>
-      <a href="#" onclick="nav('collaborators');return false;" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#F8C65A;text-decoration:none;border-bottom:1px solid rgba(248,198,90,.3);padding-bottom:3px">Community Directory &#8599;</a>
     </div>
   </div>
 </section>
 <section class="events-sec">
   <div class="s-head"><h2 class="s-title blue">Where We Show Up</h2></div>
   <div class="events-grid">
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Milan, Italy</div><div class="ev-name">Milan Design Week</div></div><div><p class="ev-desc">Fuorisalone exhibitions showcasing Kosovo's emerging design talent alongside global practitioners.</p><div class="ev-arr">&#8594;</div></div></div>
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Eindhoven, Netherlands</div><div class="ev-name">Dutch Design Week</div></div><div><p class="ev-desc">The world's largest design event â where DKF connects with the international design community.</p><div class="ev-arr">&#8594;</div></div></div>
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Dubai, UAE</div><div class="ev-name">Dubai Design Week</div></div><div><p class="ev-desc">Cross-cultural design dialogue, representing Kosovo in the MENA design scene.</p><div class="ev-arr">&#8594;</div></div></div>
-    <div class="ev"><div><div class="ev-dot"></div><div class="ev-city">Pristina, Kosovo</div><div class="ev-name">Festival of Design</div></div><div><p class="ev-desc">Kosovo's flagship design festival â DKF's homeground where it all begins every year.</p><div class="ev-arr">&#8594;</div></div></div>
+    <div class="ev"><div><div class="ev-dot"><svg viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z" fill="#003DD6"/></svg></div><div class="ev-city">Milan, Italy</div><div class="ev-name">Milan Design Week</div></div><div><p class="ev-desc">Fuorisalone exhibitions showcasing Kosovo's emerging design talent alongside global practitioners.</p><div class="ev-arr">&#8594;</div></div></div>
+    <div class="ev"><div><div class="ev-dot"><svg viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4" fill="#003DD6"/><rect x="2" y="6" width="16" height="8" rx="4" fill="#003DD6"/></svg></div><div class="ev-city">Eindhoven, Netherlands</div><div class="ev-name">Dutch Design Week</div></div><div><p class="ev-desc">The world's largest design event â where DKF connects with the international design community.</p><div class="ev-arr">&#8594;</div></div></div>
+    <div class="ev"><div><div class="ev-dot"><svg viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5" fill="#003DD6"/></svg></div><div class="ev-city">Dubai, UAE</div><div class="ev-name">Dubai Design Week</div></div><div><p class="ev-desc">Cross-cultural design dialogue, representing Kosovo in the MENA design scene.</p><div class="ev-arr">&#8594;</div></div></div>
   </div>
 </section>
 <section><div class="cta-layout">
@@ -1180,7 +1182,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1211,8 +1213,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1465,7 +1465,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1496,8 +1496,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1505,7 +1503,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <button class="nav-cta" onclick="nav('contact')">Get Involved</button>
   </div>
 </nav><style>
-.proj-index-hero{display:grid;grid-template-columns:3fr 1fr;border-bottom:1px solid #101A30;height:calc(100vh - 60px);min-height:480px}
+.proj-index-hero{display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid #101A30;height:calc(100vh - 60px);min-height:480px}
 .pih-img{overflow:hidden;border-right:1px solid #101A30;position:relative}
 .pih-img img{width:100%;height:100%;object-fit:cover}
 .pih-text{padding:56px 32px;display:flex;flex-direction:column;justify-content:space-between;background:#EDEEE6}
@@ -1627,7 +1625,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1658,7 +1656,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
-    <li><a href="#" onclick="nav('impact');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1838,7 +1835,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -1869,8 +1866,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1878,7 +1873,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <button class="nav-cta" onclick="nav('contact')">Get Involved</button>
   </div>
 </nav><style>
-.ct-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 60px);border-bottom:1px solid #101A30}
+.ct-hero{display:grid;grid-template-columns:1fr 2fr;min-height:calc(100vh - 60px);border-bottom:1px solid #101A30}
 .ct-l{background:#EDEEE6;background-image:linear-gradient(rgba(0,61,214,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,61,214,.07) 1px,transparent 1px);background-size:52px 52px;padding:clamp(44px,6vw,72px) clamp(28px,5vw,56px);display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #101A30;position:relative;overflow:hidden}
 .ct-deco{position:absolute;bottom:-60px;right:-60px;font-size:220px;letter-spacing:-.05em;font-weight:300;color:rgba(0,61,214,.06);pointer-events:none;line-height:1}
 .ct-eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(16,26,48,.38)}
@@ -1908,8 +1903,9 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .ct-topic{padding:14px 0;border-bottom:1px solid rgba(16,26,48,.08);display:flex;align-items:center;gap:12px;cursor:pointer;transition:padding-left .2s}
 .ct-topic:hover{padding-left:6px}
 .ct-topic:first-child{border-top:1px solid rgba(16,26,48,.08)}
-.ct-topic:hover .ct-tdiamond{background:#F8C65A}
-.ct-tdiamond{width:8px;height:8px;background:#003DD6;transform:rotate(45deg);flex-shrink:0;transition:background .2s}
+.ct-topic:hover .ct-tsym svg{fill:#F8C65A}
+.ct-tsym{width:10px;height:10px;flex-shrink:0;transition:fill .2s}
+.ct-tsym svg{width:100%;height:100%;fill:#003DD6;transition:fill .2s}
 .ct-topic-text{font-size:13px;color:#101A30}
 .ct-form-main{padding:64px 64px;background:#EDEEE6}
 .ct-frow{display:grid;grid-template-columns:1fr 1fr;gap:32px}
@@ -1926,12 +1922,15 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .ct-fsel-arr{position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:10px;color:#003DD6;pointer-events:none}
 .ct-fsubmit{background:#003DD6;color:#fff;height:52px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;font-family:"Funnel Display",sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;width:100%;margin-top:12px;transition:background .2s}
 .ct-fsubmit:hover{background:#002fb5}
-.ct-social-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #101A30}
+.ct-social-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #101A30}
 .ct-soc{padding:48px 40px;border-right:1px solid #101A30;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;text-decoration:none;transition:background .25s}
 .ct-soc:last-child{border-right:none}
 .ct-soc:hover{background:#003DD6}
-.ct-soc-icon{width:18px;height:18px;background:#003DD6;transform:rotate(45deg);transition:background .25s}
-.ct-soc:hover .ct-soc-icon{background:#F8C65A}
+.ct-soc-icon{width:22px;height:22px;transition:fill .25s}
+.ct-soc-icon svg{width:100%;height:100%;fill:#003DD6;transition:fill .25s}
+.ct-soc:hover .ct-soc-icon svg{fill:#F8C65A}
+.sym-cross,.sym-clover,.sym-hex{display:inline-block;vertical-align:middle}
+.sym-cross svg,.sym-clover svg,.sym-hex svg{display:block}
 .ct-soc-name{font-size:18px;letter-spacing:-.01em;color:#101A30;transition:color .25s}
 .ct-soc:hover .ct-soc-name{color:#EDEEE6}
 .ct-soc-meta{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,26,48,.4);margin-top:4px;transition:color .25s}
@@ -1970,12 +1969,12 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <div>
       <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(16,26,48,.4);margin-bottom:14px">Topics</div>
       <div class="ct-topics">
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Festival of Design</span></div>
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Academy applications</span></div>
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Institutional partnerships</span></div>
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Sponsorship &amp; funding</span></div>
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Press &amp; media</span></div>
-        <div class="ct-topic"><div class="ct-tdiamond"></div><span class="ct-topic-text">Shop Design order</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z"/></svg></div><span class="ct-topic-text">Festival of Design</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4"/><rect x="2" y="6" width="16" height="8" rx="4"/></svg></div><span class="ct-topic-text">Academy applications</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5"/></svg></div><span class="ct-topic-text">Institutional partnerships</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z"/></svg></div><span class="ct-topic-text">Sponsorship &amp; funding</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4"/><rect x="2" y="6" width="16" height="8" rx="4"/></svg></div><span class="ct-topic-text">Press &amp; media</span></div>
+        <div class="ct-topic"><div class="ct-tsym"><svg viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5"/></svg></div><span class="ct-topic-text">Shop Design order</span></div>
       </div>
     </div>
     <div style="font-size:12px;line-height:1.9;color:rgba(16,26,48,.45)">We respond to all messages within 2 business days.</div>
@@ -2000,10 +1999,9 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </div>
 </div>
 <div class="ct-social-strip">
-  <a href="#" class="ct-soc"><div class="ct-soc-icon"></div><div><div class="ct-soc-name">Instagram</div><div class="ct-soc-meta">@designkosova</div></div><span class="ct-soc-arr">&#8599;</span></a>
-  <a href="#" class="ct-soc"><div class="ct-soc-icon"></div><div><div class="ct-soc-name">LinkedIn</div><div class="ct-soc-meta">Design Kosova</div></div><span class="ct-soc-arr">&#8599;</span></a>
-  <a href="#" class="ct-soc"><div class="ct-soc-icon"></div><div><div class="ct-soc-name">Newsletter</div><div class="ct-soc-meta">Monthly updates</div></div><span class="ct-soc-arr">&#8599;</span></a>
-  <a href="#" class="ct-soc"><div class="ct-soc-icon"></div><div><div class="ct-soc-name">Press Kit</div><div class="ct-soc-meta">Media resources</div></div><span class="ct-soc-arr">&#8599;</span></a>
+  <a href="#" class="ct-soc"><div class="ct-soc-icon"><svg viewBox="0 0 20 20"><path d="M6,0h8v6h6v8h-6v6H6V14H0V6h6z"/></svg></div><div><div class="ct-soc-name">Instagram</div><div class="ct-soc-meta">@designkosova</div></div><span class="ct-soc-arr">&#8599;</span></a>
+  <a href="#" class="ct-soc"><div class="ct-soc-icon"><svg viewBox="0 0 20 20"><rect x="6" y="2" width="8" height="16" rx="4"/><rect x="2" y="6" width="16" height="8" rx="4"/></svg></div><div><div class="ct-soc-name">LinkedIn</div><div class="ct-soc-meta">Design Kosova</div></div><span class="ct-soc-arr">&#8599;</span></a>
+  <a href="#" class="ct-soc"><div class="ct-soc-icon"><svg viewBox="0 0 20 20"><polygon points="10,0 20,5 20,15 10,20 0,15 0,5"/></svg></div><div><div class="ct-soc-name">Newsletter</div><div class="ct-soc-meta">Monthly updates</div></div><span class="ct-soc-arr">&#8599;</span></a>
 </div>
 <!-- FOOTER -->
 <footer>
@@ -2059,7 +2057,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2089,8 +2087,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2306,7 +2302,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2337,8 +2333,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2648,7 +2642,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2679,8 +2673,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2811,7 +2803,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -2842,8 +2834,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2974,7 +2964,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3005,8 +2995,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3137,7 +3125,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3168,8 +3156,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3300,7 +3286,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
@@ -3331,8 +3317,6 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
-    <li><a href="#" onclick="nav('collaborators');return false;">Collaborators</a></li>
-    <li><a href="#" onclick="nav('impact');return false;">Impact</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3463,7 +3447,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2025 Design Kosova · All Rights Reserved</span>
+    <span>&copy; 2026 Design Kosova · All Rights Reserved</span>
     <span>Designed in Pristina, Kosovo</span>
   </div>
 </footer>
