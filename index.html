@@ -851,14 +851,45 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   .about-panel{position:relative!important;inset:unset!important;width:100%!important;padding:32px 20px!important;}
   .about-bg{height:55vw;min-height:200px;}
 
+  /* ABOUT PAGE — story, stats, collage, pillars */
+  .a-story{grid-template-columns:1fr!important;}
+  .a-story-l{border-right:none!important;border-bottom:1px solid #101A30!important;}
+  .a-stats-bar{grid-template-columns:repeat(2,1fr)!important;}
+  .a-pgrid{grid-template-columns:repeat(2,1fr)!important;}
+  .a-collage{grid-template-columns:1fr!important;grid-template-rows:auto!important;}
+  .a-collage .tall{grid-row:auto!important;}
+  .a-pillar{grid-template-columns:40px 1fr!important;}
+
+  /* IMPACT PAGE — numbers, collaborators */
+  .impact-left{padding:40px 20px!important;border-right:none!important;}
+  .impact-right{padding:40px 20px!important;}
+  .imp-numbers{grid-template-columns:repeat(2,1fr)!important;}
+  .imp-collab-grid{grid-template-columns:1fr!important;}
+  .imp-hero-deco{display:none!important;}
+
+  /* PROJECTS INDEX — cards */
+  .pi-cards{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* SHOP PAGE — product grid */
+  .sh-prod-grid{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* SPA OTHER PROJECTS grid */
+  .pp-other-grid{grid-template-columns:repeat(2,1fr)!important;}
+
+  /* Color strip — hide on mobile */
+  .cs{display:none!important;}
+
   /* General padding fixes */
   .section-head,.s-head{padding:32px 20px!important;}
   .a-founders-head,.a-ph,.a-tl-head{padding:32px 20px!important;}
   .proj-head{padding:32px 20px!important;}
   .impact-s-head{padding:32px 20px!important;}
+  .ip-head{padding:32px 20px!important;}
+  .imp-hero-l{padding:40px 20px!important;}
 
   /* Watermarks — hide on mobile */
   .wm,.wm-text{display:none!important;}
+  .imp-hero-l-deco{display:none!important;}
 
   /* Blue rule consistent spacing */
   .hero-rule{margin-bottom:20px;}
@@ -881,6 +912,13 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   .pp-gallery{grid-template-columns:1fr!important;}
   .ip-grid{grid-template-columns:1fr!important;}
   .ct-hero-title{font-size:clamp(32px,10vw,52px)!important;}
+  .a-stats-bar{grid-template-columns:1fr!important;}
+  .a-pgrid{grid-template-columns:1fr!important;}
+  .pi-cards{grid-template-columns:1fr!important;}
+  .imp-numbers{grid-template-columns:1fr!important;}
+  .imp-collab-grid{grid-template-columns:1fr!important;}
+  .sh-prod-grid{grid-template-columns:1fr!important;}
+  .pp-other-grid{grid-template-columns:1fr!important;}
 }
 </style>
 </head>
