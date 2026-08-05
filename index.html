@@ -294,8 +294,8 @@ footer{background:#101A30;color:#EDEEE6}
 /* About hero viewport fit */
 .manifesto { height:calc(100vh - 60px); }
 
-/* Ensure sticky filter bar works in SPA */
-.sh-filter-bar { position:sticky; top:60px; }
+/* Ensure sticky tab bar works in SPA */
+.sh-tab-bar { position:sticky; top:60px; }
 
 
 /* ââââ LOADER ââââ */
@@ -405,7 +405,7 @@ img {
   transition: filter .55s cubic-bezier(.4,0,.2,1);
 }
 /* Protect nav, logos, icons â no grayscale */
-nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !important; }
+nav img, .logo-diamond img, .logo-wrap img, .ft-logo img, .sh-prod-img img, .sh-hero-img img { filter: none !important; }
 
 /* HOVER: darken image so texture layers are visible */
 .hero-img:hover img,
@@ -421,8 +421,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .pp-fullbleed:hover img,
 .pp-gal-cell:hover img,
 .pp-img:hover img,
-.sh-hero-img:hover img,
-.sh-card:hover .sh-prod-img img {
+.sh-card:hover .sh-prod-img img,
+.sh-prod-card:hover .sh-prod-img img {
   filter: grayscale(20%) contrast(1.1) brightness(0.78) saturate(0.5);
 }
 
@@ -1004,6 +1004,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <button class="nav-burger" id="nav-burger" aria-label="Menu" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button><div class="nav-right">
@@ -1016,7 +1017,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
     <nav class="mob-nav-links">
       <a class="mob-nl" onclick="nav('about');toggleMobileMenu()">About</a>
       <a class="mob-nl" onclick="nav('projects');toggleMobileMenu()">Projects</a>
-            <a class="mob-nl" onclick="nav('contact');toggleMobileMenu()">Contact</a>
+            <a class="mob-nl" onclick="nav('shop');toggleMobileMenu()">Shop</a>
+      <a class="mob-nl" onclick="nav('contact');toggleMobileMenu()">Contact</a>
     </nav>
     <div class="mob-menu-foot">
       <a href="#" class="mob-lang">SQ / EN</a>
@@ -1215,7 +1217,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -1251,6 +1254,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1498,7 +1502,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -1534,6 +1539,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1658,7 +1664,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -1694,6 +1701,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1868,7 +1876,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -1904,6 +1913,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2090,7 +2100,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -2125,6 +2136,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2335,7 +2347,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -2370,7 +2383,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   </a>
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
-    <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('projects');return false;">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2389,15 +2403,43 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .sh-title{font-size:clamp(36px,3.8vw,56px);line-height:1;letter-spacing:-.025em;font-weight:300;color:#101A30}
 .sh-title span{color:#003DD6}
 .sh-desc{font-size:13px;line-height:1.8;color:rgba(16,26,48,.6);margin-top:20px}
-.sh-filter-bar{position:sticky;top:60px;z-index:50;background:#EDEEE6;border-bottom:1px solid #101A30;display:flex;align-items:center;overflow-x:auto}
-.sh-filter-btn{flex-shrink:0;height:52px;padding:0 28px;background:transparent;border:none;border-right:1px solid #101A30;font-family:"Funnel Display",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#101A30;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
-.sh-filter-btn:hover{background:rgba(0,61,214,.06)}
-.sh-filter-btn.active{background:#101A30;color:#EDEEE6}
-.sh-filter-count{margin-left:auto;flex-shrink:0;padding:0 28px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,26,48,.4);border-left:1px solid #101A30;height:52px;display:flex;align-items:center;white-space:nowrap}
-.sh-cart-btn{flex-shrink:0;height:52px;padding:0 28px;background:#003DD6;border:none;border-left:1px solid #101A30;font-family:"Funnel Display",sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s}
+
+.sh-tab-bar{display:flex;border-bottom:1px solid #101A30;position:sticky;top:60px;z-index:51;background:#EDEEE6}
+.sh-tab{flex:1;height:56px;display:flex;align-items:center;justify-content:center;gap:10px;background:transparent;border:none;border-right:1px solid #101A30;font-family:"Funnel Display",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(16,26,48,.45);cursor:pointer;transition:all .25s}
+.sh-tab:last-child{border-right:none}
+.sh-tab:hover{color:#101A30;background:rgba(0,61,214,.03)}
+.sh-tab.active{color:#101A30;background:#EDEEE6;box-shadow:inset 0 -3px 0 #003DD6}
+.sh-tab-badge{font-size:9px;background:rgba(16,26,48,.08);padding:2px 8px;border-radius:10px;letter-spacing:.05em;font-weight:500}
+.sh-tab.active .sh-tab-badge{background:rgba(0,61,214,.1);color:#003DD6}
+
+.sh-shop-body{display:grid;grid-template-columns:260px 1fr;min-height:600px;border-bottom:1px solid #101A30}
+
+.sh-sidebar{border-right:1px solid #101A30;padding:32px 28px;overflow-y:auto;position:sticky;top:116px;height:calc(100vh - 116px)}
+.sh-sidebar-section{margin-bottom:32px}
+.sh-sidebar-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#101A30;margin-bottom:16px;font-weight:500}
+.sh-sidebar-opt{display:flex;align-items:center;gap:10px;padding:6px 0;cursor:pointer;font-size:13px;color:rgba(16,26,48,.65);transition:color .2s}
+.sh-sidebar-opt:hover{color:#101A30}
+.sh-sidebar-radio{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(16,26,48,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s}
+.sh-sidebar-radio.checked{border-color:#003DD6}
+.sh-sidebar-radio.checked::after{content:'';width:8px;height:8px;border-radius:50%;background:#003DD6}
+.sh-sidebar-check{width:16px;height:16px;border-radius:3px;border:1.5px solid rgba(16,26,48,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,background .2s}
+.sh-sidebar-check.checked{border-color:#003DD6;background:#003DD6}
+.sh-sidebar-check.checked::after{content:'';width:8px;height:5px;border-left:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.sh-sidebar-count{margin-left:auto;font-size:11px;color:rgba(16,26,48,.3)}
+.sh-sidebar-divider{height:1px;background:rgba(16,26,48,.08);margin:24px 0}
+.sh-clear-filters{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#003DD6;cursor:pointer;padding:8px 0;transition:opacity .2s;border:none;background:none;font-family:inherit}
+.sh-clear-filters:hover{opacity:.7}
+
+.sh-sort-select{width:100%;padding:10px 12px;border:1px solid rgba(16,26,48,.15);border-radius:4px;background:#EDEEE6;font-family:"Funnel Display",sans-serif;font-size:12px;color:#101A30;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23101A30' stroke-width='1.2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+
+.sh-main{background:#EDEEE6}
+.sh-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid rgba(16,26,48,.08)}
+.sh-result-count{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,26,48,.4)}
+.sh-cart-btn{height:40px;padding:0 20px;background:#003DD6;border:none;border-radius:4px;font-family:"Funnel Display",sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s}
 .sh-cart-btn:hover{background:#002fb5}
 .sh-cart-count{background:#F8C65A;color:#101A30;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600}
-.sh-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#101A30;gap:1px;border-bottom:1px solid #101A30;min-height:300px}
+
+.sh-prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#101A30;min-height:300px}
 .sh-prod-card{background:#EDEEE6;display:flex;flex-direction:column;transition:background .25s}
 .sh-prod-card.sh-hidden{display:none}
 .sh-prod-img{aspect-ratio:1;overflow:hidden;position:relative}
@@ -2407,10 +2449,18 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .sh-prod-card:hover .sh-prod-overlay{opacity:1}
 .sh-prod-add{width:100%;background:#EDEEE6;border:none;font-family:"Funnel Display",sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30;padding:10px 14px;cursor:pointer;transition:background .2s}
 .sh-prod-add:hover{background:#fff}
+.sh-prod-badge{position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:2px;font-family:"Funnel Display",sans-serif;z-index:2}
+.sh-badge-byus{background:#003DD6;color:#EDEEE6}
+.sh-badge-brand{background:#EDEEE6;color:#101A30;border:1px solid rgba(16,26,48,.15)}
 .sh-prod-info{padding:18px 22px 22px}
 .sh-prod-maker{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#003DD6;margin-bottom:3px}
 .sh-prod-name{font-size:14px;letter-spacing:-.01em;color:#101A30;margin-bottom:6px}
 .sh-prod-price{font-size:12px;color:rgba(16,26,48,.55)}
+
+.sh-no-results{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;gap:12px;background:#EDEEE6}
+.sh-no-results-icon{font-size:32px;opacity:.25}
+.sh-no-results-txt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(16,26,48,.35)}
+
 .sh-cart-overlay{position:fixed;inset:0;background:rgba(16,26,48,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
 .sh-cart-overlay.open{opacity:1;pointer-events:auto}
 .sh-cart-panel{position:fixed;top:0;right:0;bottom:0;width:400px;background:#EDEEE6;border-left:1px solid #101A30;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);z-index:201}
@@ -2433,15 +2483,45 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
 .sh-ct-val{font-size:20px;letter-spacing:-.02em;color:#101A30}
 .sh-checkout{width:100%;background:#003DD6;border:none;color:#fff;font-family:"Funnel Display",sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;height:50px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 22px;transition:background .2s}
 .sh-checkout:hover{background:#002fb5}
+
 .sh-about-strip{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #101A30;background:#101A30}
 .sh-about-l{padding:72px 56px;border-right:1px solid rgba(237,238,230,.12)}
 .sh-about-r{padding:72px 56px;display:flex;flex-direction:column;justify-content:space-between}
 .sh-about-body{font-size:14px;line-height:2;color:rgba(237,238,230,.65)}
 .sh-about-body p+p{margin-top:16px}
+
+.sh-mob-filter-toggle{display:none}
+
+@media(max-width:1024px){
+  .sh-prod-grid{grid-template-columns:repeat(2,1fr)}
+  .sh-shop-body{grid-template-columns:220px 1fr}
+  .sh-sidebar{padding:24px 20px}
+}
+@media(max-width:768px){
+  .sh-shop-body{grid-template-columns:1fr}
+  .sh-sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;z-index:199;background:#EDEEE6;border-right:1px solid #101A30;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);height:100vh;padding:24px 20px}
+  .sh-sidebar.sh-sidebar-open{transform:translateX(0)}
+  .sh-sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(16,26,48,.35);z-index:198}
+  .sh-sidebar-overlay.sh-sidebar-open{display:block}
+  .sh-mob-filter-toggle{display:flex;align-items:center;gap:8px;height:36px;padding:0 16px;background:transparent;border:1px solid rgba(16,26,48,.2);border-radius:4px;font-family:"Funnel Display",sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#101A30;cursor:pointer}
+  .sh-mob-filter-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:20px;color:#101A30;cursor:pointer}
+  .sh-prod-grid{grid-template-columns:repeat(2,1fr)}
+  .sh-tab{font-size:11px;letter-spacing:.08em;height:48px}
+  .sh-about-strip{grid-template-columns:1fr}
+  .sh-about-l{border-right:none;border-bottom:1px solid rgba(237,238,230,.12)}
+  .sh-cart-panel{width:100%}
+}
+@media(max-width:480px){
+  .sh-prod-grid{grid-template-columns:1fr 1fr}
+  .sh-hero{grid-template-columns:1fr;min-height:unset}
+  .sh-hero-img{border-right:none;border-bottom:1px solid #101A30;height:280px}
+}
 </style>
+
+<!-- HERO -->
 <div class="sh-hero">
   <div class="sh-hero-img">
-    <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=1600&q=90&fit=crop" alt="">
+    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=90&fit=crop" alt="Shop Design">
     <div class="sh-hero-img-ov"></div>
   </div>
   <div class="sh-hero-text">
@@ -2449,183 +2529,127 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
       <a href="#" onclick="nav('projects');return false;" class="sh-back">&#8592; All Projects</a>
       <div class="sh-num">03 / 06</div>
       <h1 class="sh-title">Shop<br><span>Design</span></h1>
-      <p class="sh-desc">Objects, prints, textiles and ceramics â all made by Kosovo's creative community.</p>
+      <p class="sh-desc">Objects, prints, textiles and ceramics &#8212; all made by Kosovo's creative community.</p>
     </div>
   </div>
 </div>
-<div class="sh-filter-bar">
-  <button class="sh-filter-btn active" data-filter="all" onclick="shopFilter(this)">All Items</button>
-<button class="sh-filter-btn " data-filter="mugs" onclick="shopFilter(this)">Mugs</button>
-<button class="sh-filter-btn " data-filter="tshirts" onclick="shopFilter(this)">T-Shirts</button>
-<button class="sh-filter-btn " data-filter="prints" onclick="shopFilter(this)">Prints</button>
-<button class="sh-filter-btn " data-filter="carpets" onclick="shopFilter(this)">Carpets</button>
-<button class="sh-filter-btn " data-filter="ceramics" onclick="shopFilter(this)">Ceramics</button>
-<button class="sh-filter-btn " data-filter="frames" onclick="shopFilter(this)">Frames</button>
-  <span class="sh-filter-count" id="shopItemCount">24 Items</span>
-  <button class="sh-cart-btn" onclick="shopToggleCart()"><span>Cart</span><div class="sh-cart-count" id="shopCartCount">0</div></button>
+
+<!-- BY US / BY BRANDS TABS -->
+<div class="sh-tab-bar">
+  <button class="sh-tab active" data-seller="all" onclick="shopTabSwitch(this)">All Products <span class="sh-tab-badge" id="shopCountAll">32</span></button>
+  <button class="sh-tab" data-seller="byus" onclick="shopTabSwitch(this)">By Us <span class="sh-tab-badge" id="shopCountByUs">16</span></button>
+  <button class="sh-tab" data-seller="brand" onclick="shopTabSwitch(this)">By Brands <span class="sh-tab-badge" id="shopCountBrand">16</span></button>
 </div>
-<div class="sh-prod-grid" id="shopProdGrid">
-<div class="sh-prod-card" data-cat="mugs">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1566319?w=600&q=80&fit=crop" alt="Terracotta Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Terracotta Mug" data-price="18â¬">Add to Cart</button></div>
+
+<!-- SIDEBAR + GRID -->
+<div class="sh-shop-body">
+  <!-- SIDEBAR FILTERS -->
+  <div class="sh-sidebar" id="shopSidebar">
+    <button class="sh-mob-filter-close" onclick="shopToggleSidebar()" style="display:none">&#10005;</button>
+    <div class="sh-sidebar-section">
+      <div class="sh-sidebar-title">Sort By</div>
+      <select class="sh-sort-select" id="shopSort" onchange="shopApplyFilters()">
+        <option value="default">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name-asc">Name: A &#8211; Z</option>
+      </select>
+    </div>
+    <div class="sh-sidebar-divider"></div>
+    <div class="sh-sidebar-section">
+      <div class="sh-sidebar-title">Categories</div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="posters"><div class="sh-sidebar-check"></div><span>Posters</span><span class="sh-sidebar-count" data-count-cat="posters"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="mugs"><div class="sh-sidebar-check"></div><span>Mugs</span><span class="sh-sidebar-count" data-count-cat="mugs"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="art"><div class="sh-sidebar-check"></div><span>Art</span><span class="sh-sidebar-count" data-count-cat="art"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="lighting"><div class="sh-sidebar-check"></div><span>Lighting</span><span class="sh-sidebar-count" data-count-cat="lighting"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="chairs"><div class="sh-sidebar-check"></div><span>Chairs</span><span class="sh-sidebar-count" data-count-cat="chairs"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="tshirts"><div class="sh-sidebar-check"></div><span>T-Shirts</span><span class="sh-sidebar-count" data-count-cat="tshirts"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="ceramics"><div class="sh-sidebar-check"></div><span>Ceramics</span><span class="sh-sidebar-count" data-count-cat="ceramics"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="books"><div class="sh-sidebar-check"></div><span>Books</span><span class="sh-sidebar-count" data-count-cat="books"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="home"><div class="sh-sidebar-check"></div><span>Home Decor</span><span class="sh-sidebar-count" data-count-cat="home"></span></div>
+      <div class="sh-sidebar-opt" onclick="shopToggleCat(this)" data-cat="textiles"><div class="sh-sidebar-check"></div><span>Textiles</span><span class="sh-sidebar-count" data-count-cat="textiles"></span></div>
+    </div>
+    <div class="sh-sidebar-divider"></div>
+    <div class="sh-sidebar-section">
+      <div class="sh-sidebar-title">Price Range</div>
+      <div class="sh-sidebar-opt" onclick="shopTogglePrice(this)" data-price="0-25"><div class="sh-sidebar-radio"></div><span>Under &#8364;25</span></div>
+      <div class="sh-sidebar-opt" onclick="shopTogglePrice(this)" data-price="25-50"><div class="sh-sidebar-radio"></div><span>&#8364;25 &#8211; &#8364;50</span></div>
+      <div class="sh-sidebar-opt" onclick="shopTogglePrice(this)" data-price="50-100"><div class="sh-sidebar-radio"></div><span>&#8364;50 &#8211; &#8364;100</span></div>
+      <div class="sh-sidebar-opt" onclick="shopTogglePrice(this)" data-price="100-250"><div class="sh-sidebar-radio"></div><span>&#8364;100 &#8211; &#8364;250</span></div>
+      <div class="sh-sidebar-opt" onclick="shopTogglePrice(this)" data-price="250+"><div class="sh-sidebar-radio"></div><span>&#8364;250+</span></div>
+    </div>
+    <div class="sh-sidebar-divider"></div>
+    <button class="sh-clear-filters" onclick="shopClearFilters()">Clear All Filters</button>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Terracotta Mug</div><div class="sh-prod-price">18â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="mugs">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1493355?w=600&q=80&fit=crop" alt="Blue Glaze Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Glaze Mug" data-price="22â¬">Add to Cart</button></div>
+  <!-- MAIN PRODUCT AREA -->
+  <div class="sh-main">
+    <div class="sh-topbar">
+      <button class="sh-mob-filter-toggle" onclick="shopToggleSidebar()"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M0 1h14M3 6h8M5 11h4" stroke="#101A30" stroke-width="1.2"/></svg> Filters</button>
+      <span class="sh-result-count" id="shopItemCount">32 Items</span>
+      <button class="sh-cart-btn" onclick="shopToggleCart()"><span>Cart</span><div class="sh-cart-count" id="shopCartCount">0</div></button>
+    </div>
+    <div class="sh-prod-grid" id="shopProdGrid">
+      <!-- BY US -->
+      <div class="sh-prod-card" data-cat="posters" data-seller="byus" data-price-val="48"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80&fit=crop" alt="Diamond Grid Print" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Diamond Grid Print" data-price="&#8364;48">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Diamond Grid Print</div><div class="sh-prod-price">&#8364;48</div></div></div>
+      <div class="sh-prod-card" data-cat="posters" data-seller="byus" data-price-val="38"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80&fit=crop" alt="Festival Poster 2025" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Poster 2025" data-price="&#8364;38">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Poster 2025</div><div class="sh-prod-price">&#8364;38</div></div></div>
+      <div class="sh-prod-card" data-cat="mugs" data-seller="byus" data-price-val="18"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&q=80&fit=crop" alt="Terracotta Mug" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Terracotta Mug" data-price="&#8364;18">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Terracotta Mug</div><div class="sh-prod-price">&#8364;18</div></div></div>
+      <div class="sh-prod-card" data-cat="mugs" data-seller="byus" data-price-val="45"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&q=80&fit=crop" alt="Studio Mug Set" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Studio Mug Set" data-price="&#8364;45">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Studio Mug Set</div><div class="sh-prod-price">&#8364;45</div></div></div>
+      <div class="sh-prod-card" data-cat="tshirts" data-seller="byus" data-price-val="28"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80&fit=crop" alt="Kosovo Grid Tee" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Grid Tee" data-price="&#8364;28">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Kosovo Grid Tee</div><div class="sh-prod-price">&#8364;28</div></div></div>
+      <div class="sh-prod-card" data-cat="tshirts" data-seller="byus" data-price-val="32"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80&fit=crop" alt="Festival Tee 2025" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Tee 2025" data-price="&#8364;32">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Tee 2025</div><div class="sh-prod-price">&#8364;32</div></div></div>
+      <div class="sh-prod-card" data-cat="ceramics" data-seller="byus" data-price-val="65"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80&fit=crop" alt="Vase No. 3" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Vase No. 3" data-price="&#8364;65">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Vase No. 3</div><div class="sh-prod-price">&#8364;65</div></div></div>
+      <div class="sh-prod-card" data-cat="ceramics" data-seller="byus" data-price-val="42"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=80&fit=crop" alt="Speckled Plate" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Speckled Plate" data-price="&#8364;42">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Speckled Plate</div><div class="sh-prod-price">&#8364;42</div></div></div>
+      <div class="sh-prod-card" data-cat="art" data-seller="byus" data-price-val="120"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&q=80&fit=crop" alt="Kosovo Topography" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Topography" data-price="&#8364;120">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Kosovo Topography</div><div class="sh-prod-price">&#8364;120</div></div></div>
+      <div class="sh-prod-card" data-cat="art" data-seller="byus" data-price-val="85"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80&fit=crop" alt="Abstract Series I" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Abstract Series I" data-price="&#8364;85">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Abstract Series I</div><div class="sh-prod-price">&#8364;85</div></div></div>
+      <div class="sh-prod-card" data-cat="books" data-seller="byus" data-price-val="35"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80&fit=crop" alt="Design in Kosovo" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Design in Kosovo" data-price="&#8364;35">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Press</div><div class="sh-prod-name">Design in Kosovo</div><div class="sh-prod-price">&#8364;35</div></div></div>
+      <div class="sh-prod-card" data-cat="books" data-seller="byus" data-price-val="28"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80&fit=crop" alt="Festival Yearbook" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Yearbook" data-price="&#8364;28">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Press</div><div class="sh-prod-name">Festival Yearbook</div><div class="sh-prod-price">&#8364;28</div></div></div>
+      <div class="sh-prod-card" data-cat="textiles" data-seller="byus" data-price-val="220"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80&fit=crop" alt="Geometric Kilim" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Geometric Kilim" data-price="&#8364;220">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Geometric Kilim</div><div class="sh-prod-price">&#8364;220</div></div></div>
+      <div class="sh-prod-card" data-cat="home" data-seller="byus" data-price-val="55"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80&fit=crop" alt="Oak Frame A3" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Oak Frame A3" data-price="&#8364;55">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Oak Frame A3</div><div class="sh-prod-price">&#8364;55</div></div></div>
+      <div class="sh-prod-card" data-cat="home" data-seller="byus" data-price-val="72"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&q=80&fit=crop" alt="Walnut Candle Holder" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Walnut Candle Holder" data-price="&#8364;72">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Walnut Candle Holder</div><div class="sh-prod-price">&#8364;72</div></div></div>
+      <div class="sh-prod-card" data-cat="lighting" data-seller="byus" data-price-val="145"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-byus">By Us</span><img src="https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&q=80&fit=crop" alt="Minimal Desk Lamp" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Minimal Desk Lamp" data-price="&#8364;145">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Minimal Desk Lamp</div><div class="sh-prod-price">&#8364;145</div></div></div>
+      <!-- BY BRANDS -->
+      <div class="sh-prod-card" data-cat="posters" data-seller="brand" data-price-val="55"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1561839561-b13bcfe95249?w=600&q=80&fit=crop" alt="Architecture Study" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Architecture Study" data-price="&#8364;55">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Kushtrim Lita</div><div class="sh-prod-name">Architecture Study</div><div class="sh-prod-price">&#8364;55</div></div></div>
+      <div class="sh-prod-card" data-cat="posters" data-seller="brand" data-price-val="42"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?w=600&q=80&fit=crop" alt="Pristina Nights" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Nights" data-price="&#8364;42">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Pristina Nights</div><div class="sh-prod-price">&#8364;42</div></div></div>
+      <div class="sh-prod-card" data-cat="mugs" data-seller="brand" data-price-val="22"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80&fit=crop" alt="Blue Glaze Mug" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Glaze Mug" data-price="&#8364;22">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Blue Glaze Mug</div><div class="sh-prod-price">&#8364;22</div></div></div>
+      <div class="sh-prod-card" data-cat="mugs" data-seller="brand" data-price-val="16"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=600&q=80&fit=crop" alt="Market Mug" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Market Mug" data-price="&#8364;16">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Market Mug</div><div class="sh-prod-price">&#8364;16</div></div></div>
+      <div class="sh-prod-card" data-cat="art" data-seller="brand" data-price-val="180"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&q=80&fit=crop" alt="Mountain Forms" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Mountain Forms" data-price="&#8364;180">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Nora Bajrami</div><div class="sh-prod-name">Mountain Forms</div><div class="sh-prod-price">&#8364;180</div></div></div>
+      <div class="sh-prod-card" data-cat="art" data-seller="brand" data-price-val="95"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&q=80&fit=crop" alt="Color Field No. 7" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Color Field No. 7" data-price="&#8364;95">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Studio Tok</div><div class="sh-prod-name">Color Field No. 7</div><div class="sh-prod-price">&#8364;95</div></div></div>
+      <div class="sh-prod-card" data-cat="lighting" data-seller="brand" data-price-val="185"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&q=80&fit=crop" alt="Pendant Shade" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pendant Shade" data-price="&#8364;185">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Luan Galica</div><div class="sh-prod-name">Pendant Shade</div><div class="sh-prod-price">&#8364;185</div></div></div>
+      <div class="sh-prod-card" data-cat="lighting" data-seller="brand" data-price-val="260"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=600&q=80&fit=crop" alt="Floor Arc Light" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Floor Arc Light" data-price="&#8364;260">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Urban Lab</div><div class="sh-prod-name">Floor Arc Light</div><div class="sh-prod-price">&#8364;260</div></div></div>
+      <div class="sh-prod-card" data-cat="chairs" data-seller="brand" data-price-val="340"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80&fit=crop" alt="Lounge Chair" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Lounge Chair" data-price="&#8364;340">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Lounge Chair</div><div class="sh-prod-price">&#8364;340</div></div></div>
+      <div class="sh-prod-card" data-cat="chairs" data-seller="brand" data-price-val="275"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop" alt="Studio Stool" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Studio Stool" data-price="&#8364;275">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Drita Veseli</div><div class="sh-prod-name">Studio Stool</div><div class="sh-prod-price">&#8364;275</div></div></div>
+      <div class="sh-prod-card" data-cat="ceramics" data-seller="brand" data-price-val="110"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80&fit=crop" alt="Tall Vessel" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Tall Vessel" data-price="&#8364;110">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Studio Tok</div><div class="sh-prod-name">Tall Vessel</div><div class="sh-prod-price">&#8364;110</div></div></div>
+      <div class="sh-prod-card" data-cat="ceramics" data-seller="brand" data-price-val="88"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=80&fit=crop" alt="Bowl Set" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Bowl Set" data-price="&#8364;88">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Bowl Set</div><div class="sh-prod-price">&#8364;88</div></div></div>
+      <div class="sh-prod-card" data-cat="textiles" data-seller="brand" data-price-val="340"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&q=80&fit=crop" alt="Pristina Pattern Rug" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Pattern Rug" data-price="&#8364;340">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Pristina Pattern Rug</div><div class="sh-prod-price">&#8364;340</div></div></div>
+      <div class="sh-prod-card" data-cat="home" data-seller="brand" data-price-val="40"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fit=crop" alt="Thin Black Frame" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Thin Black Frame" data-price="&#8364;40">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Studio Ton</div><div class="sh-prod-name">Thin Black Frame</div><div class="sh-prod-price">&#8364;40</div></div></div>
+      <div class="sh-prod-card" data-cat="tshirts" data-seller="brand" data-price-val="35"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80&fit=crop" alt="Pristina Map Tee" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Map Tee" data-price="&#8364;35">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Arjeta Morina</div><div class="sh-prod-name">Pristina Map Tee</div><div class="sh-prod-price">&#8364;35</div></div></div>
+      <div class="sh-prod-card" data-cat="books" data-seller="brand" data-price-val="24"><div class="sh-prod-img"><span class="sh-prod-badge sh-badge-brand">Brand</span><img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=600&q=80&fit=crop" alt="Balkan Typography" loading="lazy"><div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Balkan Typography" data-price="&#8364;24">Add to Cart</button></div></div><div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Balkan Typography</div><div class="sh-prod-price">&#8364;24</div></div></div>
+      <div class="sh-no-results" id="shopNoResults" style="display:none"><div class="sh-no-results-icon">&#9671;</div><div class="sh-no-results-txt">No products match your filters</div><button class="sh-clear-filters" onclick="shopClearFilters()">Clear Filters</button></div>
+    </div>
   </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Blue Glaze Mug</div><div class="sh-prod-price">22â¬</div></div>
 </div>
-<div class="sh-prod-card" data-cat="mugs">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1793958?w=600&q=80&fit=crop" alt="Market Mug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Market Mug" data-price="16â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Market Mug</div><div class="sh-prod-price">16â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="mugs">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1533873?w=600&q=80&fit=crop" alt="Studio Mug Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Studio Mug Set" data-price="45â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Collective</div><div class="sh-prod-name">Studio Mug Set</div><div class="sh-prod-price">45â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="tshirts">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1536619?w=600&q=80&fit=crop" alt="Kosovo Grid Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Grid Tee" data-price="28â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Luan Galica</div><div class="sh-prod-name">Kosovo Grid Tee</div><div class="sh-prod-price">28â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="tshirts">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1483538?w=600&q=80&fit=crop" alt="Festival Tee 2023" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Tee 2023" data-price="32â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Tee 2023</div><div class="sh-prod-price">32â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="tshirts">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1536620?w=600&q=80&fit=crop" alt="Minimal Type Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Minimal Type Tee" data-price="28â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arjeta Morina</div><div class="sh-prod-name">Minimal Type Tee</div><div class="sh-prod-price">28â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="tshirts">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1581092921461?w=600&q=80&fit=crop" alt="Pristina Map Tee" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Map Tee" data-price="35â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Urban Lab</div><div class="sh-prod-name">Pristina Map Tee</div><div class="sh-prod-price">35â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="prints">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1212764?w=600&q=80&fit=crop" alt="Diamond Grid Print" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Diamond Grid Print" data-price="48â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Diamond Grid Print</div><div class="sh-prod-price">48â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="prints">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1423807?w=600&q=80&fit=crop" alt="Kosovo Topography" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Kosovo Topography" data-price="55â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Kosovo Topography</div><div class="sh-prod-price">55â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="prints">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1366396?w=600&q=80&fit=crop" alt="Festival Poster 2023" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Festival Poster 2023" data-price="38â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Studio</div><div class="sh-prod-name">Festival Poster 2023</div><div class="sh-prod-price">38â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="prints">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1545004?w=600&q=80&fit=crop" alt="Architecture Study" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Architecture Study" data-price="65â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Kushtrim Lita</div><div class="sh-prod-name">Architecture Study</div><div class="sh-prod-price">65â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="carpets">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1549778?w=600&q=80&fit=crop" alt="Geometric Kilim" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Geometric Kilim" data-price="220â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Drita Veseli</div><div class="sh-prod-name">Geometric Kilim</div><div class="sh-prod-price">220â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="carpets">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1200980?w=600&q=80&fit=crop" alt="Pristina Pattern Rug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Pristina Pattern Rug" data-price="340â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Pristina Pattern Rug</div><div class="sh-prod-price">340â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="carpets">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1577893?w=600&q=80&fit=crop" alt="Blue Diamond Rug" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Blue Diamond Rug" data-price="280â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Nora Bajrami</div><div class="sh-prod-name">Blue Diamond Rug</div><div class="sh-prod-price">280â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="carpets">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1444032?w=600&q=80&fit=crop" alt="Natural Wool Runner" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Natural Wool Runner" data-price="195â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Artizana KS</div><div class="sh-prod-name">Natural Wool Runner</div><div class="sh-prod-price">195â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="ceramics">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1493356?w=600&q=80&fit=crop" alt="Vase No. 3" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Vase No. 3" data-price="65â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Blerta Hoxha</div><div class="sh-prod-name">Vase No. 3</div><div class="sh-prod-price">65â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="ceramics">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1566320?w=600&q=80&fit=crop" alt="Bowl Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Bowl Set" data-price="88â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Arta Krasniqi</div><div class="sh-prod-name">Bowl Set</div><div class="sh-prod-price">88â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="ceramics">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1212765?w=600&q=80&fit=crop" alt="Tall Vessel" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Tall Vessel" data-price="110â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Tok</div><div class="sh-prod-name">Tall Vessel</div><div class="sh-prod-price">110â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="ceramics">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1533874?w=600&q=80&fit=crop" alt="Speckled Plate" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Speckled Plate" data-price="42â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Fisnik Berisha</div><div class="sh-prod-name">Speckled Plate</div><div class="sh-prod-price">42â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="frames">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1544034?w=600&q=80&fit=crop" alt="Oak Frame A3" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Oak Frame A3" data-price="55â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Oak Frame A3</div><div class="sh-prod-price">55â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="frames">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1545005?w=600&q=80&fit=crop" alt="Walnut Frame A2" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Walnut Frame A2" data-price="85â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">DKF Editions</div><div class="sh-prod-name">Walnut Frame A2</div><div class="sh-prod-price">85â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="frames">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1546020?w=600&q=80&fit=crop" alt="Thin Black Frame" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Thin Black Frame" data-price="40â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Studio Ton</div><div class="sh-prod-name">Thin Black Frame</div><div class="sh-prod-price">40â¬</div></div>
-</div>
-<div class="sh-prod-card" data-cat="frames">
-  <div class="sh-prod-img"><img src="https://images.unsplash.com/photo-1547001?w=600&q=80&fit=crop" alt="Arch Frame Set" loading="lazy">
-    <div class="sh-prod-overlay"><button class="sh-prod-add" onclick="shopAddToCart(this)" data-name="Arch Frame Set" data-price="72â¬">Add to Cart</button></div>
-  </div>
-  <div class="sh-prod-info"><div class="sh-prod-maker">Gent Shehu</div><div class="sh-prod-name">Arch Frame Set</div><div class="sh-prod-price">72â¬</div></div>
-</div>
-</div>
+
+<div class="sh-sidebar-overlay" id="shopSidebarOverlay" onclick="shopToggleSidebar()"></div>
+
+<!-- ABOUT STRIP -->
 <div class="sh-about-strip">
   <div class="sh-about-l"><h2 class="s-title yellow">Made in Kosovo,<br>Designed to Last.</h2></div>
   <div class="sh-about-r">
-    <div class="sh-about-body"><p>Shop Design is our curated marketplace for Kosovo-designed objects â a direct economic channel connecting the country's most talented makers with local and international audiences.</p><p>Every product is independently made, ethically produced, and carries the context of Kosovo's creative culture.</p></div>
+    <div class="sh-about-body"><p>Shop Design is our curated marketplace for Kosovo-designed objects &#8212; a direct economic channel connecting the country's most talented makers with local and international audiences.</p><p>"By Us" products are made and sold directly by Design Kosova Foundation. "By Brands" items are sold by independent creators through our platform &#8212; we take a small fee to sustain the ecosystem.</p></div>
     <a href="#" onclick="nav('contact');return false;" class="s-link white" style="align-self:flex-start">Apply as a Maker &#8594;</a>
   </div>
 </div>
+
+<!-- CART OVERLAY -->
 <div class="sh-cart-overlay" id="shopCartOverlay" onclick="shopToggleCart()"></div>
 <div class="sh-cart-panel" id="shopCartPanel">
   <div class="sh-cart-head"><div class="sh-cart-title">Your Cart</div><button class="sh-cart-close" onclick="shopToggleCart()">&#10005;</button></div>
   <div class="sh-cart-items" id="shopCartItems">
     <div class="sh-cart-empty" id="shopCartEmpty"><div class="sh-cart-empty-icon">&#9671;</div><div class="sh-cart-empty-txt">Your cart is empty</div></div>
   </div>
-  <div class="sh-cart-foot"><div class="sh-cart-total"><span class="sh-ct-label">Total</span><span class="sh-ct-val" id="shopCartTotal">â¬0</span></div>
+  <div class="sh-cart-foot"><div class="sh-cart-total"><span class="sh-ct-label">Total</span><span class="sh-ct-val" id="shopCartTotal">&#8364;0</span></div>
   <button class="sh-checkout"><span>Checkout</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.2"/></svg></button></div>
 </div>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
@@ -2675,7 +2699,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -2711,6 +2736,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2836,7 +2862,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -2872,6 +2899,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -2997,7 +3025,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -3033,6 +3062,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3158,7 +3188,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -3194,6 +3225,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3319,7 +3351,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -3355,6 +3388,7 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
   <ul class="nav-links">
     <li><a href="#" onclick="nav('about');return false;">About</a></li>
     <li><a href="#" onclick="nav('projects');return false;" style="border-bottom:1px solid #101A30;padding-bottom:2px">Projects</a></li>
+    <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
     <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -3480,7 +3514,8 @@ nav img, .logo-diamond img, .logo-wrap img, .ft-logo img { filter: none !importa
         <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
+        <li><a href="#" onclick="nav('shop');return false;">Shop</a></li>
+    <li><a href="#" onclick="nav('contact');return false;">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -3652,27 +3687,144 @@ function _initHome() {
   resetTimer();
 }
 
-/* ââ SHOP FILTERS ââ */
-function shopFilter(btn) {
-  document.querySelectorAll('.sh-filter-btn').forEach(b=>b.classList.remove('active'));
+/* -- SHOP FILTERS & TABS -- */
+var _shopActiveSeller = 'all';
+var _shopActiveCats = [];
+var _shopActivePrice = '';
+
+function shopTabSwitch(btn) {
+  document.querySelectorAll('.sh-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  const filter = btn.dataset.filter;
-  let visible = 0;
-  document.querySelectorAll('.sh-prod-card').forEach(card=>{
-    const show = filter==='all' || card.dataset.cat===filter;
+  _shopActiveSeller = btn.dataset.seller;
+  shopApplyFilters();
+}
+
+function shopToggleCat(el) {
+  var check = el.querySelector('.sh-sidebar-check');
+  check.classList.toggle('checked');
+  var cat = el.dataset.cat;
+  var idx = _shopActiveCats.indexOf(cat);
+  if (idx > -1) _shopActiveCats.splice(idx, 1);
+  else _shopActiveCats.push(cat);
+  shopApplyFilters();
+}
+
+function shopTogglePrice(el) {
+  var radios = document.querySelectorAll('.sh-sidebar-opt[data-price] .sh-sidebar-radio');
+  var clickedRadio = el.querySelector('.sh-sidebar-radio');
+  var wasChecked = clickedRadio.classList.contains('checked');
+  radios.forEach(function(r) { r.classList.remove('checked'); });
+  if (!wasChecked) {
+    clickedRadio.classList.add('checked');
+    _shopActivePrice = el.dataset.price;
+  } else {
+    _shopActivePrice = '';
+  }
+  shopApplyFilters();
+}
+
+function shopClearFilters() {
+  _shopActiveCats = [];
+  _shopActivePrice = '';
+  document.querySelectorAll('.sh-sidebar-check').forEach(function(c) { c.classList.remove('checked'); });
+  document.querySelectorAll('.sh-sidebar-radio').forEach(function(r) { r.classList.remove('checked'); });
+  document.getElementById('shopSort').value = 'default';
+  shopApplyFilters();
+}
+
+function shopToggleSidebar() {
+  var sb = document.getElementById('shopSidebar');
+  var ov = document.getElementById('shopSidebarOverlay');
+  sb.classList.toggle('sh-sidebar-open');
+  ov.classList.toggle('sh-sidebar-open');
+}
+
+function shopApplyFilters() {
+  var cards = Array.from(document.querySelectorAll('#shopProdGrid .sh-prod-card'));
+  var visible = 0;
+
+  cards.forEach(function(card) {
+    var matchSeller = _shopActiveSeller === 'all' || card.dataset.seller === _shopActiveSeller;
+    var matchCat = _shopActiveCats.length === 0 || _shopActiveCats.indexOf(card.dataset.cat) > -1;
+    var price = parseFloat(card.dataset.priceVal) || 0;
+    var matchPrice = true;
+    if (_shopActivePrice) {
+      if (_shopActivePrice === '0-25') matchPrice = price < 25;
+      else if (_shopActivePrice === '25-50') matchPrice = price >= 25 && price < 50;
+      else if (_shopActivePrice === '50-100') matchPrice = price >= 50 && price < 100;
+      else if (_shopActivePrice === '100-250') matchPrice = price >= 100 && price < 250;
+      else if (_shopActivePrice === '250+') matchPrice = price >= 250;
+    }
+    var show = matchSeller && matchCat && matchPrice;
     card.classList.toggle('sh-hidden', !show);
-    if(show) visible++;
+    if (show) visible++;
   });
-  const el = document.getElementById('shopItemCount');
-  if(el) el.textContent = visible + ' Items';
+
+  var sortVal = document.getElementById('shopSort').value;
+  var grid = document.getElementById('shopProdGrid');
+  var noResults = document.getElementById('shopNoResults');
+  var visibleCards = cards.filter(function(c) { return !c.classList.contains('sh-hidden'); });
+
+  if (sortVal === 'price-asc') visibleCards.sort(function(a, b) { return (parseFloat(a.dataset.priceVal)||0) - (parseFloat(b.dataset.priceVal)||0); });
+  else if (sortVal === 'price-desc') visibleCards.sort(function(a, b) { return (parseFloat(b.dataset.priceVal)||0) - (parseFloat(a.dataset.priceVal)||0); });
+  else if (sortVal === 'name-asc') visibleCards.sort(function(a, b) { return (a.querySelector('.sh-prod-name').textContent).localeCompare(b.querySelector('.sh-prod-name').textContent); });
+
+  visibleCards.forEach(function(c) { grid.appendChild(c); });
+  if (noResults) grid.appendChild(noResults);
+
+  var el = document.getElementById('shopItemCount');
+  if (el) el.textContent = visible + ' Items';
+  if (noResults) noResults.style.display = visible === 0 ? 'flex' : 'none';
+
+  var totalAll = 0, totalByUs = 0, totalBrand = 0;
+  cards.forEach(function(c) {
+    var matchCat2 = _shopActiveCats.length === 0 || _shopActiveCats.indexOf(c.dataset.cat) > -1;
+    var p2 = parseFloat(c.dataset.priceVal) || 0;
+    var matchPrice2 = true;
+    if (_shopActivePrice) {
+      if (_shopActivePrice === '0-25') matchPrice2 = p2 < 25;
+      else if (_shopActivePrice === '25-50') matchPrice2 = p2 >= 25 && p2 < 50;
+      else if (_shopActivePrice === '50-100') matchPrice2 = p2 >= 50 && p2 < 100;
+      else if (_shopActivePrice === '100-250') matchPrice2 = p2 >= 100 && p2 < 250;
+      else if (_shopActivePrice === '250+') matchPrice2 = p2 >= 250;
+    }
+    if (matchCat2 && matchPrice2) {
+      totalAll++;
+      if (c.dataset.seller === 'byus') totalByUs++;
+      if (c.dataset.seller === 'brand') totalBrand++;
+    }
+  });
+  var ca = document.getElementById('shopCountAll');
+  var cb = document.getElementById('shopCountByUs');
+  var cc = document.getElementById('shopCountBrand');
+  if (ca) ca.textContent = totalAll;
+  if (cb) cb.textContent = totalByUs;
+  if (cc) cc.textContent = totalBrand;
+
+  document.querySelectorAll('[data-count-cat]').forEach(function(el) {
+    var cat = el.dataset.countCat;
+    var count = cards.filter(function(c) {
+      var ms = _shopActiveSeller === 'all' || c.dataset.seller === _shopActiveSeller;
+      return ms && c.dataset.cat === cat;
+    }).length;
+    el.textContent = count;
+  });
 }
 
 function _initShop() {
-  // re-sync cart count in case we navigated away and back
+  _shopActiveSeller = 'all';
+  _shopActiveCats = [];
+  _shopActivePrice = '';
+  document.querySelectorAll('.sh-tab').forEach(function(t, i) { t.classList.toggle('active', i === 0); });
+  document.querySelectorAll('.sh-sidebar-check').forEach(function(c) { c.classList.remove('checked'); });
+  document.querySelectorAll('.sh-sidebar-radio').forEach(function(r) { r.classList.remove('checked'); });
+  var sortEl = document.getElementById('shopSort');
+  if (sortEl) sortEl.value = 'default';
+  shopApplyFilters();
   _updateShopCart();
 }
 
-/* ââ SHOP CART ââ */
+/* -- SHOP CART -- */
 function shopAddToCart(btn) {
   _shopCart.push({name:btn.dataset.name, price:btn.dataset.price});
   _updateShopCart();
@@ -3683,38 +3835,37 @@ function shopRemoveFromCart(i) {
   _updateShopCart();
 }
 function _updateShopCart() {
-  const countEl = document.getElementById('shopCartCount');
-  const emptyEl = document.getElementById('shopCartEmpty');
-  const itemsEl = document.getElementById('shopCartItems');
-  const totalEl = document.getElementById('shopCartTotal');
+  var countEl = document.getElementById('shopCartCount');
+  var emptyEl = document.getElementById('shopCartEmpty');
+  var itemsEl = document.getElementById('shopCartItems');
+  var totalEl = document.getElementById('shopCartTotal');
   if(!countEl) return;
   countEl.textContent = _shopCart.length;
-  const total = _shopCart.reduce((s,it)=>s+parseFloat(it.price.replace('â¬','')),0);
-
-  if(totalEl) totalEl.textContent = 'â¬'+total.toFixed(0);
+  var total = _shopCart.reduce(function(s,it){ return s + parseFloat(it.price.replace(/[^0-9.]/g,'')); },0);
+  if(totalEl) totalEl.textContent = '\u20ac'+total.toFixed(0);
   if(!itemsEl) return;
-  Array.from(itemsEl.querySelectorAll('.sh-cart-item')).forEach(el=>el.remove());
+  Array.from(itemsEl.querySelectorAll('.sh-cart-item')).forEach(function(el){el.remove();});
   if(_shopCart.length===0){
     if(emptyEl) emptyEl.style.display='flex';
   } else {
     if(emptyEl) emptyEl.style.display='none';
-    _shopCart.forEach((item,i)=>{
-      const div=document.createElement('div');
+    _shopCart.forEach(function(item,i){
+      var div=document.createElement('div');
       div.className='sh-cart-item';
-      div.innerHTML=`<div><div class="sh-ci-name">${item.name}</div><div class="sh-ci-price">${item.price}</div></div><button class="sh-ci-remove" onclick="shopRemoveFromCart(${i})">&#x2715;</button>`;
+      div.innerHTML='<div><div class="sh-ci-name">'+item.name+'</div><div class="sh-ci-price">'+item.price+'</div></div><button class="sh-ci-remove" onclick="shopRemoveFromCart('+i+')">\u2715</button>';
       itemsEl.appendChild(div);
     });
   }
 }
 function shopOpenCart(){
-  const p=document.getElementById('shopCartPanel');
-  const o=document.getElementById('shopCartOverlay');
+  var p=document.getElementById('shopCartPanel');
+  var o=document.getElementById('shopCartOverlay');
   if(p)p.classList.add('open');
   if(o)o.classList.add('open');
 }
 function shopToggleCart(){
-  const p=document.getElementById('shopCartPanel');
-  const o=document.getElementById('shopCartOverlay');
+  var p=document.getElementById('shopCartPanel');
+  var o=document.getElementById('shopCartOverlay');
   if(p)p.classList.toggle('open');
   if(o)o.classList.toggle('open');
 }
