@@ -2,7 +2,7 @@
    1. Full-bleed blue: the message types itself. DESIGN / IS NOT DECORATION. → IS PROGRESS. → IS CULTURE. → IS IDENTITY. → KOSOVA
    2. The blue contracts into the 540×334 wordmark and the editorial hero appears around it.
    3. E I G O O A jump out into the six initiative symbols; D S N / K S V close up, the box squares to 334 and turns 45° into the DSN KSV badge.
-   Plays once per visit; Replay runs it again, Skip or a click jumps to the end. */
+   Plays once per visit; Skip or a click jumps to the end. */
 const Hero=(()=>{
   const RATIO=334/539.47;
   const M=.105, CAP=.317, TOP1=.135, TOP2=.548;     // margins / cap height / line tops, measured from the logo artwork
@@ -47,8 +47,9 @@ const Hero=(()=>{
   async function erase(line,keep,id,ms=26){const tn=line.firstChild;while(tn.data.length>keep){tn.data=tn.data.slice(0,-1);await wait(ms,id)}}
   function setLine(line,text){line.textContent="";line.append(document.createTextNode(text),caretEl())}
 
+  const chrome=(intro,notop)=>{document.body.classList.toggle("in-intro",intro);document.body.classList.toggle("notop",notop)};
   async function intro(id){
-    el.intro.hidden=false;el.intro.style.clipPath="inset(0)";el.introType.style.opacity=1;
+    chrome(true,true);el.intro.hidden=false;el.intro.style.clipPath="inset(0)";el.introType.style.opacity=1;
     setLine(el.t1,"");el.t2.textContent="";
     await wait(500,id);
     await type(el.t1,"DESIGN",id,90);
@@ -67,12 +68,13 @@ const Hero=(()=>{
     const h=el.intro.getBoundingClientRect(),b=el.box.getBoundingClientRect();
     const to=`inset(${b.top-h.top}px ${h.right-b.right}px ${h.bottom-b.bottom}px ${b.left-h.left}px)`;
     anim(el.introType,[{opacity:1},{opacity:0}],{duration:380});
+    chrome(false,true);   // header leaves the blue and moves up as it contracts
     el.box.style.opacity=1;
     await anim(el.intro,[{clipPath:"inset(0px 0px 0px 0px)"},{clipPath:to}],{duration:1100,easing:EASE});
     el.intro.hidden=true;
   }
   async function play(id,withIntro){
-    done=false;el.replay.classList.remove("show");
+    done=false;
     el.box.querySelectorAll(".ch").forEach(n=>n.remove());KEYS.forEach((k,i)=>lit(i,false));
     geom();el.strike.style.display="none";
     const lines=[spawn("DESIGN",0),spawn("KOSOVA",1)];
@@ -100,7 +102,8 @@ const Hero=(()=>{
     await anim(el.badge,[{transform:"translate(-50%,-50%) rotate(45deg)"},{transform:"translate(-50%,-50%) rotate(0deg)"}],{duration:950,easing:"cubic-bezier(.7,0,.2,1)"});
     await wait(900,id);
     caption("From Prishtina, to the world.");
-    done=true;el.replay.classList.add("show");
+    chrome(false,false);  // only now does the top bar come in
+    done=true;
     try{sessionStorage.setItem("dk-intro","1")}catch(e){}
   }
   // stand the badge artwork upright over the box's final square and read where it draws
@@ -142,11 +145,11 @@ const Hero=(()=>{
   function finish(){
     run++;document.querySelectorAll(".fly").forEach(n=>n.remove());
     [el.box,el.intro,el.introType,el.badge].forEach(n=>n.getAnimations({subtree:true}).forEach(a=>a.cancel()));
-    el.intro.hidden=true;reveal(true);
+    el.intro.hidden=true;reveal(true);chrome(false,false);
     geom();el.box.style.opacity=0;el.badge.style.opacity=1;
     KEYS.forEach((k,i)=>lit(i));
     const s=el.cap.firstElementChild;s.textContent="From Prishtina, to the world.";s.classList.remove("out");
-    done=true;el.replay.classList.add("show");
+    done=true;
     try{sessionStorage.setItem("dk-intro","1")}catch(e){}
   }
   let rz;
@@ -154,17 +157,17 @@ const Hero=(()=>{
   return{
     async start(){
       const $=id=>document.getElementById(id);
-      el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),cap:$("cap"),strike:$("strike"),replay:$("replay"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
+      el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),cap:$("cap"),strike:$("strike"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
       let seen=false;try{seen=sessionStorage.getItem("dk-intro")==="1"}catch(e){}
-      if(!reduce&&!seen)reveal(false);else el.intro.hidden=true;
+      if(!reduce&&!seen){reveal(false);chrome(true,true)}else el.intro.hidden=true;
       el.intro.onclick=()=>finish();
-      el.stage.onclick=e=>{if(e.target===el.replay||done){const id=++run;play(id,true).catch(()=>{})}else finish()};
+      el.stage.onclick=()=>{if(!done)finish()};
       addEventListener("resize",onResize);
       try{await document.fonts.load('400 100px "Unica One"')}catch(e){}
       if(!el.stage.isConnected)return;
       if(reduce){finish();return}
       const id=++run;play(id,!seen).catch(()=>{});
     },
-    stop(){run++;removeEventListener("resize",onResize);document.querySelectorAll(".fly").forEach(n=>n.remove())}
+    stop(){run++;chrome(false,false);removeEventListener("resize",onResize);document.querySelectorAll(".fly").forEach(n=>n.remove())}
   };
 })();

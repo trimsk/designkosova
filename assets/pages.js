@@ -46,7 +46,6 @@ P.home=()=>`
   <div class="hero-grid">
   <div class="stage paper-grid" id="stage" aria-label="Design Kosova: design is not decoration. It is progress, culture, together, Kosova.">
     <span class="stage-meta label">DSN KSV · Est. 2016</span>
-    <button class="replay label" id="replay">↻ Replay</button>
     <div class="box" id="box"><div class="strike" id="strike"></div></div>
     <svg class="badge" id="badge" viewBox="0 0 473 473" aria-hidden="true">${DIAMOND}</svg>
     <p class="caption" id="cap"><span></span></p>

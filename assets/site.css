@@ -53,8 +53,6 @@ button:disabled{opacity:.4;cursor:default}
 .caption{position:absolute;left:24px;right:24px;bottom:34px;text-align:center;font-size:clamp(15px,1.35vw,19px);font-weight:400;height:1.6em}
 .caption span{display:inline-block;transition:opacity .45s,transform .6s var(--out)}
 .caption span.out{opacity:0;transform:translateY(8px)}
-.replay{position:absolute;right:20px;top:18px;opacity:0;transition:opacity .4s;color:var(--ink-2)}
-.replay.show{opacity:1}.replay:hover{color:var(--blue)}
 .stage-meta{position:absolute;left:20px;top:18px;color:var(--ink-2)}
 .hero-copy{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:48px var(--gut) 32px clamp(24px,3vw,48px)}
 .hero h1{font-weight:500;font-size:clamp(38px,4vw,64px);line-height:1.04;letter-spacing:-.04em;margin:18px 0 22px}
@@ -304,7 +302,7 @@ select{font:inherit;font-size:14px;height:36px;border:1px solid var(--rule-soft)
 .intro .tl{min-height:.92em;white-space:nowrap}
 .intro .caret{display:inline-block;width:.06em;height:.74em;background:var(--paper);margin-left:.05em;vertical-align:-.02em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.intro-meta{position:absolute;left:clamp(24px,6vw,96px);top:26px;opacity:.75}
+.intro-meta{position:absolute;left:clamp(24px,6vw,96px);top:calc(69px + 28px);opacity:.75}  /* sits below the header row that shares the blue */
 .intro-skip{position:absolute;right:clamp(24px,6vw,96px);bottom:26px;color:var(--paper);opacity:.75}
 .intro-skip:hover{opacity:1}
 .hero.pre .hero-copy>*>*,.hero.pre .idx li,.hero.pre .stage-meta{opacity:0;transform:translateY(14px)}
@@ -315,3 +313,19 @@ select{font:inherit;font-size:14px;height:36px;border:1px solid var(--rule-soft)
 svg.k{color:var(--acc)!important}
 .fly svg.k{color:inherit!important}  /* flying symbols take the animated colour */
 .totop{width:46px;height:46px;right:16px;bottom:16px}
+
+/* header joins the intro: cream on blue, slightly lowered; top bar waits until the hero is done */
+.topbar{height:34px;overflow:hidden;transition:height .7s var(--out),border-color .7s}
+body.notop .topbar{height:0;border-color:transparent}
+.header,.header .wrap{transition:background .7s var(--out),border-color .7s,transform 1s var(--out)}
+.nav a,.lang,.lang button,.btn,.burger i{transition:color .6s,background .6s,border-color .6s}
+.intro{top:-69px}
+body.in-intro .header{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+body.in-intro .nav a,body.in-intro .lang,body.in-intro .lang button{color:var(--paper)}
+body.in-intro .nav a::after{background:var(--paper)}
+body.in-intro .hdr-r .btn{border-color:var(--paper);color:var(--paper)}
+body.in-intro .burger i{background:var(--paper)}
+@media (max-width:900px){.intro{height:100svh}}
+
+/* hero grid counts out from the divider on the right, so a line always meets it */
+.stage.paper-grid{background-position:right 0 top 0,right 0 top 0}
