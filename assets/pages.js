@@ -48,12 +48,11 @@ P.home=()=>`
   <div class="stage paper-grid" id="stage" aria-label="Design Kosova: design is not decoration. It is progress, culture, together, Kosova.">
     <div class="box" id="box"><div class="strike" id="strike"></div></div>
     <svg class="badge" id="badge" viewBox="0 0 473 473" aria-hidden="true">${DIAMOND}</svg>
-    <p class="caption" id="cap"><span></span></p>
   </div>
   <div class="hero-copy">
     <div>
       <p class="label blue">Pristina · Kosovo</p>
-      <h1>From Prishtina, <em>to the World</em></h1>
+      <h1>From Prishtina,<br><em>to the World</em></h1>
       <p class="lede">A platform dedicated to fostering creativity and cultural transformation through design.</p>
       <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap"><a class="btn solid" href="#/projects">Explore Projects ${arrow}</a><a class="btn" href="#/about">About DKF</a></div>
     </div>

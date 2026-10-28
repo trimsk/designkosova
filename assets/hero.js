@@ -37,7 +37,6 @@ const Hero=(()=>{
     return layout(text,line,G.W).map(p=>{const s=document.createElement("span");s.className="ch";s.textContent=p.c;
       Object.assign(s.style,{left:p.x+"px",top:p.y+"px",fontSize:p.f+"px"});el.box.appendChild(s);return s});
   }
-  const caption=t=>{const s=el.cap.firstElementChild;s.classList.add("out");setTimeout(()=>{s.textContent=t;s.classList.remove("out")},260)};
   const lit=(i,on=true)=>document.querySelector(`.idx .slot[data-i="${i}"]`)?.classList.toggle("lit",on);
   const reveal=on=>{el.hero.classList.toggle("pre",!on);if(on)[...el.hero.querySelectorAll(".hero-copy>*>*,.idx li")].forEach((n,i)=>n.style.transitionDelay=i*45+"ms")};
 
@@ -79,7 +78,7 @@ const Hero=(()=>{
     geom();el.strike.style.display="none";
     const lines=[spawn("DESIGN",0),spawn("KOSOVA",1)];
     if(withIntro){reveal(false);el.box.style.opacity=0;await intro(id);await contract(id)}
-    reveal(true);caption("Design Kosova. From Prishtina, to the world.");
+    reveal(true);
     await wait(withIntro?900:600,id);
     // vowels jump out into the initiative symbols
     DROP.forEach(([ln,ix],n)=>setTimeout(()=>id===run&&fly(lines[ln][ix],n),n*110));
@@ -94,14 +93,11 @@ const Hero=(()=>{
         x=p.u-(g.actualBoundingBoxRight-g.actualBoundingBoxLeft)/2;y=p.v-(m.base-m.cap/2)}   // centre the ink, not the advance
       anim(s,[{left:s.style.left,top:s.style.top,fontSize:f0+"px"},{left:x+"px",top:y+"px",fontSize:f+"px"}],{duration:900,easing:EASE})})});
     await anim(el.box,[{width:G.W+"px"},{width:H+"px"}],{duration:900,easing:EASE});
-    caption("DSN KSV. One platform, six initiatives.");
-    // hand over to the artwork while still upright, then the artwork itself turns
     await wait(140,id);
     el.badge.style.opacity=1;el.box.style.opacity=0;   // same square, same letters: a straight one-frame swap, no fade
     await wait(60,id);
     await anim(el.badge,[{transform:"translate(-50%,-50%) rotate(45deg)"},{transform:"translate(-50%,-50%) rotate(0deg)"}],{duration:950,easing:"cubic-bezier(.7,0,.2,1)"});
     await wait(900,id);
-    caption("From Prishtina, to the world.");
     chrome(false,false);  // only now does the top bar come in
     done=true;
     try{sessionStorage.setItem("dk-intro","1")}catch(e){}
@@ -148,7 +144,6 @@ const Hero=(()=>{
     el.intro.hidden=true;reveal(true);chrome(false,false);
     geom();el.box.style.opacity=0;el.badge.style.opacity=1;
     KEYS.forEach((k,i)=>lit(i));
-    const s=el.cap.firstElementChild;s.textContent="From Prishtina, to the world.";s.classList.remove("out");
     done=true;
     try{sessionStorage.setItem("dk-intro","1")}catch(e){}
   }
@@ -157,7 +152,7 @@ const Hero=(()=>{
   return{
     async start(){
       const $=id=>document.getElementById(id);
-      el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),cap:$("cap"),strike:$("strike"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
+      el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),strike:$("strike"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
       let seen=false;try{seen=sessionStorage.getItem("dk-intro")==="1"}catch(e){}
       if(!reduce&&!seen){reveal(false);chrome(true,true)}else el.intro.hidden=true;
       el.intro.onclick=()=>finish();
