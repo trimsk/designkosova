@@ -116,7 +116,7 @@ const GALLERY={festival:["milan-exhibit","the-rebel","bold-collection","leka-lam
 const gallery=k=>{const g=GALLERY[k];if(!g||!g.length)return "";return `<section class="sec gal-sec"><div class="wrap"><div class="sec-head"><h2>${mark()}In Pictures</h2><span class="label muted">Work from our community</span></div></div>
   <div class="gallery" tabindex="0" aria-label="Gallery">${g.map(f=>`<figure>${fig(IMG+f+".jpg",WORKS[f][0]+" by "+WORKS[f][1],"4/5")}<figcaption><span>${WORKS[f][0]}</span><span>${WORKS[f][1]}</span></figcaption></figure>`).join("")}</div></section>`};
 /* key numbers as a compact strip, like a spec sheet */
-const facts=(list,k)=>`<div class="facts">${list.map(s=>`<div class="fact rv">${k?sym(k,"fact-sym"):""}<b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>`;
+const facts=list=>`<div class="facts">${list.map(s=>`<div class="fact rv"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>`;
 
 P.projects=()=>`
 <section class="phero"><div class="wrap">
@@ -136,10 +136,10 @@ const initiative=k=>()=>{const i=byK(k);return `
     <div><p class="body-l">${i.lede}</p><a class="btn solid" style="margin-top:28px" href="#/contact">Get Involved ${arrow}</a></div>
   </div>
   <div class="fig wide-fig st rv"><img src="${i.img}" alt="${i.name}"></div>
-  ${facts(i.stats,k)}
+  ${facts(i.stats)}
 </div></section>
 <section class="sec"><div class="wrap"><div class="story">
-  <div class="story-aside rv"><p class="label blue">${i.catLong||i.cat} · Design Kosova</p><h2 class="h-l">${i.h}</h2>${sym(k,"story-sym")}</div>
+  <div class="story-aside rv"><p class="label blue">${i.catLong||i.cat} · Design Kosova</p><h2 class="h-l">${i.h}</h2></div>
   <div class="story-main rv">${i.body.map((b,n)=>`<p class="${n?"muted":"body-l"}">${b}</p>`).join("")}
     <p class="label muted" style="margin:44px 0 16px">What It Includes</p>
     <ul class="inc-grid">${i.inc.map((x,n)=>`<li><span class="label blue">0${n+1}</span><p>${x}</p></li>`).join("")}</ul></div>
@@ -177,7 +177,7 @@ P.about=()=>`
   </div>
 </div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Our Journey</h2><span class="label muted">2016 to 2024</span></div>
-  <ol class="journey">${[["2016","Design Kosova Founded","Origin","Established in Pristina to build Kosovo's first structured design platform, connecting local talent to global networks."],["2018","Festival of Design, First Edition","Annual Event","Kosovo's inaugural design festival brought together over 200 designers, architects, and creative practitioners for a week of exhibitions and talks."],["2019","DAE Eindhoven Partnership","Partnership","Formal collaboration with Design Academy Eindhoven, opening exchange programmes and co-educational initiatives."],["2021","Milan & Dutch Design Weeks","Global Presence","First official Kosovo presence at Milan Design Week and Dutch Design Week."],["2022","WDO Membership","Recognition","World Design Organization membership, officially placing Kosovo on the global design map with access to WDO's 40+ country network."],["2024","Academy of Design Launch","Education","Launch of Kosovo's first structured design education programme, mentorship, workshops, and professional development."]].map((t,n)=>`<li class="rv">${sym(KEYS6[n],"j-sym")}<span class="j-y">${t[0]}</span><span class="label blue">${t[2]}</span><h3>${t[1]}</h3><p>${t[3]}</p></li>`).join("")}</ol>
+  <ol class="journey">${[["2016","Design Kosova Founded","Origin","Established in Pristina to build Kosovo's first structured design platform, connecting local talent to global networks."],["2018","Festival of Design, First Edition","Annual Event","Kosovo's inaugural design festival brought together over 200 designers, architects, and creative practitioners for a week of exhibitions and talks."],["2019","DAE Eindhoven Partnership","Partnership","Formal collaboration with Design Academy Eindhoven, opening exchange programmes and co-educational initiatives."],["2021","Milan & Dutch Design Weeks","Global Presence","First official Kosovo presence at Milan Design Week and Dutch Design Week."],["2022","WDO Membership","Recognition","World Design Organization membership, officially placing Kosovo on the global design map with access to WDO's 40+ country network."],["2024","Academy of Design Launch","Education","Launch of Kosovo's first structured design education programme, mentorship, workshops, and professional development."]].map((t,n)=>`<li class="rv"><span class="j-y">${t[0]}</span><span class="label blue">${t[2]}</span><h3>${t[1]}</h3><p>${t[3]}</p></li>`).join("")}</ol>
 </div></section>
 <section class="sec" id="founders"><div class="wrap"><div class="sec-head"><h2>${mark()}Founders</h2><span class="label muted">Design Kosova Foundation</span></div>
   <div class="cols c3">${[["ibrahim","Ibrahim Beqiri","Architect","Co-founder of Design Kosova Foundation. Ibrahim brings architectural vision to the foundation's urban and spatial initiatives, shaping how Kosovo's built environment engages with design culture.",[["LinkedIn ↗","#/contact"],["Instagram ↗","#/contact"]]],["trim","Trim Sokoli","Product & Brand Designer","11 years of helping 30+ companies push their visual boundaries. Based in Prishtina, Trim leads the brand and product design direction of DKF's identity and initiatives.",[["trimsokoli.com ↗","https://trimsokoli.com"],["Email","mailto:"+E]]],["enes","Enes Ramaxhiku","Animator","Motion and animation director at DKF. Enes leads the moving-image identity of the foundation, from festival openers to campaign films and interactive visual experiences.",[["Portfolio ↗","#/contact"],["Instagram ↗","#/contact"]]]].map((f,n)=>`<div class="founder rv">${fig(IMG+"founder-"+f[0]+".jpg",f[1],"4/5")}<p class="label muted">0${n+1} / Founder</p><h3>${f[1]}</h3><p class="label blue" style="margin:0">${f[2]}</p><p>${f[3]}</p><div class="links">${f[4].map(l=>`<a href="${l[1]}">${l[0]}</a>`).join("")}</div></div>`).join("")}</div>
@@ -187,14 +187,11 @@ P.about=()=>`
 </div></section>
 ${getInvolved("Whether you're a designer, institution, or business, there's a place for you in Kosovo's creative ecosystem.","Join the <em>Movement</em>","Get In Touch","Contact · Open to collaborations and conversations.")}`;
 
-/* Pristina at the centre, arcs out to the cities where DKF shows up (schematic, like a metro map, so labels never collide) */
-const netMap=()=>{const hx=560,hy=300;
-  const C=[["Porto",130,360,"factory","Innovation partner","end"],["Milan",360,250,"festival","Design Week since 2021","end"],["Eindhoven",300,110,"academy","Design Week · DAE","end"],["Berlin",560,70,"talk","Network","start"],["Dubai",870,430,"shop","Design Week since 2022","end"]];
-  return `<svg class="netmap" viewBox="0 0 1000 520" role="img" aria-label="Map of Design Kosova's network: Pristina connected to Porto, Milan, Eindhoven, Berlin and Dubai">
-  ${C.map(([n,x,y])=>{const mx=(hx+x)/2,my=(hy+y)/2-Math.abs(hx-x)*.28;return `<path class="arc" d="M${hx},${hy} Q${mx},${my} ${x},${y}"/>`}).join("")}
-  ${C.map(([n,x,y,k,t,a])=>{const dx=a==="end"?-20:20;return `<g class="city-pt" transform="translate(${x},${y})"><g transform="translate(-11,-11) scale(.22)" style="--acc:${ACC[k]}" class="k">${SYM[k]}</g><text x="${dx}" y="-3" text-anchor="${a}">${n}</text><text x="${dx}" y="17" text-anchor="${a}" class="sub">${t}</text></g>`}).join("")}
-  <g transform="translate(${hx},${hy})"><rect x="-24" y="-24" width="48" height="48" transform="rotate(45)" fill="#003DD6"/><text x="44" y="-4" class="home">Pristina</text><text x="44" y="18" class="sub">Home of DSN KSV</text></g>
-</svg>`};
+/* where DKF shows up, as a typographic index: coordinates and distance from Pristina */
+const CITIES=[["Pristina","Kosovo",42.6629,21.1655,"Home of DSN KSV · Festival of Design"],["Milan","Italy",45.4642,9.19,"Milan Design Week · since 2021"],["Eindhoven","Netherlands",51.4416,5.4697,"Dutch Design Week · DAE partnership"],["Dubai","UAE",25.2048,55.2708,"Dubai Design Week · since 2022"],["Porto","Portugal",41.1579,-8.6291,"Porto Design Factory · innovation partner"],["Berlin","Germany",52.52,13.405,"Network"]];
+const coord=(v,pos,neg)=>`${Math.abs(v).toFixed(2)}° ${v>=0?pos:neg}`;
+const km=(a,b,c,d)=>{const R=6371,t=x=>x*Math.PI/180,dl=t(c-a),dg=t(d-b),h=Math.sin(dl/2)**2+Math.cos(t(a))*Math.cos(t(c))*Math.sin(dg/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(h)))};
+const cityIndex=()=>{const [,,pl,pg]=CITIES[0];return `<ul class="cindex">${CITIES.map(([n,c,la,lo,role],i)=>`<li class="rv"><span class="ci-n">${i?String(i).padStart(2,"0"):"HQ"}</span><span class="ci-city">${n}</span><span class="ci-meta">${c}</span><span class="ci-meta ci-coord">${coord(la,"N","S")}, ${coord(lo,"E","W")}</span><span class="ci-dist">${i?km(pl,pg,la,lo).toLocaleString("en")+" km":"0 km"}</span><span class="ci-role">${role}</span></li>`).join("")}</ul>`};
 
 P.impact=()=>`
 <section class="phero"><div class="wrap">
@@ -205,9 +202,9 @@ P.impact=()=>`
 </div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head"><h2>${mark()}Kosovo on the world map</h2><span class="label muted">Festival of Design · Pristina</span></div>
-  <div class="map-wrap paper-grid rv">${netMap()}</div>
+  ${cityIndex()}
 </div></section>
-<section class="sec"><div class="wrap"><div class="cols c4">${[["500+","Designers Supported","Local designers given platforms, mentorship, and economic pathways through DKF programmes.","academy"],["7","Festival Editions","Annual flagship event drawing thousands of visitors and practitioners to Pristina each year.","festival"],["40+","Talk for Design Sessions","Curated lectures with local and international practitioners, all recorded and freely available.","talk"],["120+","Academy Students","Emerging designers trained through Kosovo's first structured design education programme.","factory"]].map(s=>`<div class="stat-card rv">${sym(s[3],"fact-sym")}<b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join("")}</div></div></section>
+<section class="sec"><div class="wrap"><div class="cols c4">${[["500+","Designers Supported","Local designers given platforms, mentorship, and economic pathways through DKF programmes.","academy"],["7","Festival Editions","Annual flagship event drawing thousands of visitors and practitioners to Pristina each year.","festival"],["40+","Talk for Design Sessions","Curated lectures with local and international practitioners, all recorded and freely available.","talk"],["120+","Academy Students","Emerging designers trained through Kosovo's first structured design education programme.","factory"]].map(s=>`<div class="stat-card rv"><b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join("")}</div></div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}How We Work</h2><span class="label muted">Impact &amp; Collaborations</span></div>
   <div class="cols c4">
     <div class="pillar rv"><span class="n">01</span><h3>International Partners</h3><p>Collaborations with DAE Eindhoven, Porto Design Factory, World Design Organization, iF Design Foundation, and more.</p></div>
@@ -323,7 +320,7 @@ P.collaborators=()=>`
 function collabInit(){
   const t=document.getElementById("discTabs");
   const draw=()=>{const L=PEOPLE.filter(p=>DF==="All"||p[0]===DF);
-    document.getElementById("cgrid").innerHTML=L.map(p=>`<a class="ccard" href="#/contact"><div style="display:flex;justify-content:space-between"><span class="ini">${p[1].split(" ").map(w=>w[0]).join("")}</span><span class="blue">↗</span></div><div><p class="label muted c-disc">${sym(KEYS6[DISC.indexOf(p[0])%6],"c-sym")}${p[0]}</p><h3>${p[1]}</h3><p class="muted" style="font-size:14.5px;margin-top:4px">${p[2]}</p></div></a>`).join("");
+    document.getElementById("cgrid").innerHTML=L.map(p=>`<a class="ccard" href="#/contact"><div style="display:flex;justify-content:space-between"><span class="ini">${p[1].split(" ").map(w=>w[0]).join("")}</span><span class="blue">↗</span></div><div><p class="label muted">${p[0]}</p><h3>${p[1]}</h3><p class="muted" style="font-size:14.5px;margin-top:4px">${p[2]}</p></div></a>`).join("");
     document.getElementById("pcount").textContent=L.length+" Creatives"};
   t.onclick=e=>{const b=e.target.closest("[data-d]");if(!b)return;DF=b.dataset.d;t.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));draw()};draw();
 }

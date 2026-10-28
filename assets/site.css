@@ -336,7 +336,7 @@ body.in-intro .burger i{background:var(--paper)}
 .intro .ishape svg{width:100%;height:100%;display:block}
 
 /* a list straight under a section title shares the title's rule instead of drawing a second line */
-.sec-head+:is(.prog,.ltable,.timeline,.others,.cgrid,.incl,.help,.news){border-top:0;margin-top:calc(-1 * clamp(32px,4vw,56px))}
+.sec-head+:is(.prog,.ltable,.timeline,.others,.cgrid,.incl,.help,.news,.cindex){border-top:0;margin-top:calc(-1 * clamp(32px,4vw,56px))}
 .sec-head+.others,.sec-head+.cgrid{border-top:0}
 
 /* ── inner pages ── */
@@ -449,3 +449,24 @@ body.in-intro .burger i{background:var(--paper)}
   .idx .slot{width:18px;height:18px}
   .hero-copy>div{order:3;padding:32px var(--gut) 44px}
 }
+
+/* Impact: city index (replaces the drawn map) */
+.cindex{list-style:none;border-top:1px solid var(--rule-soft)}
+.cindex li{display:grid;grid-template-columns:52px minmax(0,1.3fr) minmax(0,.7fr) minmax(0,1fr) minmax(0,.6fr) minmax(0,1.4fr);gap:20px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--rule-soft);transition:background .3s}
+.ci-n{font-size:12px;letter-spacing:.07em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.ci-city{font-weight:500;font-size:clamp(26px,2.6vw,40px);line-height:1;letter-spacing:-.035em;transition:color .25s}
+.cindex li:first-child .ci-city,.cindex li:first-child .ci-n{color:var(--blue)}
+.cindex li:hover .ci-city{color:var(--blue)}
+.ci-meta{font-size:14.5px;color:var(--ink-2)}
+.ci-coord,.ci-dist{font-variant-numeric:tabular-nums}
+.ci-dist{font-size:14.5px;color:var(--ink);text-align:right}
+.ci-role{font-size:14.5px;color:var(--ink-2);text-align:right}
+@media (max-width:900px){
+  .cindex li{grid-template-columns:36px 1fr auto;row-gap:6px}
+  .ci-n{grid-row:1}
+  .ci-city{grid-column:2}
+  .ci-dist{grid-column:3;grid-row:1}
+  .ci-meta,.ci-role{grid-column:2/4;text-align:left}
+  .ci-coord{display:none}
+}
+@media (max-width:600px){.sec-head>span.label{display:none}}  /* secondary labels beside section titles only crowd small screens */
