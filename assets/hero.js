@@ -54,9 +54,15 @@ const Hero=(()=>{
     await type(el.t1,"DESIGN",id,90);
     el.t1.lastChild.remove();setLine(el.t2,"");
     await wait(250,id);
-    for(const [w,hold] of [["IS NOT DECORATION.",1100],["IS PROGRESS.",800],["IS CULTURE.",800],["IS IDENTITY.",800]]){
-      await type(el.t2,w.slice(el.t2.textContent.length),id);await wait(hold,id);
-      await erase(el.t2,w.startsWith("IS IDENTITY")?0:3,id);
+    // each phrase ends on a brand shape instead of a full stop; it pops in, then leaves before the erase
+    for(const [w,k,hold] of [["IS NOT DECORATION","festival",1100],["IS PROGRESS","academy",800],["IS CULTURE","factory",800],["IS IDENTITY","talk",800]]){
+      await type(el.t2,w.slice(el.t2.firstChild.data.length),id);
+      const s=document.createElement("span");s.className="ishape";s.innerHTML=sym(k);el.t2.insertBefore(s,el.t2.lastChild);
+      anim(s,[{transform:"scale(0) rotate(-120deg)",opacity:0},{transform:"none",opacity:1}],{duration:520,easing:"cubic-bezier(.34,1.56,.64,1)"});
+      await wait(hold,id);
+      await anim(s,[{transform:"none",opacity:1},{transform:"scale(0) rotate(90deg)",opacity:0}],{duration:220,easing:"cubic-bezier(.65,0,.2,1)"});
+      s.remove();
+      await erase(el.t2,w==="IS IDENTITY"?0:3,id);
     }
     await wait(200,id);
     await type(el.t2,"KOSOVA",id,95);
