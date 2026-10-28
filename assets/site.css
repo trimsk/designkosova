@@ -434,3 +434,18 @@ body.in-intro .burger i{background:var(--paper)}
   .foot-top a,.contact-strip a,.founder .links a,.sec-head a,.crumbs a{display:inline-flex;align-items:center;min-height:44px}
   .contact-strip{gap:0 24px}
 }
+
+/* phone hero: logo panel, then the six initiatives as tiles (where the shapes land), then the headline */
+@media (max-width:900px){
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-copy{display:contents}
+  .stage{order:1;min-height:56svh;border-bottom:1px solid var(--rule-soft)}
+  .idx{order:2;flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:0}
+  .idx li{display:block;min-height:0;border-bottom:1px solid var(--rule-soft);border-right:1px solid var(--rule-soft)}
+  .idx li:nth-child(3n){border-right:0}
+  .idx li a,.idx li:last-child a{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:12px;height:100%;min-height:76px;padding:14px 12px 12px;border-bottom:0;font-size:13.5px;line-height:1.25}
+  .idx a:hover{padding-left:12px}
+  .idx .n,.idx .c{display:none}
+  .idx .slot{width:18px;height:18px}
+  .hero-copy>div{order:3;padding:32px var(--gut) 44px}
+}
