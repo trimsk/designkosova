@@ -181,6 +181,7 @@ a:hover .fig img{transform:scale(1.035)}
 .timeline p{color:var(--ink-2);font-size:15.5px}
 .founder .fig{aspect-ratio:4/5;margin-bottom:18px}
 .founder .fig img{filter:grayscale(1);transition:filter .6s}
+.founder--trim .fig img{transform:scale(1.1);object-position:center 25%}
 .founder:hover .fig img{filter:none}
 .founder h3{font-weight:400;font-size:26px;letter-spacing:-.015em;margin:6px 0 4px}
 .founder p{color:var(--ink-2);font-size:15.5px;margin-top:10px}
