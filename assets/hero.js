@@ -2,7 +2,7 @@
    1. Full-bleed blue: the message types itself. DESIGN / IS NOT DECORATION. → IS PROGRESS. → IS CULTURE. → IS IDENTITY. → KOSOVA
    2. The blue contracts into the 540×334 wordmark and the editorial hero appears around it.
    3. E I G O O A jump out into the six initiative symbols; D S N / K S V close up, the box squares to 334 and turns 45° into the DSN KSV badge.
-   Plays once per visit; Skip or a click jumps to the end. */
+   Plays on every page load (not when returning to Home inside the site); Skip or a click jumps to the end. */
 const Hero=(()=>{
   const RATIO=334/539.47;
   const M=.105, CAP=.317, TOP1=.135, TOP2=.548;     // margins / cap height / line tops, measured from the logo artwork
@@ -10,7 +10,7 @@ const Hero=(()=>{
   const KEYS=["festival","talk","shop","factory","academy","urban"];
   const EASE="cubic-bezier(.65,0,.2,1)";
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let run=0,el={},G={},done=false;
+  let run=0,el={},G={},done=false,played=false;   // played: the intro runs on every page load, not on in-site returns to Home
 
   const wait=(ms,id)=>new Promise((res,rej)=>setTimeout(()=>id===run?res():rej("x"),ms));
   const anim=(node,kf,o)=>{const a=node.animate(kf,{fill:"forwards",easing:"cubic-bezier(.16,1,.3,1)",...o});
@@ -100,7 +100,7 @@ const Hero=(()=>{
     await wait(900,id);
     chrome(false,false);  // only now does the top bar come in
     done=true;
-    try{sessionStorage.setItem("dk-intro","1")}catch(e){}
+    played=true;
   }
   // stand the badge artwork upright over the box's final square and read where it draws
   // D S N / K S V (box px), plus the font size whose cap height matches its letters
@@ -145,7 +145,7 @@ const Hero=(()=>{
     geom();el.box.style.opacity=0;el.badge.style.opacity=1;
     KEYS.forEach((k,i)=>lit(i));
     done=true;
-    try{sessionStorage.setItem("dk-intro","1")}catch(e){}
+    played=true;
   }
   let rz;
   const onResize=()=>{clearTimeout(rz);rz=setTimeout(()=>{if(el.stage?.isConnected)finish()},150)};
@@ -153,7 +153,7 @@ const Hero=(()=>{
     async start(){
       const $=id=>document.getElementById(id);
       el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),strike:$("strike"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
-      let seen=false;try{seen=sessionStorage.getItem("dk-intro")==="1"}catch(e){}
+      const seen=played;
       if(!reduce&&!seen){reveal(false);chrome(true,true)}else el.intro.hidden=true;
       el.intro.onclick=()=>finish();
       el.stage.onclick=()=>{if(!done)finish()};
