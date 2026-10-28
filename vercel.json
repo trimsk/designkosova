@@ -1,1 +1,1 @@
-{"buildCommand":null,"outputDirectory":".","framework":null}
+{"$schema":"https://openapi.vercel.sh/vercel.json","buildCommand":"node scripts/generate-pages.cjs","outputDirectory":".","framework":null,"cleanUrls":true}

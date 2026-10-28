@@ -1,4 +1,4 @@
-/* Page templates. Every page renders into #app; app.js routes by hash. */
+/* Page templates. Every page renders into #app; app.js routes by path. */
 const arrow='<span aria-hidden="true">→</span>';
 const KEYS6=INIT.map(i=>i.k);
 const DIAMOND_INV=DIAMOND.replace(/#003DD6/g,"#TMP").replace(/#EDEEE6/g,"#003DD6").replace(/#TMP/g,"#EDEEE6");
@@ -12,8 +12,8 @@ const getInvolved=(t="Whether you're a designer, educator, sponsor, or instituti
   ${sub?`<p class="label" style="opacity:.7;margin-bottom:22px">${sub}</p>`:""}
   <h2 class="h-xl" style="max-width:13ch">${h}</h2>
   ${t?`<p class="body-l" style="max-width:44ch;margin:24px 0 36px;opacity:.85">${t}</p>`:`<div style="height:36px"></div>`}
-  <a class="btn" href="#/contact">${b} ${arrow}</a>
-  <div class="contact-strip"><a href="mailto:${E}">${E}</a><a href="https://instagram.com/designkosova" target="_blank" rel="noopener">Instagram ↗</a><a href="#/contact">LinkedIn ↗</a><a href="#/contact">Newsletter ↗</a></div>
+  <a class="btn" href="/contact">${b} ${arrow}</a>
+  <div class="contact-strip"><a href="mailto:${E}">${E}</a><a href="https://instagram.com/designkosova" target="_blank" rel="noopener">Instagram ↗</a><a href="/contact">LinkedIn ↗</a><a href="/contact">Newsletter ↗</a></div>
   ${badge("cta-badge spin",true)}
 </div></section>`;
 
@@ -23,17 +23,17 @@ const footer=()=>`
     <div><svg class="foot-mark" viewBox="0 0 540 334" role="img" aria-label="Design Kosova">${WIDE}</svg>
       <p class="muted" style="max-width:36ch">A creative ecosystem fostering design innovation, culture, and transformation across Kosovo and beyond.</p>
       <p class="label blue" style="margin-top:14px">DSN KSV · Pristina, Kosovo</p></div>
-    <div><h4>Foundation</h4><ul><li><a href="#/about">About DKF</a></li><li><a href="#/about">Mission &amp; Vision</a></li><li><a href="#/about" data-go="founders">Team</a></li><li><a href="#/impact">Annual Report</a></li><li><a href="#/collaborators">Collaborators</a></li></ul></div>
-    <div><h4>Projects</h4><ul>${INIT.map(i=>`<li><a href="#/${i.k}">${i.name}</a></li>`).join("")}</ul></div>
-    <div><h4>Connect</h4><ul><li><a href="https://instagram.com/designkosova" target="_blank" rel="noopener">Instagram</a></li><li><a href="#/contact">LinkedIn</a></li><li><a href="#/contact">Newsletter</a></li><li><a href="mailto:${PRESS}">Press &amp; Media</a></li><li><a href="#/shop">Shop</a></li><li><a href="#/contact">Contact</a></li></ul></div>
+    <div><h4>Foundation</h4><ul><li><a href="/about">About DKF</a></li><li><a href="/about">Mission &amp; Vision</a></li><li><a href="/about" data-go="founders">Team</a></li><li><a href="/impact">Annual Report</a></li><li><a href="/collaborators">Collaborators</a></li></ul></div>
+    <div><h4>Projects</h4><ul>${INIT.map(i=>`<li><a href="/${i.k}">${i.name}</a></li>`).join("")}</ul></div>
+    <div><h4>Connect</h4><ul><li><a href="https://instagram.com/designkosova" target="_blank" rel="noopener">Instagram</a></li><li><a href="/contact">LinkedIn</a></li><li><a href="/contact">Newsletter</a></li><li><a href="mailto:${PRESS}">Press &amp; Media</a></li><li><a href="/shop">Shop</a></li><li><a href="/contact">Contact</a></li></ul></div>
   </div>
   <div class="foot-bot"><span>© 2026 Design Kosova · All Rights Reserved</span><span>Designed in Pristina, Kosovo</span></div>
 </div></footer>`;
 
-const others=k=>`<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Other Initiatives</h2><a href="#/projects">All Projects ${arrow}</a></div>
-  <div class="others">${INIT.filter(i=>i.k!==k).map(i=>`<a href="#/${i.k}">${sym(i.k)}<div><div class="label muted">${i.n} · ${i.cat}</div><div class="h-m" style="margin-top:6px">${i.name}</div></div></a>`).join("")}</div></div></section>`;
+const others=k=>`<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Other Initiatives</h2><a href="/projects">All Projects ${arrow}</a></div>
+  <div class="others">${INIT.filter(i=>i.k!==k).map(i=>`<a href="/${i.k}">${sym(i.k)}<div><div class="label muted">${i.n} · ${i.cat}</div><div class="h-m" style="margin-top:6px">${i.name}</div></div></a>`).join("")}</div></div></section>`;
 
-const progList=()=>`<ul class="prog">${INIT.map(i=>`<li><a href="#/${i.k}"><span class="n">${i.n}</span>${sym(i.k,"s")}<span class="t">${i.name}</span><span class="d">${i.line}</span><span class="c">${i.cat}</span><span class="blue">→</span><span class="peek"><img src="${i.img}" alt="" loading="lazy"></span></a></li>`).join("")}</ul>`;
+const progList=()=>`<ul class="prog">${INIT.map(i=>`<li><a href="/${i.k}"><span class="n">${i.n}</span>${sym(i.k,"s")}<span class="t">${i.name}</span><span class="d">${i.line}</span><span class="c">${i.cat}</span><span class="blue">→</span><span class="peek"><img src="${i.img}" alt="" loading="lazy"></span></a></li>`).join("")}</ul>`;
 const cityCard=(w,long)=>`<div class="city rv">${w.img?fig(w.img,w.name,"4/3"):`<div class="sym-card">${sym("academy")}</div>`}<p class="label muted">${w.city}${long?" · Since "+w.y:""}</p><h3 class="h-m">${w.name}</h3>${long?`<p class="muted">${w.dl}</p>`:""}</div>`;
 
 const P={};
@@ -54,9 +54,9 @@ P.home=()=>`
       <p class="label blue">Pristina · Kosovo</p>
       <h1>From Prishtina,<br><em>to the World</em></h1>
       <p class="lede">A platform dedicated to fostering creativity and cultural transformation through design.</p>
-      <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap"><a class="btn solid" href="#/projects">Explore Projects ${arrow}</a><a class="btn" href="#/about">About DKF</a></div>
+      <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap"><a class="btn solid" href="/projects">Explore Projects ${arrow}</a><a class="btn" href="/about">About DKF</a></div>
     </div>
-    <ul class="idx">${INIT.map((i,n)=>`<li><a href="#/${i.k}"><span class="n">${i.n}</span><span class="slot" data-i="${n}">${sym(i.k)}</span><span>${i.name}</span><span class="c">${i.cat}</span></a></li>`).join("")}</ul>
+    <ul class="idx">${INIT.map((i,n)=>`<li><a href="/${i.k}"><span class="n">${i.n}</span><span class="slot" data-i="${n}">${sym(i.k)}</span><span>${i.name}</span><span class="c">${i.cat}</span></a></li>`).join("")}</ul>
   </div>
 </div></section>
 
@@ -65,14 +65,14 @@ P.home=()=>`
 <section class="sec" id="now"><div class="wrap">
   <div class="sec-head"><h2>${mark()}Now</h2><span class="label muted">Dutch Design Week · 2026</span></div>
   <div class="feature">
-    <a class="rv" href="#/impact">${fig(IMG+"sonomi-bloom.jpg","Bloom by Sonomi Atelier, a layered recycled-paper lamp glowing orange","4/5","",true)}
+    <a class="rv" href="/impact">${fig(IMG+"sonomi-bloom.jpg","Bloom by Sonomi Atelier, a layered recycled-paper lamp glowing orange","4/5","",true)}
       <div class="fig-cap"><span>Sonomi Atelier · Bloom</span><span>Light Form, DDW 2026</span></div></a>
     <div class="feature-side rv">
       <div>
         <p class="label blue">Exhibition · Eindhoven</p>
         <h3 class="h-l" style="margin:12px 0 18px">Light Form: Experiments in Material &amp; Form</h3>
         <p class="body-l">LIGHT FORM is a curatorial theme by Design Kosova, bringing together three design studios from Kosovo at Dutch Design Week 2026. Through sculptural lighting, Sonomi Atelier, Studio 96, and Shape &amp; Shade explore the relationship between light, material, and form.</p>
-        <a class="btn" style="margin-top:28px" href="#/impact">See the exhibition ${arrow}</a>
+        <a class="btn" style="margin-top:28px" href="/impact">See the exhibition ${arrow}</a>
       </div>
       <div class="thumbs">${LIGHTFORM.slice(0,4).map(([f,s,t])=>fig(IMG+f+".jpg",`${t} by ${s}`,"3/4")).join("")}</div>
     </div>
@@ -80,7 +80,7 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${mark()}A Creative Ecosystem</h2><a href="#/about">Read More ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}A Creative Ecosystem</h2><a href="/about">Read More ${arrow}</a></div>
   <div class="split">
     <p class="quote rv">Design is not decoration. <em>It is a catalyst for progress.</em></p>
     <div class="rv">
@@ -90,22 +90,22 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${mark()}Core Projects</h2><a href="#/projects">All Projects ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Core Projects</h2><a href="/projects">All Projects ${arrow}</a></div>
   ${progList()}
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${mark()}Impact &amp; Collaborations</h2><a href="#/impact">Full Story ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Impact &amp; Collaborations</h2><a href="/impact">Full Story ${arrow}</a></div>
   <div class="split">
     <div class="rv"><h3 class="h-xl">Global network, <span class="blue">local impact.</span></h3>
       <div class="cols c2" style="margin-top:48px">${[["500+","Designers Supported"],["7","Festival Editions"],["40+","Talk for Design Sessions"],["120+","Academy Students"]].map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div></div>
-    <a class="rv" href="#/impact">${fig(IMG+"local-shapes.jpg","Local Shapes at Milan Design Week 2026: works by Kosovo designers","4/3","",true)}
+    <a class="rv" href="/impact">${fig(IMG+"local-shapes.jpg","Local Shapes at Milan Design Week 2026: works by Kosovo designers","4/3","",true)}
       <div class="fig-cap"><span>Local Shapes</span><span>Milan Design Week 2026</span></div></a>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${mark()}Where We Show Up</h2><a href="#/impact">Global Presence ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Where We Show Up</h2><a href="/impact">Global Presence ${arrow}</a></div>
   <div class="cols c3">${WEEKS.map(w=>cityCard(w)).join("")}</div>
 </div></section>
 ${getInvolved("","Shape the <em>Future</em> of Design","Get In Touch","")}`;
@@ -120,7 +120,7 @@ const gallery=k=>{const g=GALLERY[k];if(!g||!g.length)return "";return `<section
 const pwall=(list)=>`<div class="pwall">${list.map(([n,c,r,d])=>`<div class="pw rv"><span class="label muted">${r}</span><b>${n}</b>${d?`<p class="pw-d">${d}</p>`:""}<span class="pw-c">${c}</span></div>`).join("")}</div>`;
 const splitRole=p=>[p[0],p[1],p[2].split(" · ")[0],p[2].split(" · ")[1]||""];
 /* slim sticky in-page navigation for long pages */
-const subnav=items=>`<nav class="subnav" aria-label="On this page"><div class="wrap">${items.map(([id,l])=>`<a href="${location.hash||"#/"}" data-go="${id}">${l}</a>`).join("")}</div></nav>`;
+const subnav=items=>`<nav class="subnav" aria-label="On this page"><div class="wrap">${items.map(([id,l])=>`<a href="${location.pathname}" data-go="${id}">${l}</a>`).join("")}</div></nav>`;
 const facts=list=>`<div class="facts">${list.map(s=>`<div class="fact rv"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>`;
 
 P.projects=()=>`
@@ -128,17 +128,17 @@ P.projects=()=>`
   <p class="label blue">What We Do</p>
   <div class="phero-grid" style="margin-top:20px"><h1 class="h-xl">Core Projects</h1><p class="body-l">Six initiatives, one vision, activating Kosovo's design culture.</p></div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="pcards">${INIT.map(i=>`<a class="pcard rv" href="#/${i.k}"><div class="fig">${`<img src="${i.img}" alt="${i.name}" loading="lazy">`}<span class="pcard-sym" style="--acc:${ACC[i.k]}">${sym(i.k)}</span></div>
+<section class="sec"><div class="wrap"><div class="pcards">${INIT.map(i=>`<a class="pcard rv" href="/${i.k}"><div class="fig">${`<img src="${i.img}" alt="${i.name}" loading="lazy">`}<span class="pcard-sym" style="--acc:${ACC[i.k]}">${sym(i.k)}</span></div>
   <div class="pcard-body"><div class="label muted">${i.n} · ${i.cat}</div><h3 class="h-l">${i.name}</h3><p class="muted">${i.line}</p><span class="blue pcard-cta">${i.cta} →</span></div></a>`).join("")}</div>
 </div></section>
 ${getInvolved("Each initiative welcomes collaborators: designers, educators, institutions, or sponsors.")}`;
 
 const initiative=k=>()=>{const i=byK(k);return `
 <section class="phero"><div class="wrap">
-  <div class="crumbs label"><a href="#/projects">← All Projects</a><span>${i.n} / 06</span><span class="blue">${i.catLong||i.cat}</span></div>
+  <div class="crumbs label"><a href="/projects">← All Projects</a><span>${i.n} / 06</span><span class="blue">${i.catLong||i.cat}</span></div>
   <div class="phero-grid">
     <div>${sym(k,"sym-big")}<h1 class="h-xl">${i.name}</h1></div>
-    <div><p class="body-l">${i.lede}</p><a class="btn solid" style="margin-top:28px" href="#/contact">Get Involved ${arrow}</a></div>
+    <div><p class="body-l">${i.lede}</p><a class="btn solid" style="margin-top:28px" href="/contact">Get Involved ${arrow}</a></div>
   </div>
   <div class="fig wide-fig st rv"><img src="${i.img}" alt="${i.name}"></div>
   ${facts(i.stats)}
@@ -146,7 +146,7 @@ const initiative=k=>()=>{const i=byK(k);return `
 <section class="sec"><div class="wrap"><div class="story">
   <div class="story-aside rv"><p class="label blue">${i.catLong||i.cat} · Design Kosova</p><h2 class="h-l">${i.h}</h2>
     <div class="aside-card"><p class="label muted">Get involved</p><p>Apply to exhibit, speak, or partner.</p>
-      <a href="mailto:${E}?subject=${encodeURIComponent(i.name)}" class="aside-mail">${E}</a><a class="btn solid" href="#/contact">Contact Us ${arrow}</a></div></div>
+      <a href="mailto:${E}?subject=${encodeURIComponent(i.name)}" class="aside-mail">${E}</a><a class="btn solid" href="/contact">Contact Us ${arrow}</a></div></div>
   <div class="story-main rv">${i.body.map((b,n)=>`<p class="${n?"muted":"body-l"}">${b}</p>`).join("")}
     <p class="label muted" style="margin:44px 0 16px">What It Includes</p>
     <ul class="inc-grid">${i.inc.map((x,n)=>`<li><span class="label blue">0${n+1}</span><p>${x}</p></li>`).join("")}</ul></div>
@@ -158,7 +158,7 @@ P.about=()=>`
 <section class="phero"><div class="wrap">
   <div class="crumbs label"><span class="blue">DKF</span><span>Pristina · Kosovo · Est. 2016</span></div>
   <div class="phero-grid"><h1 class="quote" style="max-width:none">Design is not decoration. It is a <em>catalyst</em> for progress.</h1>
-    <div><p class="body-l">Design Kosova Foundation was built on the belief that design shapes identity, economy, and culture, and Kosovo is ready to lead.</p><a class="btn" style="margin-top:28px" href="#/projects">See Our Work ${arrow}</a></div></div>
+    <div><p class="body-l">Design Kosova Foundation was built on the belief that design shapes identity, economy, and culture, and Kosovo is ready to lead.</p><a class="btn" style="margin-top:28px" href="/projects">See Our Work ${arrow}</a></div></div>
   ${facts([["2016","Founded in Pristina"],["6","Core Initiatives"],["3","Global Design Weeks"],["4+","International Partners"],["500+","Designers Supported"],["8+","Years Active"]])}
 </div></section>
 ${subnav([["story","Story"],["values","Values"],["what","What We Do"],["journey","Journey"],["founders","Founders"],["partners","Partners"]])}
@@ -169,7 +169,7 @@ ${subnav([["story","Story"],["values","Values"],["what","What We Do"],["journey"
     <p class="muted" style="margin-top:16px">DKF operates as an umbrella platform, modular and flexible, allowing each initiative to function independently while maintaining a shared vision.</p>
     <p class="muted" style="margin-top:16px">We believe design is a public resource. Not reserved for institutions or corporations, but a tool that belongs to communities, cities, and individuals. Our work puts design at the service of Kosovo's cultural transformation.</p>
     <p class="muted" style="margin-top:16px">Rooted in Pristina but globally connected, DKF has built formal partnerships with Design Academy Eindhoven, Porto Design Factory, the World Design Organization, and iF Design Foundation.</p>
-    <div class="ring">${INIT.map(x=>`<a href="#/${x.k}" class="ring-i">${sym(x.k)}<span>${x.name}</span></a>`).join("")}</div>
+    <div class="ring">${INIT.map(x=>`<a href="/${x.k}" class="ring-i">${sym(x.k)}<span>${x.name}</span></a>`).join("")}</div>
   </div>
 </div></div></section>
 <section class="sec vv" id="values"><div class="wrap"><div class="cols c2">
@@ -190,7 +190,7 @@ ${subnav([["story","Story"],["values","Values"],["what","What We Do"],["journey"
 <section class="sec" id="founders"><div class="wrap"><div class="sec-head"><h2>${mark()}Founders</h2><span class="label muted">Design Kosova Foundation</span></div>
   <div class="cols c3">${[["ibrahim","Ibrahim Beqiri","Architect","Co-founder of Design Kosova Foundation. Ibrahim brings architectural vision to the foundation's urban and spatial initiatives, shaping how Kosovo's built environment engages with design culture.",[["LinkedIn ↗","#/contact"],["Instagram ↗","#/contact"]]],["trim","Trim Sokoli","Product & Brand Designer","11 years of helping 30+ companies push their visual boundaries. Based in Prishtina, Trim leads the brand and product design direction of DKF's identity and initiatives.",[["trimsokoli.com ↗","https://trimsokoli.com"],["Email","mailto:"+E]]],["enes","Enes Ramaxhiku","Animator","Motion and animation director at DKF. Enes leads the moving-image identity of the foundation, from festival openers to campaign films and interactive visual experiences.",[["Portfolio ↗","#/contact"],["Instagram ↗","#/contact"]]]].map((f,n)=>`<div class="founder rv">${fig(IMG+"founder-"+f[0]+".jpg",f[1],"4/5")}<p class="label muted">0${n+1} / Founder</p><h3>${f[1]}</h3><p class="label blue" style="margin:0">${f[2]}</p><p>${f[3]}</p><div class="links">${f[4].map(l=>`<a href="${l[1]}">${l[0]}</a>`).join("")}</div></div>`).join("")}</div>
 </div></section>
-<section class="sec" id="partners"><div class="wrap"><div class="sec-head"><h2>${mark()}Partners</h2><a href="#/contact">Become a Partner ${arrow}</a></div>
+<section class="sec" id="partners"><div class="wrap"><div class="sec-head"><h2>${mark()}Partners</h2><a href="/contact">Become a Partner ${arrow}</a></div>
   ${pwall(PARTNERS.slice(0,4).map(splitRole))}
 </div></section>
 ${getInvolved("Whether you're a designer, institution, or business, there's a place for you in Kosovo's creative ecosystem.","Join the <em>Movement</em>","Get In Touch","Contact · Open to collaborations and conversations.")}`;
@@ -235,7 +235,7 @@ ${subnav([["network","Network"],["numbers","Numbers"],["work","How We Work"],["e
 </div>
   <div class="gallery" tabindex="0" aria-label="Works from the exhibitions" style="margin-top:56px">${["leka-lamp","bold-tapestry","the-rebel","mothers-lace","studio96-bifrost","ss-bold-flower","sonomi-terra"].map(f=>`<figure>${fig(IMG+f+".jpg",WORKS[f][0]+" by "+WORKS[f][1],"4/5")}<figcaption><span>${WORKS[f][0]}</span><span>${WORKS[f][1]}</span></figcaption></figure>`).join("")}</div>
 </section>
-<section class="sec" id="partners"><div class="wrap"><div class="sec-head"><h2>${mark()}Collaborators</h2><a href="#/contact">Partner With Us ${arrow}</a></div>
+<section class="sec" id="partners"><div class="wrap"><div class="sec-head"><h2>${mark()}Collaborators</h2><a href="/contact">Partner With Us ${arrow}</a></div>
   ${pwall(PARTNERS.map(splitRole))}
   <p class="label muted pw-group">Local sponsors &amp; supporters</p>
   <div class="pwall pwall-s">${SPONSORS.map(n=>`<div class="pw rv"><b>${n}</b></div>`).join("")}</div>
@@ -249,7 +249,7 @@ ${getInvolved("Join DKF as a collaborator, sponsor, or partner and help put Koso
 const SH={seller:"all",cats:new Set(),prices:new Set(),sort:"featured",cart:[]};
 P.shop=()=>`
 <section class="phero"><div class="wrap">
-  <div class="crumbs label"><a href="#/projects">← All Projects</a><span>03 / 06</span><span class="blue">Marketplace</span></div>
+  <div class="crumbs label"><a href="/projects">← All Projects</a><span>03 / 06</span><span class="blue">Marketplace</span></div>
   <div class="phero-grid"><div>${sym("shop","sym-big")}<h1 class="h-xl">Shop Design</h1></div><p class="body-l">${byK("shop").line}</p></div>
 </div></section>
 <section style="padding-bottom:96px"><div class="wrap">
@@ -271,9 +271,11 @@ P.shop=()=>`
     <h2 class="h-xl">Made in Kosovo, <span class="blue">Designed to Last.</span></h2>
     <div><p class="body-l">Shop Design is our curated marketplace for Kosovo-designed objects: a direct economic channel connecting the country's most talented makers with local and international audiences.</p>
       <p class="muted" style="margin-top:14px">"By Us" products are made and sold directly by Design Kosova Foundation. "By Brands" items are sold by independent creators through our platform, and we take a small fee to sustain the ecosystem.</p>
-      <a class="btn solid" style="margin-top:28px" href="#/contact">Apply as a Maker ${arrow}</a></div>
+      <a class="btn solid" style="margin-top:28px" href="/contact">Apply as a Maker ${arrow}</a></div>
   </div>
 </div></section>${others("shop")}`;
+P.product=p=>`<section class="phero"><div class="wrap"><div class="crumbs label"><a href="/shop">← Shop Design</a><span>${CATS.find(c=>c[0]===p.c)?.[1]||p.c}</span></div><div class="product-detail"><div class="fig"><img src="${p.img}" alt="${p.n}"></div><div><p class="label blue">${p.s==="byus"?"By Us":"By Brands"} · ${p.m}</p><h1 class="h-xl">${p.n}</h1><p class="body-l">€${p.p}</p><p class="muted">A design from Kosovo's creative community, curated by Design Kosova Foundation.</p><div class="product-actions"><button class="btn solid" id="productAdd">Add to Cart ${arrow}</button><button class="btn" id="copyProduct">Copy Link</button></div><p class="label muted" id="copyStatus" aria-live="polite"></p></div></div></div></section>${others("shop")}`;
+function productInit(p){document.getElementById("productAdd").onclick=()=>addCart(p.i);document.getElementById("copyProduct").onclick=async()=>{try{await navigator.clipboard.writeText(location.href);document.getElementById("copyStatus").textContent="Link copied"}catch{document.getElementById("copyStatus").textContent="Copy this page's URL from your browser"}}}
 function shopInit(){
   const st=document.getElementById("sellerTabs");
   st.innerHTML=[["all","All Products",32],["byus","By Us",16],["brand","By Brands",16]].map(t=>`<button class="tab${SH.seller===t[0]?" on":""}" data-s="${t[0]}">${t[1]}<small>${t[2]}</small></button>`).join("");
@@ -290,7 +292,7 @@ function shopInit(){
 function renderP(){
   let L=PRODUCTS.filter(p=>(SH.seller==="all"||p.s===SH.seller)&&(!SH.cats.size||SH.cats.has(p.c))&&(!SH.prices.size||[...SH.prices].some(r=>{const[a,b]=r.split("-").map(Number);return p.p>=a&&p.p<b})));
   if(SH.sort==="lo")L.sort((a,b)=>a.p-b.p);if(SH.sort==="hi")L.sort((a,b)=>b.p-a.p);if(SH.sort==="az")L.sort((a,b)=>a.n.localeCompare(b.n));
-  document.getElementById("pgrid").innerHTML=L.map(p=>`<div class="prod"><div class="fig"><img src="${p.img}" alt="${p.n}" loading="lazy"><span class="tag${p.s==="byus"?" by":""}">${p.s==="byus"?"By Us":"Brand"}</span><button class="add" data-add="${p.i}">Add to Cart</button></div><div class="meta"><div><div class="mk">${p.m}</div><div>${p.n}</div></div><div>€${p.p}</div></div></div>`).join("");
+  document.getElementById("pgrid").innerHTML=L.map(p=>`<div class="prod"><div class="fig"><a href="/shop/${p.slug}" aria-label="View ${p.n}"><img src="${p.img}" alt="${p.n}" loading="lazy"></a><span class="tag${p.s==="byus"?" by":""}">${p.s==="byus"?"By Us":"Brand"}</span><button class="add" data-add="${p.i}">Add to Cart</button></div><div class="meta"><div><div class="mk">${p.m}</div><a href="/shop/${p.slug}">${p.n}</a></div><div>€${p.p}</div></div></div>`).join("");
   document.getElementById("count").textContent=L.length+" Items";
   document.getElementById("noRes").hidden=!!L.length;
 }
@@ -326,12 +328,12 @@ P.collaborators=()=>`
 <section class="sec"><div class="wrap"><div class="split">
   <div><p class="label blue">Join the roster</p><h2 class="h-xl" style="margin-top:14px">Are you a Kosovo creative?</h2></div>
   <div><p class="body-l">Participate in one of our events and get listed, connecting your work to Kosovo's growing international design network.</p>
-    <ul class="help" style="margin-top:32px">${[["festival","Festival of Design"],["academy","Academy of Design"],["factory","Factory of Design"],["contact","Get In Touch"]].map(l=>`<li><a href="#/${l[0]}"><b>${l[1]}</b><span class="blue">→</span></a></li>`).join("")}</ul></div>
+    <ul class="help" style="margin-top:32px">${[["festival","Festival of Design"],["academy","Academy of Design"],["factory","Factory of Design"],["contact","Get In Touch"]].map(l=>`<li><a href="/${l[0]}"><b>${l[1]}</b><span class="blue">→</span></a></li>`).join("")}</ul></div>
 </div></div></section>`;
 function collabInit(){
   const t=document.getElementById("discTabs");
   const draw=()=>{const L=PEOPLE.filter(p=>DF==="All"||p[0]===DF);
-    document.getElementById("cgrid").innerHTML=L.map(p=>`<a class="ccard" href="#/contact"><div style="display:flex;justify-content:space-between"><span class="ini">${p[1].split(" ").map(w=>w[0]).join("")}</span><span class="blue">↗</span></div><div><p class="label muted">${p[0]}</p><h3>${p[1]}</h3><p class="muted" style="font-size:14.5px;margin-top:4px">${p[2]}</p></div></a>`).join("");
+    document.getElementById("cgrid").innerHTML=L.map(p=>`<a class="ccard" href="/contact"><div style="display:flex;justify-content:space-between"><span class="ini">${p[1].split(" ").map(w=>w[0]).join("")}</span><span class="blue">↗</span></div><div><p class="label muted">${p[0]}</p><h3>${p[1]}</h3><p class="muted" style="font-size:14.5px;margin-top:4px">${p[2]}</p></div></a>`).join("");
     document.getElementById("pcount").textContent=L.length+" Creatives"};
   t.onclick=e=>{const b=e.target.closest("[data-d]");if(!b)return;DF=b.dataset.d;t.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));draw()};draw();
 }
