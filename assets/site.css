@@ -502,3 +502,23 @@ main section[id]{scroll-margin-top:130px}
 
 @media (max-width:1100px){.pwall{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.pwall{grid-template-columns:1fr}.pw{min-height:0}.pwall-s{grid-template-columns:1fr 1fr}.subnav .wrap{gap:22px}}
+
+/* ── fewer lines: spacing separates sections; rules stay only where they help reading ── */
+.sec{border-bottom:0}
+.sec+.sec{padding-top:0}
+.sec-head{border-bottom-color:var(--rule-soft)}
+.pillar,.stat,.stat-card,.journey li,.inc-grid li,.vv-card{border-top:0}
+.pillar{padding-top:0}.stat,.stat-card{padding-top:0}.journey li{padding-top:0}.inc-grid li{padding-top:0;padding-bottom:26px}
+.stat-card .fact-sym{top:4px}
+.fact{border-right:0}
+.facts{border-top:0}
+.phero .facts{margin-top:clamp(36px,4vw,56px)}
+/* grids become soft tiles */
+.pwall,.others,.cgrid{border:0;gap:10px}
+.pw,.others a,.ccard{border:0;background:var(--paper-2)}
+.pw:hover{background:#DEDFD5}
+.sec-head+.pwall,.sec-head+.others,.sec-head+.cgrid{margin-top:0}
+.ring-i,.aside-card,.tab{border-color:transparent;background:var(--paper-2)}
+.tab.on{background:var(--blue)}
+.ring-i:hover{border-color:transparent;background:#DEDFD5}
+.sec.vv,.vv+.sec{padding-top:clamp(72px,9vw,128px)}
