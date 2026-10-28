@@ -44,7 +44,7 @@ button:disabled{opacity:.4;cursor:default}
 
 /* hero */
 .hero{border-bottom:1px solid var(--rule-soft)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:calc(100svh - 102px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:calc(100svh - 69px)}  /* fills the screen under the header; the ticker starts below the fold */
 .stage{position:relative;border-right:1px solid var(--rule-soft);overflow:hidden;min-height:540px;cursor:pointer}
 .box{position:absolute;left:50%;top:46%;background:var(--blue);color:var(--paper)}
 .box .ch{position:absolute;top:0;left:0;font-family:var(--logo);font-weight:400;line-height:1;text-transform:uppercase;white-space:pre;will-change:transform,opacity}
@@ -285,7 +285,7 @@ select{font:inherit;font-size:14px;height:36px;border:1px solid var(--rule-soft)
 
 /* the DSN KSV badge as recurring mark: turns with scroll (--rot set in app.js) */
 .spin{transform:rotate(var(--rot,0deg));will-change:transform}
-.sec-head h2 .spin{width:26px;height:26px;flex:none}
+.sec-head h2 .mark{width:20px;height:20px;flex:none}
 .fig.st::after{content:"";position:absolute;right:14px;bottom:14px;width:46px;height:46px;background:url(logo-diamond.svg) center/contain no-repeat;pointer-events:none}
 .cta .wrap{position:relative}
 .cta-badge{position:absolute;right:var(--gut);top:-8px;width:min(24vw,300px);height:auto}
@@ -316,7 +316,7 @@ svg.k{color:var(--acc)!important}
 
 /* header joins the intro: cream on blue, slightly lowered; top bar waits until the hero is done */
 .topbar{height:34px;overflow:hidden;transition:height .7s var(--out),border-color .7s}
-body.notop .topbar{height:0;border-color:transparent}
+body.notop .topbar{height:0;border-bottom-width:0}
 .header,.header .wrap{transition:background .7s var(--out),border-color .7s,transform 1s var(--out)}
 .nav a,.lang,.lang button,.btn,.burger i{transition:color .6s,background .6s,border-color .6s}
 .intro{top:-69px}

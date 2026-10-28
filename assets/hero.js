@@ -39,7 +39,7 @@ const Hero=(()=>{
   }
   const caption=t=>{const s=el.cap.firstElementChild;s.classList.add("out");setTimeout(()=>{s.textContent=t;s.classList.remove("out")},260)};
   const lit=(i,on=true)=>document.querySelector(`.idx .slot[data-i="${i}"]`)?.classList.toggle("lit",on);
-  const reveal=on=>{el.hero.classList.toggle("pre",!on);if(on)[...el.hero.querySelectorAll(".hero-copy>*>*,.idx li,.stage-meta")].forEach((n,i)=>n.style.transitionDelay=i*45+"ms")};
+  const reveal=on=>{el.hero.classList.toggle("pre",!on);if(on)[...el.hero.querySelectorAll(".hero-copy>*>*,.idx li")].forEach((n,i)=>n.style.transitionDelay=i*45+"ms")};
 
   // typing on the intro
   const caretEl=()=>{const c=document.createElement("span");c.className="caret";return c};

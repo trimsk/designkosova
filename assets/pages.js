@@ -2,6 +2,8 @@
 const arrow='<span aria-hidden="true">→</span>';
 const KEYS6=INIT.map(i=>i.k);
 const DIAMOND_INV=DIAMOND.replace(/#003DD6/g,"#TMP").replace(/#EDEEE6/g,"#003DD6").replace(/#TMP/g,"#EDEEE6");
+// section titles take the brand symbols in turn (reset per page in app.js)
+let markN=0;const mark=()=>sym(KEYS6[markN++%6],"spin mark");
 const badge=(cls="",inv=false)=>`<svg class="${cls}" viewBox="0 0 473 473" aria-hidden="true">${inv?DIAMOND_INV:DIAMOND}</svg>`;
 const fig=(src,alt,ratio,extra="",st=false)=>`<div class="fig${st?" st":""}" style="aspect-ratio:${ratio}${extra}"><img src="${src}" alt="${alt}" loading="lazy"></div>`;
 
@@ -28,7 +30,7 @@ const footer=()=>`
   <div class="foot-bot"><span>© 2026 Design Kosova · All Rights Reserved</span><span>Designed in Pristina, Kosovo</span></div>
 </div></footer>`;
 
-const others=k=>`<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Other Initiatives</h2><a href="#/projects">All Projects ${arrow}</a></div>
+const others=k=>`<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Other Initiatives</h2><a href="#/projects">All Projects ${arrow}</a></div>
   <div class="others">${INIT.filter(i=>i.k!==k).map(i=>`<a href="#/${i.k}">${sym(i.k)}<div><div class="label muted">${i.n} · ${i.cat}</div><div class="h-m" style="margin-top:6px">${i.name}</div></div></a>`).join("")}</div></div></section>`;
 
 const progList=()=>`<ul class="prog">${INIT.map(i=>`<li><a href="#/${i.k}"><span class="n">${i.n}</span>${sym(i.k,"s")}<span class="t">${i.name}</span><span class="d">${i.line}</span><span class="c">${i.cat}</span><span class="blue">→</span><span class="peek"><img src="${i.img}" alt="" loading="lazy"></span></a></li>`).join("")}</ul>`;
@@ -39,13 +41,11 @@ const P={};
 P.home=()=>`
 <section class="hero" id="hero">
   <div class="intro" id="intro" aria-hidden="true">
-    <span class="label intro-meta">DSN KSV · Est. 2016</span>
     <div class="intro-type"><div class="tl" id="t1"></div><div class="tl" id="t2"></div></div>
     <button class="label intro-skip" id="skip">Skip intro →</button>
   </div>
   <div class="hero-grid">
   <div class="stage paper-grid" id="stage" aria-label="Design Kosova: design is not decoration. It is progress, culture, together, Kosova.">
-    <span class="stage-meta label">DSN KSV · Est. 2016</span>
     <div class="box" id="box"><div class="strike" id="strike"></div></div>
     <svg class="badge" id="badge" viewBox="0 0 473 473" aria-hidden="true">${DIAMOND}</svg>
     <p class="caption" id="cap"><span></span></p>
@@ -64,7 +64,7 @@ P.home=()=>`
 <div class="ticker" aria-hidden="true"><div class="ticker-track">${[0,1].map(()=>`<span>${[["Festival of Design","festival"],["Talk for Design","talk"],["Shop Design","shop"],["Factory of Design","factory"],["Academy of Design","academy"],["Urban Design Lab","urban"],["Milan Design Week","academy"],["Dutch Design Week","academy"],["Dubai Design Week","academy"]].map(([t,k])=>`${t} ${sym(k)}`).join(" ")}</span>`).join("")}</div></div>
 
 <section class="sec" id="now"><div class="wrap">
-  <div class="sec-head"><h2>${badge("spin")}Now</h2><span class="label muted">Dutch Design Week · 2026</span></div>
+  <div class="sec-head"><h2>${mark()}Now</h2><span class="label muted">Dutch Design Week · 2026</span></div>
   <div class="feature">
     <a class="rv" href="#/impact">${fig(IMG+"sonomi-bloom.jpg","Bloom by Sonomi Atelier, a layered recycled-paper lamp glowing orange","4/5","",true)}
       <div class="fig-cap"><span>Sonomi Atelier · Bloom</span><span>Light Form, DDW 2026</span></div></a>
@@ -86,7 +86,7 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${badge("spin")}A Creative Ecosystem</h2><a href="#/about">Read More ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}A Creative Ecosystem</h2><a href="#/about">Read More ${arrow}</a></div>
   <div class="split">
     <p class="quote rv">Design is not decoration. <em>It is a catalyst for progress.</em></p>
     <div class="rv">
@@ -102,7 +102,7 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${badge("spin")}Core Projects</h2><a href="#/projects">All Projects ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Core Projects</h2><a href="#/projects">All Projects ${arrow}</a></div>
   ${progList()}
   <div class="cols c2" style="margin-top:56px">
     ${[["festival","Kosovo's largest design festival: exhibitions, workshops, and panels for emerging talent."],["academy","Mentorship, courses, and training in design, building Kosovo's next generation of creatives."]].map(([k,t])=>{const i=byK(k);return `<a class="rv" href="#/${k}">${fig(i.img,i.name,"3/2")}<div class="fig-cap"><span>${i.n} · ${i.cat}</span><span class="blue">Learn More →</span></div><h3 class="h-l" style="margin:6px 0 8px">${i.name}</h3><p class="muted" style="max-width:52ch">${t}</p></a>`}).join("")}
@@ -110,7 +110,7 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${badge("spin")}Impact &amp; Collaborations</h2><a href="#/impact">Full Story ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Impact &amp; Collaborations</h2><a href="#/impact">Full Story ${arrow}</a></div>
   <div class="split">
     <div class="rv"><h3 class="h-xl">Global network, <span class="blue">local impact.</span></h3>
       <a href="#/impact" style="display:block;margin-top:36px">${fig(IMG+"local-shapes.jpg","Local Shapes at Milan Design Week 2026: works by Kosovo designers","4/3","",true)}</a>
@@ -129,7 +129,7 @@ P.home=()=>`
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2>${badge("spin")}Where We Show Up</h2><a href="#/impact">Global Presence ${arrow}</a></div>
+  <div class="sec-head"><h2>${mark()}Where We Show Up</h2><a href="#/impact">Global Presence ${arrow}</a></div>
   <div class="cols c3">${WEEKS.map(w=>cityCard(w)).join("")}</div>
 </div></section>
 ${getInvolved("Design Kosova is more than a festival. It is a creative ecosystem that leverages design to generate meaningful change.","Shape the <em>Future</em> of Design","Get In Touch","Contact · Open to collaborations and conversations.")}`;
@@ -183,13 +183,13 @@ P.about=()=>`
       <div class="pillar"><span class="n">04</span><h3>Urban Transformation</h3><p>Applying design to Pristina's public spaces, policy, and civic infrastructure.</p></div>
     </div></div>
 </div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Our Journey</h2><span class="label muted">2016 to 2024</span></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Our Journey</h2><span class="label muted">2016 to 2024</span></div>
   <ul class="timeline">${[["2016","Design Kosova Founded","Origin","Established in Pristina to build Kosovo's first structured design platform, connecting local talent to global networks."],["2018","Festival of Design, First Edition","Annual Event","Kosovo's inaugural design festival brought together over 200 designers, architects, and creative practitioners for a week of exhibitions and talks."],["2019","DAE Eindhoven Partnership","Partnership","Formal collaboration with Design Academy Eindhoven, opening exchange programmes and co-educational initiatives."],["2021","Milan & Dutch Design Weeks","Global Presence","First official Kosovo presence at Milan Design Week and Dutch Design Week."],["2022","WDO Membership","Recognition","World Design Organization membership, officially placing Kosovo on the global design map with access to WDO's 40+ country network."],["2024","Academy of Design Launch","Education","Launch of Kosovo's first structured design education programme, mentorship, workshops, and professional development."]].map(t=>`<li class="rv"><span class="y">${t[0]}</span><h3>${t[1]}</h3><p>${t[3]}</p><span class="label blue">${t[2]}</span></li>`).join("")}</ul>
 </div></section>
-<section class="sec" id="founders"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Founders</h2><span class="label muted">Design Kosova Foundation</span></div>
+<section class="sec" id="founders"><div class="wrap"><div class="sec-head"><h2>${mark()}Founders</h2><span class="label muted">Design Kosova Foundation</span></div>
   <div class="cols c3">${[["ibrahim","Ibrahim Beqiri","Architect","Co-founder of Design Kosova Foundation. Ibrahim brings architectural vision to the foundation's urban and spatial initiatives, shaping how Kosovo's built environment engages with design culture.",[["LinkedIn ↗","#/contact"],["Instagram ↗","#/contact"]]],["trim","Trim Sokoli","Product & Brand Designer","11 years of helping 30+ companies push their visual boundaries. Based in Prishtina, Trim leads the brand and product design direction of DKF's identity and initiatives.",[["trimsokoli.com ↗","https://trimsokoli.com"],["Email","mailto:"+E]]],["enes","Enes Ramaxhiku","Animator","Motion and animation director at DKF. Enes leads the moving-image identity of the foundation, from festival openers to campaign films and interactive visual experiences.",[["Portfolio ↗","#/contact"],["Instagram ↗","#/contact"]]]].map((f,n)=>`<div class="founder rv">${fig(IMG+"founder-"+f[0]+".jpg",f[1],"4/5")}<p class="label muted">0${n+1} / Founder</p><h3>${f[1]}</h3><p class="label blue" style="margin:0">${f[2]}</p><p>${f[3]}</p><div class="links">${f[4].map(l=>`<a href="${l[1]}">${l[0]}</a>`).join("")}</div></div>`).join("")}</div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Partners</h2><a href="#/contact">Become a Partner ${arrow}</a></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Partners</h2><a href="#/contact">Become a Partner ${arrow}</a></div>
   <ul class="ltable">${PARTNERS.slice(0,4).map(p=>`<li><b>${p[0]}</b><span>${p[1]}</span><span>${p[2]}</span></li>`).join("")}</ul>
 </div></section>
 ${getInvolved("Whether you're a designer, institution, or business, there's a place for you in Kosovo's creative ecosystem.","Join the <em>Movement</em>","Get In Touch","Contact · Open to collaborations and conversations.")}`;
@@ -206,7 +206,7 @@ P.impact=()=>`
     <ul class="ltable" style="margin-top:40px">${["Milan","Eindhoven","Dubai","Porto","Berlin","Pristina"].map((c,n)=>`<li style="grid-template-columns:1fr auto"><b>${c}</b><span class="label${n===5?" blue":""}">${n===5?"Home":"Network"}</span></li>`).join("")}</ul></div>
   <div class="rv"><div class="cols c2">${[["500+","Designers Supported","Local designers given platforms, mentorship, and economic pathways through DKF programmes."],["7","Festival Editions","Annual flagship event drawing thousands of visitors and practitioners to Pristina each year."],["40+","Talk for Design Sessions","Curated lectures with local and international practitioners, all recorded and freely available."],["120+","Academy Students","Emerging designers trained through Kosovo's first structured design education programme."]].map(s=>`<div class="stat"><b>${s[0]}</b><span style="color:var(--ink);font-size:17px">${s[1]}</span><p class="muted" style="margin-top:8px;font-size:15px">${s[2]}</p></div>`).join("")}</div></div>
 </div></div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Recent Exhibitions</h2><span class="label muted">2026</span></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Recent Exhibitions</h2><span class="label muted">2026</span></div>
   <div class="cols c2">
     <div class="rv">${fig(IMG+"milan-exhibit.jpg","Local Shapes exhibition at Isola Design, Milan","4/3","",true)}
       <p class="label blue" style="margin-top:18px">Milan Design Week 2026 · Isola Design</p><h3 class="h-l" style="margin:8px 0 12px">Local Shapes</h3>
@@ -217,10 +217,10 @@ P.impact=()=>`
   </div>
   <div class="cols c4" style="margin-top:48px">${[["leka-lamp","Leka Tree Standing Lamp","Studio Fitore Syla"],["bold-tapestry","Bold Tapestries","Arti n'Lesh"],["the-rebel","The Rebel","Erëmira Belegu Deçani"],["mothers-lace","Mother's Lace","Dhé by Granita"]].map(w=>`<div class="rv">${fig(IMG+w[0]+".jpg",`${w[1]} by ${w[2]}`,"4/5")}<div class="fig-cap"><span style="color:var(--ink)">${w[1]}</span><span>${w[2]}</span></div></div>`).join("")}</div>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Collaborators</h2><a href="#/contact">Partner With Us ${arrow}</a></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Collaborators</h2><a href="#/contact">Partner With Us ${arrow}</a></div>
   <ul class="ltable">${PARTNERS.map(p=>`<li><b>${p[0]}</b><span>${p[1]}</span><span>${p[2]}</span></li>`).join("")}</ul>
 </div></section>
-<section class="sec"><div class="wrap"><div class="sec-head"><h2>${badge("spin")}Global Presence</h2></div>
+<section class="sec"><div class="wrap"><div class="sec-head"><h2>${mark()}Global Presence</h2></div>
   <div class="cols c3">${WEEKS.map(w=>cityCard(w,true)).join("")}</div>
 </div></section>
 ${getInvolved("Join DKF as a collaborator, sponsor, or partner and help put Kosovo on the global design map.","Shape the <em>Narrative</em>","Partner With Us","Contact · Let's build something together.")}`;

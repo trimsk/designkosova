@@ -15,6 +15,7 @@ function route(){
   const r=(location.hash.replace(/^#\/?/,"")||"home").split("?")[0];
   const page=P[r]?r:"home";
   Hero.stop();
+  markN=0;
   document.getElementById("app").innerHTML=P[page]()+footer();
   document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.n===page||(a.dataset.n==="projects"&&page!=="shop"&&!!byK(page))));
   mob.classList.remove("open");cart(false);window.scrollTo(0,0);
