@@ -2,7 +2,7 @@
    1. Full-bleed blue: the message types itself. DESIGN / IS NOT DECORATION. → IS PROGRESS. → IS CULTURE. → IS IDENTITY. → KOSOVA
    2. The blue contracts into the 540×334 wordmark and the editorial hero appears around it.
    3. E I G O O A jump out into the six initiative symbols; D S N / K S V close up, the box squares to 334 and turns 45° into the DSN KSV badge.
-   Plays on every page load (not when returning to Home inside the site); Skip or a click jumps to the end. */
+   Plays on a first visit and on Shift+Refresh; a plain refresh or returning to Home inside the site shows the end state. Skip or a click jumps to the end. */
 const Hero=(()=>{
   const RATIO=334/539.47;
   const M=.105, CAP=.317, TOP1=.135, TOP2=.548;     // margins / cap height / line tops, measured from the logo artwork
@@ -147,19 +147,28 @@ const Hero=(()=>{
     done=true;
     played=true;
   }
+  // a plain refresh revalidates the stylesheet from cache; Shift+Refresh downloads it in full
+  function softReload(){
+    try{
+      const nav=performance.getEntriesByType("navigation")[0];
+      if(!nav||nav.type!=="reload")return false;
+      const css=performance.getEntriesByType("resource").find(e=>/assets\/site\.css/.test(e.name));
+      return !!css&&!(css.encodedBodySize>0&&css.transferSize>=css.encodedBodySize);   // 304 or cache = plain refresh; a full download = Shift+Refresh
+    }catch(e){return false}
+  }
   let rz;
   const onResize=()=>{clearTimeout(rz);rz=setTimeout(()=>{if(el.stage?.isConnected)finish()},150)};
   return{
     async start(){
       const $=id=>document.getElementById(id);
       el={hero:$("hero"),stage:$("stage"),box:$("box"),badge:$("badge"),strike:$("strike"),intro:$("intro"),introType:$("intro").querySelector(".intro-type"),t1:$("t1"),t2:$("t2")};
-      const seen=played;
+      const seen=played||softReload();done=false;
       if(!reduce&&!seen){reveal(false);chrome(true,true)}else el.intro.hidden=true;
       el.intro.onclick=()=>finish();
       el.stage.onclick=()=>{if(!done)finish()};
       addEventListener("resize",onResize);
       try{await document.fonts.load('400 100px "Unica One"')}catch(e){}
-      if(!el.stage.isConnected)return;
+      if(!el.stage.isConnected||done)return;   // skipped while the font was loading
       if(reduce){finish();return}
       const id=++run;play(id,!seen).catch(()=>{});
     },

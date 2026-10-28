@@ -44,7 +44,8 @@ button:disabled{opacity:.4;cursor:default}
 
 /* hero */
 .hero{border-bottom:1px solid var(--rule-soft)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:calc(100svh - 69px)}  /* fills the screen under the header; the ticker starts below the fold */
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:calc(100svh - 103px);transition:min-height .7s var(--out)}  /* fits under top bar + header, so all six initiatives sit above the fold */
+body.notop .hero-grid{min-height:calc(100svh - 69px)}  /* during the intro there is no top bar */
 .stage{position:relative;border-right:1px solid var(--rule-soft);overflow:hidden;min-height:540px;cursor:pointer}
 .box{position:absolute;left:50%;top:50%;background:var(--blue);color:var(--paper)}
 .box .ch{position:absolute;top:0;left:0;font-family:var(--logo);font-weight:400;line-height:1;text-transform:uppercase;white-space:pre;will-change:transform,opacity}
@@ -52,11 +53,11 @@ button:disabled{opacity:.4;cursor:default}
 .badge{position:absolute;left:50%;top:50%;opacity:0;pointer-events:none}
 .stage-meta{position:absolute;left:20px;top:18px;color:var(--ink-2)}
 .hero-copy{display:flex;flex-direction:column;gap:clamp(32px,4vh,56px);padding:clamp(40px,6vh,72px) var(--gut) 0 var(--gut)}
-.hero h1{font-weight:500;font-size:clamp(38px,4vw,64px);line-height:1.04;letter-spacing:-.04em;margin:18px 0 22px}
+.hero h1{font-weight:500;font-size:clamp(34px,min(4vw,6.6vh),64px);line-height:1.04;letter-spacing:-.04em;margin:18px 0 22px}
 .hero h1 em{font-style:normal;color:var(--blue)}
 .lede{font-size:clamp(17px,1.3vw,20px);font-weight:400;max-width:34ch}
 .idx{list-style:none;border-top:1px solid var(--rule-soft);flex:1;display:flex;flex-direction:column}  /* rows share the column's spare height */
-.idx li{flex:1;display:flex;min-height:50px}
+.idx li{flex:1;display:flex;min-height:clamp(40px,5.4vh,50px)}
 .idx li a{flex:1}
 .idx a{display:grid;grid-template-columns:30px 34px 1fr auto;align-items:center;gap:8px;border-bottom:1px solid var(--rule-soft);transition:color .25s,padding .35s var(--out)}
 .idx a:hover{color:var(--blue);padding-left:8px}
@@ -263,7 +264,7 @@ select{font:inherit;font-size:14px;height:36px;border:1px solid var(--rule-soft)
   .mob a{display:block;font-size:30px;font-weight:400;padding:10px 0;border-bottom:1px solid var(--rule-soft)}
   .mob .lang{display:block;margin-top:24px;font-size:16px}
   .hero-grid,.feature,.split,.phero-grid{grid-template-columns:1fr}
-  .hero-grid{min-height:0}
+  .hero-grid,body.notop .hero-grid{min-height:0}
   .stage{border-right:0;border-bottom:1px solid var(--rule-soft);min-height:min(118vw,520px)}
   .c3,.c4,.contact-strip,.foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}
   .shop-layout{grid-template-columns:1fr}
