@@ -338,3 +338,99 @@ body.in-intro .burger i{background:var(--paper)}
 /* a list straight under a section title shares the title's rule instead of drawing a second line */
 .sec-head+:is(.prog,.ltable,.timeline,.others,.cgrid,.incl,.help,.news){border-top:0;margin-top:calc(-1 * clamp(32px,4vw,56px))}
 .sec-head+.others,.sec-head+.cgrid{border-top:0}
+
+/* ── inner pages ── */
+/* key numbers as a compact strip */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--ink);margin-top:clamp(40px,5vw,64px)}
+.wide-fig+.facts{margin-top:0;border-top:0}
+.fact{position:relative;padding:22px 20px 6px 0;border-right:1px solid var(--rule-soft);margin-right:20px}
+.fact:last-child{border-right:0;margin-right:0}
+.fact b{display:block;font-weight:500;font-size:clamp(30px,3vw,48px);line-height:1;letter-spacing:-.04em;color:var(--blue)}
+.fact span{display:block;margin-top:8px;font-size:14px;color:var(--ink-2)}
+.fact-sym{position:absolute;right:20px;top:24px;width:14px;height:14px}
+.fact:last-child .fact-sym{right:0}
+
+/* project cards */
+.pcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(48px,5vw,80px) clamp(24px,3vw,40px)}
+.pcard .fig{aspect-ratio:16/10}
+.pcard-sym{position:absolute;left:16px;top:16px;width:52px;height:52px;display:grid;place-items:center;background:var(--paper)}
+.pcard-sym svg{width:22px;height:22px}
+.pcard-body{padding-top:20px;display:grid;gap:10px;max-width:56ch}
+.pcard-body .h-l{transition:color .25s}
+.pcard:hover .h-l{color:var(--blue)}
+.pcard-cta{font-size:15px;margin-top:4px}
+
+/* initiative story */
+.story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
+.story-aside{position:sticky;top:110px;display:grid;gap:18px}
+.story-sym{width:clamp(72px,8vw,120px);height:auto;margin-top:clamp(16px,3vw,40px)}
+.story-main p+p{margin-top:16px}
+.inc-grid{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+.inc-grid li{border-top:1px solid var(--rule-soft);padding:16px 0 22px;display:grid;gap:8px}
+.inc-grid p{font-size:17px;line-height:1.45}
+
+/* horizontal gallery of real work */
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(220px,24vw,360px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 8px;scrollbar-width:thin;scrollbar-color:var(--blue) transparent}
+.gallery figure{scroll-snap-align:start;margin:0}
+.gallery figcaption{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:14px;color:var(--ink-2)}
+.gallery figcaption span:first-child{color:var(--ink)}
+.gal-sec .sec-head{margin-bottom:clamp(24px,3vw,40px)}
+
+/* About */
+.about-fig{position:sticky;top:110px}
+.ring{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.ring-i{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 14px;border:1px solid var(--rule-soft);font-size:14.5px;transition:border-color .25s,color .25s}
+.ring-i svg{width:15px;height:15px}
+.ring-i:hover{border-color:var(--blue);color:var(--blue)}
+.vv{background:var(--blue);color:var(--paper);border-bottom:0}
+.vv-card{display:grid;align-content:start;gap:16px;padding-top:24px;border-top:1px solid rgba(237,238,230,.35)}
+.vv-sym{width:34px;height:34px}
+.vv-card .label{opacity:.7}
+.vv-text{font-weight:500;font-size:clamp(21px,1.9vw,29px);line-height:1.3;letter-spacing:-.02em;max-width:30ch}
+.vv-sub{opacity:.8;max-width:52ch}
+.journey{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,3vw,48px)}
+.journey li{position:relative;border-top:1px solid var(--ink);padding:22px 0 44px;display:grid;gap:10px;align-content:start}
+.j-sym{position:absolute;right:0;top:24px;width:18px;height:18px}
+.j-y{font-weight:500;font-size:clamp(36px,3.6vw,56px);line-height:1;letter-spacing:-.04em;color:var(--blue)}
+.journey h3{font-weight:500;font-size:19px;letter-spacing:-.01em}
+.journey p{color:var(--ink-2);font-size:15.5px;max-width:38ch}
+
+/* Impact */
+.map-wrap{border:1px solid var(--rule-soft);padding:clamp(16px,3vw,40px)}
+.netmap{width:100%;height:auto;display:block;overflow:visible}
+.netmap text{font-family:var(--sans);font-size:17px;fill:var(--ink)}
+.netmap .sub{font-size:12.5px;fill:var(--ink-2)}
+.netmap .home{font-size:22px;font-weight:500;fill:var(--blue)}
+.netmap .arc{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-dasharray:3 7;stroke-linecap:round}
+.netmap .k{fill:var(--acc)}
+.netmap .k path[fill="none"]{fill:none;stroke:var(--acc)}
+.stat-card{position:relative;border-top:1px solid var(--blue);padding-top:22px;display:grid;gap:8px;align-content:start}
+.stat-card .fact-sym{top:26px;right:0}
+.stat-card b{font-weight:500;font-size:clamp(40px,4vw,64px);line-height:1;letter-spacing:-.045em;color:var(--blue)}
+.stat-card h3{font-weight:500;font-size:18px;margin-top:6px}
+.stat-card p{color:var(--ink-2);font-size:15px}
+
+@media (max-width:900px){
+  .pcards,.story,.inc-grid{grid-template-columns:1fr}
+  .story-aside,.about-fig{position:static}
+  .story-sym{display:none}
+  .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact{margin-right:0;padding-right:16px}
+  .fact:nth-child(2n){border-right:0;padding-left:16px}
+  .fact:nth-child(n+3){border-top:1px solid var(--rule-soft)}
+  .netmap text{font-size:22px}.netmap .sub{display:none}
+}
+@media (max-width:600px){
+  .journey{grid-template-columns:1fr}
+  .gallery{grid-auto-columns:72vw}
+}
+.c-disc{display:flex;align-items:center;gap:8px}
+.c-sym{width:12px;height:12px;flex:none}
+
+/* comfortable tap targets for text links on touch screens */
+@media (max-width:900px){
+  .foot-top ul{gap:0}
+  .foot-top a,.contact-strip a,.founder .links a,.sec-head a,.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+  .contact-strip{gap:0 24px}
+}
