@@ -24,10 +24,27 @@ function route(){
   io&&io.disconnect();
   io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
   document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+  subnavSpy();countUp();
   if(page==="home")Hero.start();
   if(page==="shop")shopInit();
   if(page==="collaborators")collabInit();
   if(page==="contact")contactInit();
+}
+// in-page navigation: highlight the last section whose top has passed under the bar
+let spyLinks=[];
+function subnavSpy(){const nav=document.querySelector(".subnav");spyLinks=nav?[...nav.querySelectorAll("a")].map(l=>[l,document.getElementById(l.dataset.go)]).filter(x=>x[1]):[];spyUpdate()}
+function spyUpdate(){if(!spyLinks.length)return;let cur=null;for(const [l,s] of spyLinks)if(s.getBoundingClientRect().top<=170)cur=l;spyLinks.forEach(([l])=>l.classList.toggle("on",l===cur))}
+// key numbers count up once when they come into view (years and words stay as they are)
+let counter;
+function countUp(){
+  counter&&counter.disconnect();
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  counter=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;counter.unobserve(e.target);
+    const el=e.target,m=el.textContent.match(/^(\d+)(.*)$/);if(!m)return;const to=+m[1],rest=m[2];if(to>=1900&&to<=2100)return;
+    const t0=performance.now(),d=1100;
+    (function f(t){const k=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v+rest;if(k<1)requestAnimationFrame(f)})(t0);
+  }),{threshold:.6});
+  document.querySelectorAll(".fact b,.stat-card b,.stat b").forEach(b=>counter.observe(b));
 }
 // the badge turns with scroll; a corner badge takes you back up
 const totop=document.createElement("button");totop.className="totop";totop.setAttribute("aria-label","Back to top");
@@ -36,6 +53,6 @@ totop.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 let tick=false;
 addEventListener("scroll",()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{tick=false;
   const t=(scrollY/900)%2;document.documentElement.style.setProperty("--rot",((t<1?t:2-t)*45).toFixed(2)+"deg");  // swings between diamond and square, never upside down
-  totop.classList.toggle("show",scrollY>700)})},{passive:true});
+  totop.classList.toggle("show",scrollY>700);spyUpdate()})},{passive:true});
 addEventListener("hashchange",route);
 updCart();route();
