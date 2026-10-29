@@ -158,6 +158,10 @@ a:hover .fig img{transform:scale(1.035)}
 .foot-top a:hover{color:var(--blue)}
 .foot-mark{width:112px;height:auto;display:block;margin-bottom:20px}
 .foot-bot{display:flex;justify-content:space-between;gap:16px;padding-top:20px;border-top:1px solid var(--rule-soft);font-size:13.5px;color:var(--ink-2)}
+.legal-copy{max-width:860px;margin-left:auto;margin-right:auto;padding-bottom:80px}
+.legal-copy h2{font-size:clamp(23px,3vw,34px);line-height:1.15;margin:42px 0 12px}
+.legal-copy p{font-size:clamp(16px,1.5vw,19px);line-height:1.7;margin:0 0 18px}
+.legal-copy a,.foot-bot a{text-decoration:underline;text-underline-offset:3px}
 
 /* inner pages */
 .phero{padding:clamp(56px,7vw,100px) 0 clamp(40px,5vw,72px);border-bottom:1px solid var(--rule-soft)}

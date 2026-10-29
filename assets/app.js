@@ -11,17 +11,21 @@ document.querySelectorAll(".lang").forEach(l=>l.onclick=e=>{const b=e.target.clo
 document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)setTimeout(()=>document.getElementById(g.dataset.go)?.scrollIntoView({behavior:"smooth"}),80)});
 
 let io;
+const notFoundPage=()=>'<section class="phero"><div class="wrap"><p class="label blue">404 · Page not found</p><h1 class="h-xl">This page does not exist.</h1><p class="body-l">Explore Design Kosova’s projects or return to the home page.</p><p style="margin-top:28px"><a class="btn solid" href="/">Go Home →</a> <a class="btn" href="/projects">Explore Projects →</a></p></div></section>';
 function route(){
   const r=location.pathname.replace(/^\/|\/$/g,"");
   const product=r.startsWith("shop/")?PRODUCTS.find(p=>p.slug===r.slice(5)):null;
-  const page=product?"product":P[r]?r:"home";
+  const page=product?"product":r===""?"home":P[r]?r:"notFound";
   Hero.stop();
   markN=0;
-  document.getElementById("app").innerHTML=(product?P.product(product):P[page]())+footer();
+  const app=document.getElementById("app");
+  const prerendered=app.dataset.prerenderPath===location.pathname;
+  if(!prerendered)app.innerHTML=(product?P.product(product):page==="notFound"?notFoundPage():P[page]())+footer();
+  delete app.dataset.prerenderPath;
   document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.n===page||(a.dataset.n==="shop"&&!!product)||(a.dataset.n==="projects"&&page!=="shop"&&!!byK(page))));
   mob.classList.remove("open");cart(false);window.scrollTo(0,0);
   const name=product?.n||byK(page)?.name||NAV.find(n=>n[0]===page)?.[1]||page[0].toUpperCase()+page.slice(1);
-  document.title=(page==="home"?"":name+" · ")+"Design Kosova Foundation";
+  if(!prerendered)document.title=page==="notFound"?"Page Not Found | Design Kosova Foundation":(page==="home"?"":name+" · ")+"Design Kosova Foundation";
   io&&io.disconnect();
   io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
   document.querySelectorAll(".rv").forEach(el=>io.observe(el));
