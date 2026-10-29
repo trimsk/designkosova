@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.designkosova.com/sitemap.xml
+Sitemap: https://www.designkosova.org/sitemap.xml

@@ -3,7 +3,7 @@ const vm = require('vm');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const origin = 'https://www.designkosova.com';
+const origin = 'https://www.designkosova.org';
 const source = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
   .replace(/<!-- SEO START -->[\s\S]*?<!-- SEO END -->\n?/, '');
 const scripts = ['logos.js', 'content.js', 'pages.js']
