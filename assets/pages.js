@@ -327,7 +327,7 @@ function updCart(){
   const d=document.getElementById("drawer");
   d.innerHTML=`<header><span class="h-m">Your Cart</span><button aria-label="Close cart" id="cartX" style="font-size:20px">✕</button></header>
   <div class="items">${SH.cart.length?SH.cart.map(c=>{const p=PRODUCTS[c.i];return `<div class="citem"><img src="${p.img}" alt=""><div><div>${p.n}</div><div class="q"><button data-q="${c.i}" data-d="-1" aria-label="Remove one">−</button>${c.q}<button data-q="${c.i}" data-d="1" aria-label="Add one">+</button></div></div><div>€${p.p*c.q}</div></div>`}).join(""):`<div class="empty">${sym("academy")}Your cart is empty</div>`}</div>
-  <footer><div class="tot"><span>Total</span><span>€${tot}</span></div><button class="btn solid" style="width:100%;justify-content:center" ${SH.cart.length?"":"disabled"}>Checkout</button></footer>`;
+  <footer><div class="tot"><span>Total</span><span>€${tot}</span></div><p class="muted" style="font-size:14px;margin:12px 0">Online ordering is not available yet.</p><button class="btn solid" style="width:100%;justify-content:center" disabled>Checkout coming soon</button></footer>`;
   d.querySelector("#cartX").onclick=()=>cart(false);
   d.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{const c=SH.cart.find(x=>x.i===+b.dataset.q);c.q+=+b.dataset.d;if(c.q<1)SH.cart=SH.cart.filter(x=>x!==c);updCart()});
 }
